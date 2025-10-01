@@ -8,7 +8,7 @@ Existen versiones anteriores, de las experimentacion y desarrollo realizados par
 - PhD. Javier Ferreiros Lopez
 - PhD. Juan Manuel Montero Martinez<br>
 
-Escuela Superior Tecnica de Ingenieros de Telecomunicaciones
-<br>Universidad Politecnica de Madrid<br>
+Escuela Superior Tecnica de Ingenieros de Telecomunicaciones (ETSIT).<br>
+Universidad Politecnica de Madrid (UPM).<br>
 
 
