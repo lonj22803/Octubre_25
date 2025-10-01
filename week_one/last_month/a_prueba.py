@@ -5,6 +5,8 @@ import torch
 import json
 import transformers
 from transformers import logging
+logging.set_verbosity_error()
+logging.set_verbosity_warning()
 
 #Pruebas de cuda
 print("CUDA available:", torch.cuda.is_available())
@@ -14,9 +16,9 @@ print("PyTorch version:", torch.__version__)
 print("Device name:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "No GPU")
 
 #Cargamos y revisamos los archivos Json
-with open('last_month/lineas_metro.json', 'r') as f:
+with open('lineas_metro.json', 'r') as f:
     lineas_metro = json.load(f)
-with open('last_month/estaciones_conexiones.json', 'r') as f:
+with open('estaciones_conexiones.json', 'r') as f:
     estaciones_conexiones = json.load(f)
 
 #print("Lineas de metro:", lineas_metro)
@@ -24,19 +26,13 @@ with open('last_month/estaciones_conexiones.json', 'r') as f:
 
 #Cargamos el modelo y pipeline
 
-model_id="meta-llama/Meta-Llama-3.1-8B-Instruct"
+model_id="meta-llama/Llama-3.2-3B-Instruct"
 
-try:
-   pipeline= transformers.pipeline(
+pipeline= transformers.pipeline(
         task="text-generation",
         model=model_id,
-        device_map="auto",
-        torch_dtype="float16"
-    )
-   print("Modelo cargado correctamente")
-except Exception as e:
-    print("Error al cargar el modelo:", e)
-    raise
+        device_map="auto")
+
 
 messages = [
     {"role": "system", "content": f"""
@@ -64,6 +60,7 @@ messages = [
 
 outputs = pipeline(
     messages,
-    max_new_tokens=1096,
+
+    max_new_tokens=512,
 )
 print(outputs[0]["generated_text"][-1])
