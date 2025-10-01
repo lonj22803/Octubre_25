@@ -8,7 +8,8 @@ Todos los derechos reservados:
 - MSc. Juan Jose Londoño Cardenas
 - PhD. Javier Ferreiros Lopez
 - PhD. Juan Manuel Montero Martinez<br>
-Escuela Superior Tecnica de Ingenieros de Telecomunicaciones<br>
-Universidad Politecnica de Madrid<br>
+
+Escuela Superior Tecnica de Ingenieros de Telecomunicaciones
+<br>Universidad Politecnica de Madrid<br>
 
 
