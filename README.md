@@ -6,9 +6,9 @@ Existen versiones anteriores, de las experimentacion y desarrollo realizados par
 Todos los derechos reservados:
 --
 - MSc. Juan Jose Londoño Cardenas
--PhD. Javier Ferreiros Lopez
--PhD. Juan Manuel Montero Martinez  
-Escuela Superior Tecnica de Ingenieros de Telecomunicaciones  
+- PhD. Javier Ferreiros Lopez
+- PhD. Juan Manuel Montero Martinez
+Escuela Superior Tecnica de Ingenieros de Telecomunicaciones
 Universidad Politecnica de Madrid  
 
 
