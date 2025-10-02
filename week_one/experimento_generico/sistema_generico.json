@@ -32,7 +32,7 @@
         "azul": {
             "estaciones": [
                 "BA1SC",
-                "BB8SC",
+                "BB2OC",
                 "BC3SC",
                 "BD2VB",
                 "BE4RC",
@@ -42,7 +42,7 @@
             ],
             "sentido_ida": [
                 "BA1SC",
-                "BB2SC",
+                "BB2OC",
                 "BC3SC",
                 "BD2VB",
                 "BE4RC",
@@ -57,7 +57,7 @@
                 "BE4RC",
                 "BD2VB",
                 "BC3SC",
-                "BB2SC",
+                "BB2OC",
                 "BA1SC"
             ]
         },
@@ -114,6 +114,23 @@
                 "RD3VC",
                 "BD2VB",
                 "VA1SC"
+            ]
+        },
+        "naranja": {
+            "estaciones": [
+                "OA1SC",
+                "OB2SC",
+                "BB2OC"
+            ],
+            "sentido_ida": [
+                "OA1SC",
+                "OB2SC",
+                "BB2OC"
+            ],
+            "sentido_vuelta": [
+                "BB2OC",
+                "OB2SC",
+                "OA1SC"
             ]
         }
     }

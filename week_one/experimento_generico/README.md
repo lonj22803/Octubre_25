@@ -17,12 +17,12 @@ del uso de información y la limitacion de capacidades.
 
 2. **Generación de datos**:  
    Se generaron datos ficticios para las estaciones y líneas del metro, manteniendo el concepto de color en las líneas, como en los metros de Madrid, Londres o Nueva York.  
-   Aquí se tienen las líneas de color amarillo, azul, rojo y verde. Adicionalmente, se realizó una codificación de las estaciones con el fin de incluso romper la tokenización del modelo:  
+   Aquí se tienen las líneas de color amarillo, azul, rojo, verde y naranja. Adicionalmente, se realizó una codificación de las estaciones con el fin de incluso romper la tokenización del modelo:  
 
    - La codificación de las estaciones es **AB#CD**.  
-   - Donde **A** obedece al color de la línea (A = Amarillo, B = Azul, R = Rojo, V = Verde).  
+   - Donde **A** obedece al color de la línea (A = Amarillo, B = Azul, O = Naranja ,R = Rojo, V = Verde).  
    - Donde **B** es la letra en orden alfabético para la estación (en el caso de la línea A va de AA a AG).  
-   - **#** obedece al número de conteo de la línea predominante; aunque puede ocurrir que por el cruce la numeración se repita para la estación, lo cual no es un problema ya que se busca confundir al modelo y “romper” su tokenización.  
+   - **#** obedece al número de conteos de la línea predominante; aunque puede ocurrir que por el cruce la numeración se repita para la estación, lo cual no es un problema ya que se busca confundir al modelo y “romper” su tokenización.  
    - **CD** corresponde al cruce de línea y estación. Puede ser la secuencia **SC** (Sin Conexión) o la línea y estación en donde se cruza. Ejemplos:  
      - **AD4RF** = Es la cuarta estación de la línea A (amarilla); por eso la letra es D. Se cruza con la línea R en la estación F. La numeración 4 corresponde al conteo predominante de la línea A.  
      - **AF6SC** = Es la sexta estación de la línea amarilla; por eso la letra es F. No tiene conexión con ninguna otra línea.  
