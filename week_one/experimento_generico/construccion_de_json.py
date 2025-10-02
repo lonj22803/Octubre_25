@@ -1,26 +1,27 @@
 import json
 import matplotlib.pyplot as plt
 import networkx as nx
+from fontTools.ttLib.woff2 import bboxFormat
 
 sistema_generico= {
     "lineas":{
         "amarilla": {
-            "estaciones": {"AA1SCI","AB2SC","AC3SC","AD4RF","AE5VE","AF7BH"},
+            "estaciones": ["AA1SCI","AB2SC","AC3SC","AD4RF","AE5VE","AF7BH"],
             "sentido_ida":["AA1SCI","AB2SC","AC3SC","AD4RF","AE5VE","AF7BH"],
             "sentido_vuelta":["AF7BH","AE5VE","AD4RF","AC3SC","AB2SC","AA1SCI"]
         },
         "azul": {
-            "estaciones": {"BA1SC","BB8SC","BC3SC","BD2VB","BE4RC","BF5SC","BG6SC","AF7BH"},
+            "estaciones": ["BA1SC","BB8SC","BC3SC","BD2VB","BE4RC","BF5SC","BG6SC","AF7BH"],
             "sentido_ida":["BA1SC","BB2SC","BC3SC","BD2VB","BE4RC","BF5SC","BG6SC","AF7BH"],
             "sentido_vuelta":["AF7BH","BG6SC","BF5SC","BE4RC","BD2VB","BC3SC","BB2SC","BA1SC"]
         },
         "roja": {
-            "estaciones":{"RA1SC","RB2SC","BE4RC","RD3VC","RE5SC","AD4RF","RG6SC"},
+            "estaciones":["RA1SC","RB2SC","BE4RC","RD3VC","RE5SC","AD4RF","RG6SC"],
             "sentido_ida":["RA1SC","RB2SC","BE4RC","RD3VC","RE5SC","AD4RF","RG6SC"],
             "sentido_vuelta":["RG6SC","AD4RF","RE5SC","RD3VC","BE4RC","RB2SC","RA1SC"]
         },
         "verde": {
-            "estaciones":{"VA1SC","BD2VB","RD3VC","VD4SC","AE5VE","VF6SC"},
+            "estaciones": ["VA1SC","BD2VB","RD3VC","VD4SC","AE5VE","VF6SC"],
             "sentido_ida":["VA1SC","BD2VB","RD3VC","VD4SC","AE5VE","VF6SC"],
             "sentido_vuelta":["VF6SC","AE5VE","VD4SC","RD3VC","BD2VB","VA1SC"]
         }
@@ -28,6 +29,10 @@ sistema_generico= {
 
     }
 }
+
+#Guardamos el sistema en un archivo JSON
+#with open("sistema_generico.json", "w", encoding="utf-8") as f:
+    #json.dump(sistema_generico, f, ensure_ascii=False, indent=4)
 
 # Mapeo de colores de español a matplotlib
 color_map = {
@@ -66,10 +71,10 @@ nx.draw(
     edge_color=colors,
     width=5,
     font_size=6,
-    font_weight='bold'
+    font_weight=600
 )
+#Guardamos la figura
+plt.savefig("sistema_generico.png", dpi=300,bbox_inches='tight')
 
 plt.show()
-
-
 

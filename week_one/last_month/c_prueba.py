@@ -57,6 +57,9 @@ Instrucciones:
 - No inventes estaciones, líneas, conexiones ni datos turísticos que no estén en el mapa o en la información dada.
 - Si no sabes la respuesta, di que no tienes suficiente información para responder.
 
-Mapa del Metro de Madrid (líneas y estaciones):
-{metro_map_str}
+Lineas de metro y sus estaciones:
+{lineas_metro}
+
+Etsaciones en donde se hacen conexiones entre lineas:
+{estaciones_conexiones}
 """
