@@ -46,7 +46,7 @@ Se generó un grafo orientado y codificado con el fin de graficarlo y hacer visi
     "lineas": {
       "amarilla": {
         "estaciones": [
-          "AA1SCI",
+          "AA1SC",
           "AB2SC",
           "AC3SC",
           "AD4RF",

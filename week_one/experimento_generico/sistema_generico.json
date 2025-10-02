@@ -2,7 +2,7 @@
     "lineas": {
         "amarilla": {
             "estaciones": [
-                "AA1SCI",
+                "AA1SC",
                 "AB2SC",
                 "AC3SC",
                 "AD4RF",
@@ -11,7 +11,7 @@
                 "AG7BH"
             ],
             "sentido_ida": [
-                "AA1SCI",
+                "AA1SC",
                 "AB2SC",
                 "AC3SC",
                 "AD4RF",
@@ -26,7 +26,7 @@
                 "AD4RF",
                 "AC3SC",
                 "AB2SC",
-                "AA1SCI"
+                "AA1SC"
             ]
         },
         "azul": {
