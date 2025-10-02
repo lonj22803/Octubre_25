@@ -7,7 +7,8 @@
                 "AC3SC",
                 "AD4RF",
                 "AE5VE",
-                "AF7BH"
+                "AF6SC",
+                "AG7BH"
             ],
             "sentido_ida": [
                 "AA1SCI",
@@ -15,10 +16,12 @@
                 "AC3SC",
                 "AD4RF",
                 "AE5VE",
-                "AF7BH"
+                "AF6SC",
+                "AG7BH"
             ],
             "sentido_vuelta": [
-                "AF7BH",
+                "AG7BH",
+                "AF6SC",
                 "AE5VE",
                 "AD4RF",
                 "AC3SC",
@@ -35,7 +38,7 @@
                 "BE4RC",
                 "BF5SC",
                 "BG6SC",
-                "AF7BH"
+                "AG7BH"
             ],
             "sentido_ida": [
                 "BA1SC",
@@ -45,10 +48,10 @@
                 "BE4RC",
                 "BF5SC",
                 "BG6SC",
-                "AF7BH"
+                "AG7BH"
             ],
             "sentido_vuelta": [
-                "AF7BH",
+                "AG7BH",
                 "BG6SC",
                 "BF5SC",
                 "BE4RC",
