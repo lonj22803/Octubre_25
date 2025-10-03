@@ -1,0 +1,36 @@
+{
+  "chat_id": "chat_20251003_160215",
+  "start_time": "2025-10-03 16:02:15",
+  "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "system_prompt": "Eres un asistente útil y amigable. Responde en español si la pregunta está en español. Sé conciso y preciso.",
+  "interactions": {
+    "interaccion_1": {
+      "user_question": "Dime todas las lineas de metro madrid",
+      "history": [
+        {
+          "role": "system",
+          "content": "Eres un asistente útil y amigable. Responde en español si la pregunta está en español. Sé conciso y preciso."
+        }
+      ],
+      "response": "Las siguientes son las líneas de metro de Madrid:\n\n1. Línea 1: Chamartín - Nuevos Ministerios - Príncipe Pío - Hospital del Henares\n2. Línea 2: Puerta de Europa - Nuevos Ministerios - Sol - Antón Martín\n3. Línea 3: Moncloa - Puerta del Sol - Sol - Latina\n4. Línea 4: Pinar de Chamartín - Atocha Renfe - Tribunal - Ventas\n5. Línea 5: Alameda de Osuna - Puerta del Arenal - Callao - Diego de León\n6. Línea 6: Atocha Renfe - Sol - Gran Vía - Universidad Diego de León\n7. Línea 7: Hospital del Henares - Pitis - Valdecarros - Pacífico\n8. Línea 8: Nuevos Ministerios - Pacífico - Barrio del Pilar - Cuatro Caminos\n9. Línea 9: Alcalá y Mesa - Puerta del Sol - Sol - Tetuán - Argüelles\n10. Línea 10: Puerto de Alcalá - Plaza de Castilla - Callao - Hospital Infanta Sofía"
+    },
+    "interaccion_2": {
+      "user_question": "Y falta linea 11",
+      "history": [
+        {
+          "role": "system",
+          "content": "Eres un asistente útil y amigable. Responde en español si la pregunta está en español. Sé conciso y preciso."
+        },
+        {
+          "role": "user",
+          "content": "Dime todas las lineas de metro madrid"
+        },
+        {
+          "role": "assistant",
+          "content": "Las siguientes son las líneas de metro de Madrid:\n\n1. Línea 1: Chamartín - Nuevos Ministerios - Príncipe Pío - Hospital del Henares\n2. Línea 2: Puerta de Europa - Nuevos Ministerios - Sol - Antón Martín\n3. Línea 3: Moncloa - Puerta del Sol - Sol - Latina\n4. Línea 4: Pinar de Chamartín - Atocha Renfe - Tribunal - Ventas\n5. Línea 5: Alameda de Osuna - Puerta del Arenal - Callao - Diego de León\n6. Línea 6: Atocha Renfe - Sol - Gran Vía - Universidad Diego de León\n7. Línea 7: Hospital del Henares - Pitis - Valdecarros - Pacífico\n8. Línea 8: Nuevos Ministerios - Pacífico - Barrio del Pilar - Cuatro Caminos\n9. Línea 9: Alcalá y Mesa - Puerta del Sol - Sol - Tetuán - Argüelles\n10. Línea 10: Puerto de Alcalá - Plaza de Castilla - Callao - Hospital Infanta Sofía"
+        }
+      ],
+      "response": "Sí, es cierto. La línea 11 del metro de Madrid se inauguró en 2020. La línea 11 va desde la estación Atazarán hasta la estación Príncipe Pío, pasando por la estación de intercambio de Cuatro Caminos."
+    }
+  }
+}

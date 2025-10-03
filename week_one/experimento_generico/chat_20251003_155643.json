@@ -1,0 +1,36 @@
+{
+  "chat_id": "chat_20251003_155643",
+  "start_time": "2025-10-03 15:56:43",
+  "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "system_prompt": "Eres un asistente útil y amigable. Responde en español si la pregunta está en español. Sé conciso y preciso.",
+  "interactions": {
+    "interaccion_1": {
+      "user_question": "Sabes las lineas de metro madrid",
+      "history": [
+        {
+          "role": "system",
+          "content": "Eres un asistente útil y amigable. Responde en español si la pregunta está en español. Sé conciso y preciso."
+        }
+      ],
+      "response": "Error al generar la respuesta: Error al cargar el modelo 'meta-llama/Meta-Llama-3-8B-Instruct': You are trying to access a gated repo.\nMake sure to have access to it at https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct.\n403 Client Error. (Request ID: Root=1-68dfd63f-352dd4b12077fe116db144f2;04734ab6-ca45-43a1-8b45-2ef1a152663c)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json.\nAccess to model meta-llama/Meta-Llama-3-8B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct to ask for access.. Verifica el ID y tu acceso a Hugging Face.. Intenta de nuevo."
+    },
+    "interaccion_2": {
+      "user_question": "Sabes las lineas de metro madrid",
+      "history": [
+        {
+          "role": "system",
+          "content": "Eres un asistente útil y amigable. Responde en español si la pregunta está en español. Sé conciso y preciso."
+        },
+        {
+          "role": "user",
+          "content": "Sabes las lineas de metro madrid"
+        },
+        {
+          "role": "assistant",
+          "content": "Error al generar la respuesta: Error al cargar el modelo 'meta-llama/Meta-Llama-3-8B-Instruct': You are trying to access a gated repo.\nMake sure to have access to it at https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct.\n403 Client Error. (Request ID: Root=1-68dfd63f-352dd4b12077fe116db144f2;04734ab6-ca45-43a1-8b45-2ef1a152663c)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json.\nAccess to model meta-llama/Meta-Llama-3-8B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct to ask for access.. Verifica el ID y tu acceso a Hugging Face.. Intenta de nuevo."
+        }
+      ],
+      "response": "Sí, las líneas del metro de Madrid son:\n\n1. Línea 1 (Roja)\n2. Línea 2 (Azul)\n3. Línea 3 (Verde)\n4. Línea 4 (Amarilla)\n5. Línea 5 (Gris)\n6. Línea 6 (Marron)\n7. Línea 7 (Plateada)\n8. Línea 8 (Gris claro)\n9. Línea 9 (Roja clara)\n10. Línea 10 (Amarilla clara)\n\nEn total, hay 10 líneas de metro en Madrid."
+    }
+  }
+}
