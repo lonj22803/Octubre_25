@@ -1,0 +1,7 @@
+{
+  "chat_id": "chat_20251003_151933",
+  "start_time": "2025-10-03 15:19:33",
+  "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "system_prompt": "Eres un asistente útil y amigable. Responde en español si la pregunta está en español. Sé conciso y preciso.",
+  "interactions": []
+}
