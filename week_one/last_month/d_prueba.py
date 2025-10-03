@@ -24,7 +24,8 @@ try:
 
     with open('estaciones_conexiones.json', 'r') as f:
         estaciones_conexiones = json.load(f)
-    print("✅ estaciones_conexiones cargado. Ejemplo:", list(estaciones_conexiones.items())[:3])  # Muestra primeras 3 conexiones
+    print("✅ estaciones_conexiones cargado. Ejemplo:",
+          list(estaciones_conexiones.items())[:3])  # Muestra primeras 3 conexiones
 except Exception as e:
     print("❌ Error cargando JSON:", str(e))
     print("Asegúrate de que los archivos existan y sean válidos.")
@@ -34,7 +35,7 @@ except Exception as e:
 print("CUDA available:", torch.cuda.is_available())
 print("Number of GPUs:", torch.cuda.device_count())
 if torch.cuda.is_available():
-    print("Memory GPU:", round(int(torch.cuda.mem_get_info()[0]) / 1024**3, 3), " GB")
+    print("Memory GPU:", round(int(torch.cuda.mem_get_info()[0]) / 1024 ** 3, 3), " GB")
 
 # Cargamos el modelo y pipeline
 model_id = "meta-llama/Llama-3.2-3B-Instruct"
@@ -47,6 +48,7 @@ pipeline = transformers.pipeline(
     pad_token_id=128000  # Evita warnings (EOS token aproximado para Llama)
 )
 
+
 # Formateamos los datos JSON para que sean más legibles en el prompt
 def format_lineas_metro(data):
     formatted = ""
@@ -54,11 +56,13 @@ def format_lineas_metro(data):
         formatted += f"{linea}: {' -> '.join(estaciones)}\n"
     return formatted.strip()
 
+
 def format_estaciones_conexiones(data):
     formatted = ""
     for estacion, lineas in data.items():
         formatted += f"{estacion}: {', '.join(lineas)}\n"
     return formatted.strip()
+
 
 lineas_formatted = format_lineas_metro(lineas_metro)
 conexiones_formatted = format_estaciones_conexiones(estaciones_conexiones)
@@ -68,7 +72,7 @@ SYSTEM_PROMPT = f"""
 Eres un asistente turístico experto en el Metro de Madrid. Usa SOLO los datos proporcionados abajo para calcular rutas. No inventes estaciones, líneas o conexiones.
 
 Instrucciones paso a paso para calcular rutas:
-1. Identifica la estacion del origen y destino usando el mapa de líneas.
+1. Identifica la línea del origen y destino usando el mapa de líneas.
 2. Si están en la misma línea, indica la dirección (adelante/atrás) y lista las estaciones intermedias.
 3. Si no, encuentra estaciones de conexión cercanas usando el mapa de conexiones. Propón el transbordo más simple (mínimo 1-2 cambios).
 4. Lista TODAS las estaciones paso a paso, la línea y dirección en cada segmento.
@@ -90,17 +94,20 @@ Usuario: "¿Cómo llego al Aeropuerto desde Nuevos Ministerios?"
 Asistente: "Desde Nuevos Ministerios al Aeropuerto T4: Toma directamente Línea 8 dirección Aeropuerto T4 (estaciones: Nuevos Ministerios -> Colombia -> Mar de Cristal -> ... -> Aeropuerto T4). No necesitas transbordos. En el aeropuerto, conexiones con vuelos y trenes."
 """
 
+
 def chat(messages):
     try:
         if not messages:
-            initial_msg = [{"role": "assistant", "content": "¡Hola! Soy tu asistente del Metro de Madrid. ¿A dónde quieres ir hoy?"}]
+            initial_msg = [{"role": "assistant",
+                            "content": "¡Hola! Soy tu asistente del Metro de Madrid. ¿A dónde quieres ir hoy?"}]
             return initial_msg
 
-        # Limpia metadata/options de Gradio si existen
+        # Limpia metadata/options de Gradio si existen (solo role y content)
         clean_messages = []
         for msg in messages:
-            clean_msg = {"role": msg["role"], "content": msg["content"]}
-            clean_messages.append(clean_msg)
+            if isinstance(msg, dict) and "role" in msg and "content" in msg:
+                clean_msg = {"role": msg["role"], "content": msg["content"]}
+                clean_messages.append(clean_msg)
         messages = clean_messages
 
         user_message = messages[-1]["content"]
@@ -118,9 +125,6 @@ Usuario:
 {user_message}
 
 Asistente (piensa paso a paso primero, luego responde):"""
-
-        # NO imprimimos el full_prompt aquí (como pediste)
-
         # Generamos la respuesta
         outputs = pipeline(
             full_prompt,
@@ -136,19 +140,20 @@ Asistente (piensa paso a paso primero, luego responde):"""
             if separator in respuesta:
                 respuesta = respuesta.split(separator)[0].strip()
 
-        # Mensaje assistant (sin debug embebido; se maneja en save_conversation)
+        # Mensaje assistant limpio (solo role y content)
         assistant_msg = {"role": "assistant", "content": respuesta}
         messages.append(assistant_msg)
         return messages
 
     except Exception as e:
-        print("Error during chat processing:", str(e))  # Solo log de error, sin prompt
+        print("Error during chat processing:", str(e))  # Solo log de error
         error_msg = "Lo siento, ha ocurrido un error al procesar tu solicitud."
         assistant_msg = {"role": "assistant", "content": error_msg}
         messages.append(assistant_msg)
         return messages
 
-# Interfaz en Gradio (sin cambios)
+
+# Interfaz en Gradio
 with gr.Blocks(title="Chatbot Metro Madrid") as demo:
     gr.Markdown("# Chatbot de Turismo en Español - Metro de Madrid")
 
@@ -180,40 +185,53 @@ with gr.Blocks(title="Chatbot Metro Madrid") as demo:
                 label="Haz clic en una pregunta:"
             )
 
+
     def user_send(messages, user_message):
         if not user_message.strip():
             return messages, ""
         messages = messages or []
+        # Limpia al agregar user
         user_msg = {"role": "user", "content": user_message}
         messages.append(user_msg)
         updated_messages = chat(messages)
         return updated_messages, ""
 
+
     send.click(user_send, inputs=[chatbot, msg], outputs=[chatbot, msg])
     msg.submit(user_send, inputs=[chatbot, msg], outputs=[chatbot, msg])
 
-    # Guardado NUEVO: Formato de interacciones secuenciales
+    # Guardado MEJORADO: Formato de interacciones secuenciales con limpieza agresiva
     save_btn = gr.Button("💾 Guardar chat en JSON")
     save_status = gr.Textbox(label="Estado de guardado", interactive=False)
+
 
     def save_conversation(messages):
         if not messages:
             return "❌ No hay historial para guardar."
 
+        # Limpieza inicial: Extrae solo role y content de todos los messages (ignora metadata/options)
+        clean_messages = []
+        for msg in messages:
+            if isinstance(msg, dict) and "role" in msg and "content" in msg:
+                clean_msg = {"role": msg["role"], "content": msg["content"]}
+                clean_messages.append(clean_msg)
+
+        print("DEBUG SAVE: Mensajes limpios recibidos:", len(clean_messages))  # Temporal para depurar; comenta después
+
         # Reconstruimos interacciones secuenciales (solo user + assistant pairs)
         interactions = []
         i = 0
-        while i < len(messages):
-            if messages[i]["role"] == "user":
-                user_question = messages[i]["content"]
+        while i < len(clean_messages):
+            if clean_messages[i]["role"] == "user":
+                user_question = clean_messages[i]["content"]
                 # Busca el siguiente assistant (si existe)
                 assistant_response = None
                 debug_info = {"error": None}
-                if i + 1 < len(messages) and messages[i + 1]["role"] == "assistant":
-                    assistant_response = messages[i + 1]["content"]
-                    # Reconstruye el full_prompt para esta interacción
-                    # (Usamos la lógica de chat para generar el model_input exacto)
-                    prev_history = messages[:i]  # Historial hasta antes de este user
+                full_prompt = None
+                if i + 1 < len(clean_messages) and clean_messages[i + 1]["role"] == "assistant":
+                    assistant_response = clean_messages[i + 1]["content"]
+                    # Reconstruye el full_prompt exacto para esta interacción
+                    prev_history = clean_messages[:i]  # Historial hasta antes de este user
                     conversation_history = "\n".join([
                         f"{'Usuario' if msg['role'] == 'user' else 'Asistente'}: {msg['content']}"
                         for msg in prev_history
@@ -242,19 +260,20 @@ Asistente (piensa paso a paso primero, luego responde):"""
                     }
                     i += 2  # Salta al siguiente user
                 else:
-                    # User sin respuesta (ej. error o chat incompleto)
-                    full_prompt = None
+                    # User sin respuesta
                     debug_info["error"] = "No hay respuesta de assistant para esta pregunta"
                     i += 1
 
                 interactions.append({
                     "user_question": user_question,
-                    "model_input": full_prompt,  # Todo lo que ve el modelo (completo, largo si es)
+                    "model_input": full_prompt,  # Todo lo que ve el modelo (completo)
                     "assistant_response": assistant_response,
                     "debug_info": debug_info
                 })
             else:
-                i += 1  # Salta assistants iniciales o solitarios
+                i += 1  # Salta assistants iniciales
+
+        print("DEBUG SAVE: Interacciones construidas:", len(interactions))  # Temporal; comenta después
 
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         filename = f"chat_history_{timestamp}.json"
@@ -266,6 +285,8 @@ Asistente (piensa paso a paso primero, luego responde):"""
                 "total_interactions": len(interactions),
                 "num_responses_generated": sum(1 for intxn in interactions if intxn["assistant_response"] is not None),
                 "system_prompt_included": True,  # En cada model_input
+                "sample_model_input_length": len(interactions[0]["model_input"]) if interactions else 0,
+                # Verifica longitud
                 "data_sources": {
                     "lineas_metro_keys": list(lineas_metro.keys()),
                     "conexiones_sample": list(estaciones_conexiones.items())[:3]
@@ -277,9 +298,10 @@ Asistente (piensa paso a paso primero, luego responde):"""
         try:
             with open(filename, "w", encoding="utf-8") as f:
                 json.dump(save_data, f, ensure_ascii=False, indent=2)
-            return f"✅ Historial guardado en {filename} (formato: user_question + model_input completo + assistant_response por interacción)"
+            return f"✅ Historial guardado en {filename} (formato: {len(interactions)} interacciones con model_input completo)"
         except Exception as e:
             return f"❌ Error guardando chat: {str(e)}"
+
 
     save_btn.click(save_conversation, inputs=[chatbot], outputs=[save_status])
 

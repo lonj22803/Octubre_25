@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "saved_at": "2025-10-03_11-49-09",
+    "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+    "total_messages": 8,
+    "num_assistant_responses": 4,
+    "system_prompt_included": true
+  },
+  "conversation": [
+    {
+      "role": "user",
+      "metadata": null,
+      "content": "¿Cómo llego de Sol a Francos Rodríguez?",
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": "Para llegar de Sol a Francos Rodríguez, toma Línea 1 en Sol, dirección Tetuán. Estaciones: Gran Vía, Tribunal, Bilbao, Iglesia, Ríos Rosas, Cuatro Caminos, Alvarado, Estrecho, Tetuán, Valdeacederas, Plaza de Castilla, Chamartín, Bambú, Pinar de Chamartín, Francos Rodríguez.",
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": "¿Cómo llego al Aeropuerto desde Nuevos Ministerios?",
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": "Para llegar al Aeropuerto desde Nuevos Ministerios, toma Línea 9 en Nuevos Ministerios, dirección Paco de Lucía. Estaciones: Nuevos Ministerios, Almendrales, Legazpi, Duque de Pastrana, Ventura Rodríguez, Argüelles, Puerta de Toledo, Paco de Lucía. En Paco de Lucía haces transbordo a Línea 8 dirección Aeropuerto T4, y bajas en Aeropuerto T4. En el Aeropuerto T4 encontrarás conexiones con trenes de larga distancia.",
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": "No deberia solo tomar la Linea 8+",
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": "Lo siento, pero parece que no tengo suficiente información para darte una respuesta precisa. ¿Podrías proporcionar más detalles sobre tu destino o la ruta que deseas tomar? ¿De qué línea de metro quieres ir desde Nuevos Ministerios? ¿Y hacia dónde vas?",
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": "Quiero ir de nuevos ministerios al Aeropuerto, que lineas de metro debo tomar",
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": "Para ir de Nuevos Ministerios al Aeropuerto, toma Línea 6 en Nuevos Ministerios, dirección Circular. Estaciones: Nuevos Ministerios, República Argentina, Méndez Álvaro, Pacífico, Puente de Vallecas, Nueva Numancia, Portazgo, Buenos Aires, Alto del Arenal, Miguel Hernández, Sierra de Guadalupe, Villa de Vallecas, Congosto, La Gavia, Las Suertes, Valdecarros, Atocha, Aeropuerto T4. En Atocha haces transbordo a Línea 8 en Atocha, dirección Aeropuerto T4, y bajas en Aeropuerto T4. En el Aeropuerto T4 encontrarás conexiones con trenes de larga distancia.",
+      "options": null
+    }
+  ]
+}
