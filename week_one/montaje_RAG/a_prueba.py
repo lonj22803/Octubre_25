@@ -68,7 +68,7 @@ def retrieve(query, top_n=3):  # Corrige 'retireve'
     return similarities[:top_n]
 
 if __name__ == "__main__":
-    input_query = "¿Quiero ir de RD3VC a AG7BH? ¿Que lineas debo coger, y cuantos transbordos habra?"
+    input_query = "¿Quiero ir de RD3VC a AG7BH? ¿Que líneas debo coger, y cuantos transbordos habrá?"
     retrieved_knowledge = retrieve(input_query, top_n=3)
 
     print("Relevant Chunks:")
