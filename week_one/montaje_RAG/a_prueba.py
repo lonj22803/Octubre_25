@@ -68,7 +68,7 @@ def retrieve(query, top_n=3):  # Corrige 'retireve'
     return similarities[:top_n]
 
 if __name__ == "__main__":
-    input_query = "¿Quiero ir de BB2SC a AB2SC? ¿Que lineas debo coger, y cuantos transbordos habra?"
+    input_query = "¿Quiero ir de RD3VC a AG7BH? ¿Que lineas debo coger, y cuantos transbordos habra?"
     retrieved_knowledge = retrieve(input_query, top_n=3)
 
     print("Relevant Chunks:")
@@ -79,10 +79,31 @@ if __name__ == "__main__":
     knowledge_content = '\n'.join([f' - {chunk}' for chunk, similarity in retrieved_knowledge])
 
     instruction_prompt = f'''
-    Eres un asistente que responde preguntas sobre el sistema de metro de una ciudad.
-    Utiliza la información proporcionada en los siguientes fragmentos para responder a la pregunta de la 
-    manera más precisa posible.
+    Eres un asistente experto en el sistema de metro de [Nombre de la Ciudad, ej. "Madrid"]. Responde preguntas sobre rutas, estaciones y trayectos de manera precisa y útil, basándote **únicamente** en la información proporcionada en los fragmentos de conocimiento a continuación. No inventes datos ni uses conocimiento externo.
+
+    Instrucciones:
+    - Construye el trayecto entre dos estaciones, respetando estrictamente el sentido de las líneas (ida o vuelta) y cuales lineas se comparten. No ignores las direcciones de las líneas.
+    - Calcula el número de transbordos (cambios de línea) y las líneas utilizadas en la ruta más corta o eficiente.
+    - Si no hay ruta posible con la información disponible, indícalo claramente y sugiere alternativas si aplica.
+    - Estructura tu respuesta de forma clara: describe la ruta paso a paso, lista las estaciones intermedias, y resume transbordos y líneas al final.
+    - Usa un lenguaje amigable y preciso. Si la pregunta no es sobre rutas, responde basándote solo en los fragmentos.
+
     {knowledge_content}
+
+    Ejemplo de respuesta para una pregunta de ruta:
+    Pregunta: ¿Cómo llego de la estación BB2SC a la estación AB2SC?
+
+    Respuesta: Para ir de BB2SC a AB2SC, debes hacer 1 transbordo, ya que no están en la misma línea. Aquí está la ruta más corta utilizando las líneas disponibles:
+
+    1. Toma la línea azul en sentido ida desde BB2SC (estación de partida) hasta la estación de transbordo AG7BH (estación común entre línea azul y amarilla).
+    2. En AG7BH, cambia a la línea amarilla en sentido vuelta y continúa hasta AB2SC (estación de llegada).
+
+    En total: 1 transbordo y 2 líneas (azul y amarilla).
+
+    Trayecto completo de estaciones:
+    - BB2SC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH (transbordo)
+    - AG7BH → AF6SC → AE5VE → AD4RF → AC3SC → AB2SC
+    ¡Buen viaje!
     '''
 
     stream = ollama.chat(
