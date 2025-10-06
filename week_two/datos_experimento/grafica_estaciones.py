@@ -18,6 +18,12 @@ gdf = gdf.to_crs(epsg=3857)
 fig, ax = plt.subplots(figsize=(12, 10))
 gdf.plot(ax=ax, color='dodgerblue', edgecolor='black', markersize=100, alpha=0.8, zorder=3)
 
+#Graficamo un circulo al rededor del centro de madrid
+centro_madrid = gpd.GeoSeries([Point(-3.691800, 40.429800)], crs="EPSG:4326").to_crs(epsg=3857)
+centro_madrid.plot(ax=ax, color='red', markersize=200, marker='x', zorder=4)
+circulo = centro_madrid.buffer(5000)  # 5 km de radio
+circulo.plot(ax=ax, facecolor='none', edgecolor='red', linestyle='--', linewidth=2, zorder=2)
+
 # Añadir etiquetas
 for x, y, label in zip(gdf.geometry.x, gdf.geometry.y, gdf['estacion']):
     ax.text(x + 50, y + 50, label, fontsize=10, ha='left', va='bottom', zorder=4)
