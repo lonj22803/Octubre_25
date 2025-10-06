@@ -31,7 +31,7 @@ ax.set_title('Posiciones de Estaciones sobre Mapa', fontsize=16)
 ax.set_xlabel('Longitud')
 ax.set_ylabel('Latitud')
 ax.set_axis_off()  # Opcional: quita los ejes para ver mejor el mapa
-
+plt.savefig("estaciones_sobre_mapa_madrid.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 
