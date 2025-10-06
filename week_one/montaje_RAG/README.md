@@ -49,6 +49,9 @@ La pregunta generica para todos los mdoelo fue:
 ¿Quiero ir de RD3VC a AG7BH? ¿Qué líneas debo coger, y cuantos transbordos habrá?
 ```
 ### Respuesta ChatGPT-5
+
+Tuvo alucinacion completa, trasbordos inexistentes y lineas incorrectas.
+
 ```
 Para ir de RD3VC a AG7BH, tienes varias opciones de líneas, pero necesitarás hacer al menos un transbordo. Aquí están las líneas y los transbordos necesarios:
 
@@ -72,6 +75,8 @@ Este es el camino más directo para ir de RD3VC a AG7BH.
 ```
 
 ### Respuestas Mistral
+
+Respuesta Correcta, sin alucinaciones:
 ```
 ¡Perfecto! Vamos a planificar tu ruta de **RD3VC** a **AG7BH** usando las líneas de metro disponibles.
 
@@ -91,6 +96,8 @@ Este es el camino más directo para ir de RD3VC a AG7BH.
 ```
 
 ### Claude con Sonnet 4.5
+
+Respuesta correcta sub alucinaciones.
 ```
 Para ir de **RD3VC a AG7BH**, aquí está tu ruta:
 
@@ -109,7 +116,8 @@ Esta es la ruta más directa, ya que AD4RF es una estación de intercambio entre
 ```
 
 
-### Gemini 
+### Gemini
+Respuesta correcta sin alucinaciones:
 ```
 Para ir de **RD3VC** a **AG7BH**, la mejor ruta requiere **1 transbordo** y usarás las líneas **Verde** y **Amarilla** (o **Roja** y **Amarilla**).
 
@@ -165,6 +173,7 @@ Otra ruta que también te lleva con un solo transbordo.
 
 ## Prueba 2 corrigiendo errores de ortografía en la pregunta
 
+Las Alucinaciones empeoraron
 ```
 Relevant Chunks:
 Similarity: 0.6926
@@ -200,4 +209,15 @@ En este caso, tienes que tomar la línea Roja (RD3VC) en sentidos hacia el centr
 De esta forma, hay un total de 1 transbordo (a partir de RD3VC hasta BB2OC) y 1 línea utilizada en la ruta.
 
 Process finished with exit code 0
+```
+## Prueba 3: Centrados solo en solucionar la alucinacion y el RAG
+Lon hizo bien, errores de prompting corregibles
+```
+Toma Roja (ida) de RD3VC a AD4RF. Transborda a Amarilla (ida) hasta AG7BH. Total: 1 transbordo.  Ruta sugerida: 
+RD3VC → RE5SC → AD4RF (Roja ida), transbordo → AE5VE → AF6SC → AG7BH (Amarilla ida). 1 línea. 1 transbordo. 
+
+Nota: La respuesta se basa en el razonamiento proporcionado en el ejemplo 1. La ruta sugerida es una posible 
+solución para llegar de RD3VC a AG7BH. Si hay otras rutas más eficientes, no se mencionan en la respuesta proporcionada. 
+Ruta sugerida: RD3VC → RE5SC → AD4RF (Roja ida), transbordo → AE5VE → AF6SC → AG7BH (Amarilla ida). 
+1 línea. 1 transbordo. 1 transbordo. 1 transbordo. 1 transbordo. 1 transbordo. 1 transbordo. 1 transbordo. 1 transbordo. 1 transb
 ```
