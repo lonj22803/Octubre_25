@@ -1,0 +1,26 @@
+﻿estacion,latitud,longitud,lineas
+AA1SC,40.3768,-3.6838,amarilla
+AB2SC,40.4668,-3.7438,amarilla
+AC3SC,40.5368,-3.7038,amarilla
+AD4RF,40.5968,-3.6638,"amarilla, roja"
+AE5VE,40.6568,-3.6438,"amarilla, verde"
+AF6SC,40.7368,-3.6038,amarilla
+AG7BH,40.8168,-3.5838,"amarilla, azul"
+BA1SC,40.2968,-3.5238,azul
+BB2OC,40.3568,-3.5038,"azul, naranja"
+BC3SC,40.4168,-3.4838,azul
+BD2VB,40.4768,-3.4638,"azul, verde"
+BE4RC,40.5368,-3.4838,"azul, roja"
+BF5SC,40.6168,-3.5238,azul
+BG6SC,40.7068,-3.5438,azul
+RA1SC,40.6568,-3.4438,roja
+RB2SC,40.5968,-3.4038,roja
+RD3VC,40.5168,-3.5438,"roja, verde, naranja"
+RE5SC,40.5368,-3.6238,roja
+RG6SC,40.5368,-3.8238,roja
+VA1SC,40.4168,-3.3438,verde
+VD4SC,40.5968,-3.5838,verde
+VF6SC,40.6768,-3.7038,verde
+OA1SC,40.2568,-3.3238,naranja
+OB2SC,40.2968,-3.4238,naranja
+OC3SC,40.4168,-3.6238,naranja

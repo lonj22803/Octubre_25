@@ -203,7 +203,7 @@ def generate_response(query: str, retrieved_knowledge: List[Tuple[str, float, di
 
 # Ejemplo de uso
 if __name__ == "__main__":
-    input_query = "¿Quiero ir de RD3VC a AG7BH? ¿Que líneas debo coger, y cuantos transbordos habrá?"
+    input_query = "¿Quiero ir de BA1SC a VF6SC? ¿Que líneas debo coger, y cuantos transbordos habrá?"
 
     retrieved_knowledge = retrieve(input_query, top_n=7)
     print("Chunks relevantes recuperados:")
