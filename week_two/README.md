@@ -27,8 +27,8 @@ con distancias promedio de 11 km entre estaciones, representativo de una red de 
   Transformacion lineal:  
   La conversión se realizó mediante una transformación afín que preserva la distribución geométrica original mientras escala las coordenadas a un sistema 
 de referencia geográfico real:
-      $$ Latitud = Latitud_central + x * s $$
-      $$ Longitud = Longitud_central + y * s $$
+      $$ Latitud = Latitud_central + y * s $$
+      $$ Longitud = Longitud_central + x * s $$
         - Donde (x, y) coordenadas cartesianas originales
         - Latitud_central y Longitud_central = (40.4168, -3.7038) (coordenadas de Madrid)
         - s = 0.001 (factor de escala en grados por unidad)

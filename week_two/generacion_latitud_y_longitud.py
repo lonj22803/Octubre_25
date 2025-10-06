@@ -30,7 +30,7 @@ pos_original = {
 }
 
 
-def convertir_a_lat_lon(posiciones, centro_lat=40.4168, centro_lon=-3.7038, escala=0.001):
+def convertir_a_lat_lon(posiciones, centro_lat=40.4168, centro_lon=-3.7038, escala=0.0001):
     """
     Convierte coordenadas cartesianas a geográficas
 
@@ -45,8 +45,8 @@ def convertir_a_lat_lon(posiciones, centro_lat=40.4168, centro_lon=-3.7038, esca
     """
     pos_geo = {}
     for key, (x, y) in posiciones.items():
-        lat = centro_lat + x * escala
-        lon = centro_lon + y * escala
+        lat = centro_lat + y * escala
+        lon = centro_lon + x * escala
         pos_geo[key] = (lat, lon)
     return pos_geo
 
@@ -55,7 +55,6 @@ def convertir_a_lat_lon(posiciones, centro_lat=40.4168, centro_lon=-3.7038, esca
 pos_geo = convertir_a_lat_lon(pos_original)
 
 print("=== POSICIONES GEOGRÁFICAS ===\n")
-print(pos_geo)
 
 # Mostrar resultados
 print("pos_geo = {")
