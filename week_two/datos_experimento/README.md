@@ -14,7 +14,7 @@ verificable.
 codificacion no esta el OC que indicaria que esa linea pasa por ahi, lo cual rompe con patrones, es un caso que puede ocurrir en lña vida real, pero ayuda
 para que el modelo no se confie en patrones y pueda razonar.
 
-![Sistema Generico](week_two/sistema_generico.png "Sistema Generico")
+![Sistema Generico](sistema_generico.png "Sistema Generico")
 Sistema Generico, con las dos nuevas estaciones creadas para la linea naranja.
 
 - **Simulacion de longitud y latitud**
@@ -43,6 +43,7 @@ $$
     - *El resultado fue el siguiente*:
 
         ```
+        AA1SC,40.4188,-3.7078,amarilla
         AB2SC,40.4128,-3.6988,amarilla
         AC3SC,40.4168,-3.6918,amarilla
         AD4RF,40.4208,-3.6858,"amarilla, roja"
@@ -67,10 +68,13 @@ $$
         OA1SC,40.4548,-3.7198,naranja
         OB2SC,40.4448,-3.7158,naranja
         OC3SC,40.4248,-3.7038,naranja
-        ```
-    - *Visualización Geográfica*
-  Si graficaramos las estaciones en un mapa de Madrid, obtenemos la siguiente distribución:
-    ![Sistema Generico Coordenadas Reales](week_two/estaciones_sobre_mapa_madrid.png "Sistema Generico Coordenadas Reales")
-    Sistema Generico con coordenadas geográficas simuladas, representando una red de transporte metropolitana en Madrid.
 
-  
+        ```
+    - *Visualización Geográfica*  
+  Si graficaramos las estaciones en un mapa de Madrid, obtenemos la siguiente distribución:
+    ![Sistema Generico Coordenadas Reales](estaciones_sobre_mapa_madrid.png "Sistema Generico Coordenadas Reales")
+    Sistema Generico con coordenadas geográficas simuladas, representando una red de transporte metropolitana en Madrid.
+    
+    - *Visualización si se el sistema en Madrid*
+    ![Sistema Generico en Madrid](sistema_generico_madrid.png "Sistema Generico en Madrid")
+    Sistema Generico sobre un mapa de Madrid, mostrando las estaciones y conexiones de las líneas de transporte.
