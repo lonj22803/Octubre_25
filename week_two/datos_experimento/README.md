@@ -15,7 +15,7 @@ codificacion no esta el OC que indicaria que esa linea pasa por ahi, lo cual rom
 para que el modelo no se confie en patrones y pueda razonar.
 
 ![Sistema Generico](sistema_generico.png "Sistema Generico")
-Sistema Generico, con las dos nuevas estaciones creadas para la linea naranja.
+Sistema Generico, con las dos nuevas estaciones creadas para la línea naranja.
 
 - **Simulacion de longitud y latitud**
     - Para generar el gráfico anterior se usaron coordenadas ficticias, las cuales ya predefinían la distribucion, pero esas coordenadas 
