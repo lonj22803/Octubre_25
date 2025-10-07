@@ -120,7 +120,7 @@ circulo.plot(ax=ax, facecolor='none', edgecolor='red', linestyle='--', linewidth
 
 for x, y, label, precio, dist in zip(gdf_hoteles.geometry.x, gdf_hoteles.geometry.y, gdf_hoteles['Hotel'],
                                      gdf_hoteles['Precio'], df['Distancia_al_Centro_km']):
-    ax.text(x + 30, y + 30, f"{label})", fontsize=8, ha='left', va='bottom', zorder=4)
+    ax.text(x + 30, y + 30, f"{label}", fontsize=8, ha='left', va='bottom', zorder=4)
 
 ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
 ax.set_title("Hoteles Generados Concentrados Cerca del Centro de Madrid", fontsize=16)
@@ -153,7 +153,7 @@ try:
 
     # Mapa de fondo y detalles
     ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
-    ax.legend(loc='upper right', fontsize=10)
+    ax.legend(loc='lower right', fontsize=10)
     ax.set_title("Hoteles Concentrados en el Centro y Estaciones de Metro en Madrid", fontsize=16)
     ax.set_axis_off()
 

@@ -1,6 +1,6 @@
 # Semana II  Octubre de 2025 
 
-## Temas relevantes reunion 6/Oct/25
+## Temas relevantes reunion 06/Octubre/2025
 
 - **Cruce de informacion**
     - Se verifico que Mistral, Gemini, Claude y ChatGPT (el ultimo con errores), son capaces de resolver un grafo de 
@@ -78,3 +78,51 @@ $$
     - *Visualización si se el sistema en Madrid*
     ![Sistema Generico en Madrid](sistema_generico_madrid.png "Sistema Generico en Madrid")
     Sistema Generico sobre un mapa de Madrid, mostrando las estaciones y conexiones de las líneas de transporte.
+
+## Nuevos datos para un cruce de informacion. 
+
+
+Como una extensión del experimento genérico, se generaron datos sintéticos de hoteles con el objetivo de simular una ciudad 
+ficticia. Las ubicaciones geográficas de los hoteles se determinaron mediante una **distribución exponencial centrada en el 
+núcleo urbano**, tal que la distancia radial $ r $ desde el centro cumple:
+
+$$
+r \sim \text{Exponencial}(\lambda), \quad \lambda = \frac{1}{\mu_r}
+$$
+
+donde $ \mu_r $ es la **distancia media esperada al centro**. El ángulo \(\theta\) se selecciona uniformemente:
+
+$$
+\theta \sim \mathcal{U}(0, 2\pi)
+$$
+
+Las coordenadas geográficas $(\phi, \lambda)$ de cada hotel se aproximan a partir del centro $(\phi_c, \lambda_c)$ mediante:
+
+$$
+\phi = \phi_c + \frac{r}{R_\text{Tierra}} \cos(\theta) \cdot \frac{180}{\pi}, \quad
+\lambda = \lambda_c + \frac{r}{R_\text{Tierra}} \frac{\sin(\theta) \cdot 180}{\pi \cos(\phi_c)}
+$$
+
+donde $ R_\text{Tierra} = 6371\,\text{km} $ es el radio de la Tierra.  
+
+Adicionalmente, se asigna un **precio \(P\)** a cada hotel siguiendo una distribución normal:
+
+$$
+P \sim \mathcal{N}(\mu_P, \sigma_P^2), \quad P \geq P_\text{min}
+$$
+
+donde $ \mu_P $ es el precio medio, $ \sigma_P $ la desviación estándar, y $ P_\text{min} $ el precio mínimo permitido para garantizar valores realistas.  
+
+Este implementacion proporciona un conjunto de datos georreferenciados que refleja de manera consistente la **distribución espacial y económica de los hoteles**, 
+lo cual es útil para análisis de planificación urbana y simulaciones de infraestructura turística.
+
+#### **Distribución espacial de los hoteles**
+
+![Distribucion Hoteles](hoteles_concentrados_sobre_mapa_centro_madrid.png "Distribucion Hoteles")    
+
+#### **Distirbucion de Hoteles y lineas de Metro.**
+
+![Hoteles y Metro](hoteles_concentrados_centro_y_metro_madrid.png "Hoteles y Metro")
+
+
+
