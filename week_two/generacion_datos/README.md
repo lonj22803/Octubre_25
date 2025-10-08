@@ -28,13 +28,15 @@ con distancias promedio de 11 km entre estaciones, representativo de una red de 
   La conversión se realizó mediante una transformación afín que preserva la distribución geométrica original mientras escala las coordenadas a un sistema 
 de referencia geográfico real:
   
-$$ Latitud = Latitud\ central + y * s $$
+        $$ Latitud = Latitud\ central + y * s $$
+        
+        $$ Longitud = Longitud\ central + x * s $$
 
-$$ Longitud = Longitud\ central + x * s $$
-        - Donde (x, y) coordenadas cartesianas originales
+    - Donde:  
+        - (x, y) coordenadas cartesianas originales
         - Latitud_central y Longitud_central = (40.4168, -3.7038) (coordenadas de Madrid)
         - s = 0.0001 (factor de escala en grados por unidad)
-    - *Parámetros de Escala y Equivalencias Físicas*
+    - *Parámetros de Escala y Equivalencias Físicas*  
   El facto de escala s=0.001 se seleccionó considerando que:
 
 $$
@@ -88,7 +90,7 @@ $$
 
 Como una extensión del experimento genérico, se generaron datos sintéticos de hoteles con el objetivo de simular una ciudad 
 ficticia. Las ubicaciones geográficas de los hoteles se determinaron mediante una **distribución exponencial centrada en el 
-núcleo urbano**, tal que la distancia radial $ r $ desde el centro cumple:
+núcleo urbano**, tal que la distancia radial $r$ desde el centro cumple:
 
 $$
 r \sim \text{Exponencial}(\lambda), \quad \lambda = \frac{1}{\mu_r}
