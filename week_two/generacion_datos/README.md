@@ -39,42 +39,41 @@ de referencia geográfico real:
     - *Parámetros de Escala y Equivalencias Físicas*  
   El facto de escala s=0.001 se seleccionó considerando que:
 
-$$
-\begin{align*}
-1^\circ \text{de latitud} &\approx 111,3 \text{km} \\
-1 \text{unidad cartesiana} &= s^\circ = 0.0001^\circ \approx 11,13 \text{m}
-\end{align*}
-$$
+    $$
+    \begin{align*}
+    1^\circ \text{de latitud} &\approx 111,3 \text{km} \\
+    1 \text{unidad cartesiana} &= s^\circ = 0.0001^\circ \approx 11,13 \text{m}
+    \end{align*}
+    $$
 
     - *El resultado fue el siguiente*:
-
-            ```
-            AA1SC,40.4188,-3.7078,amarilla
-            AB2SC,40.4128,-3.6988,amarilla
-            AC3SC,40.4168,-3.6918,amarilla
-            AD4RF,40.4208,-3.6858,"amarilla, roja"
-            AE5VE,40.4228,-3.6798,"amarilla, verde"
-            AF6SC,40.4268,-3.6718,amarilla
-            AG7BH,40.4288,-3.6638,"amarilla, azul"
-            BA1SC,40.4348,-3.7158,azul
-            BB2OC,40.4368,-3.7098,"azul, naranja"
-            BC3SC,40.4388,-3.7038,azul
-            BD2VB,40.4408,-3.6978,"azul, verde"
-            BE4RC,40.4388,-3.6918,"azul, roja"
-            BF5SC,40.4348,-3.6838,azul
-            BG6SC,40.4328,-3.6748,azul
-            RA1SC,40.4428,-3.6798,roja
-            RB2SC,40.4468,-3.6858,roja
-            RD3VC,40.4328,-3.6938,"roja, verde, naranja"
-            RE5SC,40.4248,-3.6918,roja
-            RG6SC,40.4048,-3.6918,roja
-            VA1SC,40.4528,-3.7038,verde
-            VD4SC,40.4288,-3.6858,verde
-            VF6SC,40.4168,-3.6778,verde
-            OA1SC,40.4548,-3.7198,naranja
-            OB2SC,40.4448,-3.7158,naranja
-            OC3SC,40.4248,-3.7038,naranja
-            ```
+    ```csv 
+        AA1SC,40.4188,-3.7078,amarilla
+        AB2SC,40.4128,-3.6988,amarilla
+        AC3SC,40.4168,-3.6918,amarilla
+        AD4RF,40.4208,-3.6858,"amarilla, roja"
+        AE5VE,40.4228,-3.6798,"amarilla, verde"
+        AF6SC,40.4268,-3.6718,amarilla
+        AG7BH,40.4288,-3.6638,"amarilla, azul"
+        BA1SC,40.4348,-3.7158,azul
+        BB2OC,40.4368,-3.7098,"azul, naranja"
+        BC3SC,40.4388,-3.7038,azul
+        BD2VB,40.4408,-3.6978,"azul, verde"
+        BE4RC,40.4388,-3.6918,"azul, roja"
+        BF5SC,40.4348,-3.6838,azul
+        BG6SC,40.4328,-3.6748,azul
+        RA1SC,40.4428,-3.6798,roja
+        RB2SC,40.4468,-3.6858,roja
+        RD3VC,40.4328,-3.6938,"roja, verde, naranja"
+        RE5SC,40.4248,-3.6918,roja
+        RG6SC,40.4048,-3.6918,roja
+        VA1SC,40.4528,-3.7038,verde
+        VD4SC,40.4288,-3.6858,verde
+        VF6SC,40.4168,-3.6778,verde
+        OA1SC,40.4548,-3.7198,naranja
+        OB2SC,40.4448,-3.7158,naranja
+        OC3SC,40.4248,-3.7038,naranja
+  ```
     - *Visualización Geográfica*  
     Si graficaramos las estaciones en un mapa de Madrid, obtenemos la siguiente distribución:
 
@@ -96,7 +95,7 @@ $$
 r \sim \text{Exponencial}(\lambda), \quad \lambda = \frac{1}{\mu_r}
 $$
 
-donde $ \mu_r $ es la **distancia media esperada al centro**. El ángulo \(\theta\) se selecciona uniformemente:
+donde $\mu_r$ es la **distancia media esperada al centro**. El ángulo $\theta$ se selecciona uniformemente:
 
 $$
 \theta \sim \mathcal{U}(0, 2\pi)
@@ -109,7 +108,7 @@ $$
 \lambda = \lambda_c + \frac{r}{R_\text{Tierra}} \frac{\sin(\theta) \cdot 180}{\pi \cos(\phi_c)}
 $$
 
-donde $ R_\text{Tierra} = 6371\,\text{km} $ es el radio de la Tierra.  
+donde $R_\text{Tierra} = 6371\,\text{km}$ es el radio de la Tierra.  
 
 Adicionalmente, se asigna un **precio \(P\)** a cada hotel siguiendo una distribución normal:
 
@@ -117,7 +116,7 @@ $$
 P \sim \mathcal{N}(\mu_P, \sigma_P^2), \quad P \geq P_\text{min}
 $$
 
-donde $ \mu_P $ es el precio medio, $ \sigma_P $ la desviación estándar, y $$ P_\text{min} $$ el precio mínimo permitido para garantizar valores realistas.  
+donde $\mu_P$ es el precio medio, $\sigma_P$ la desviación estándar, y $P_\text{min}$ el precio mínimo permitido para garantizar valores realistas.  
 
 Este implementacion proporciona un conjunto de datos georreferenciados que refleja de manera consistente la **distribución espacial y económica de los hoteles**, 
 lo cual es útil para análisis de planificación urbana y simulaciones de infraestructura turística.
