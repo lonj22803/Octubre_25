@@ -14,7 +14,7 @@ verificable.
 codificacion no esta el OC que indicaria que esa linea pasa por ahi, lo cual rompe con patrones, es un caso que puede ocurrir en lña vida real, pero ayuda
 para que el modelo no se confie en patrones y pueda razonar.
 
-![Sistema Generico](sistema_generico.png "Sistema Generico")
+![Sistema Generico](datos_experimento/sistema_generico.png "Sistema Generico")
 Sistema Generico, con las dos nuevas estaciones creadas para la línea naranja.
 
 - **Simulacion de longitud y latitud**
@@ -72,7 +72,8 @@ $$
         ```
     - *Visualización Geográfica*  
   Si graficaramos las estaciones en un mapa de Madrid, obtenemos la siguiente distribución:
-    ![Sistema Generico Coordenadas Reales](estaciones_sobre_mapa_madrid.png "Sistema Generico Coordenadas Reales")
+
+![Sistema Generico Coordenadas Reales](estaciones_sobre_mapa_madrid.png "Sistema Generico Coordenadas Reales")
     Sistema Generico con coordenadas geográficas simuladas, representando una red de transporte metropolitana en Madrid.
     
     - *Visualización si se el sistema en Madrid*
@@ -111,7 +112,7 @@ $$
 P \sim \mathcal{N}(\mu_P, \sigma_P^2), \quad P \geq P_\text{min}
 $$
 
-donde $ \mu_P $ es el precio medio, $ \sigma_P $ la desviación estándar, y $ P_\text{min} $ el precio mínimo permitido para garantizar valores realistas.  
+donde $ \mu_P $ es el precio medio, $ \sigma_P $ la desviación estándar, y $$ P_\text{min} $$ el precio mínimo permitido para garantizar valores realistas.  
 
 Este implementacion proporciona un conjunto de datos georreferenciados que refleja de manera consistente la **distribución espacial y económica de los hoteles**, 
 lo cual es útil para análisis de planificación urbana y simulaciones de infraestructura turística.
