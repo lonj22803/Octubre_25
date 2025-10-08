@@ -27,19 +27,22 @@ con distancias promedio de 11 km entre estaciones, representativo de una red de 
   Transformacion lineal:  
   La conversión se realizó mediante una transformación afín que preserva la distribución geométrica original mientras escala las coordenadas a un sistema 
 de referencia geográfico real:
-      $$ Latitud = Latitud\ central + y * s $$
-      $$ Longitud = Longitud\ central + x * s $$
+  
+$$ Latitud = Latitud\ central + y * s $$
+
+$$ Longitud = Longitud\ central + x * s $$
         - Donde (x, y) coordenadas cartesianas originales
         - Latitud_central y Longitud_central = (40.4168, -3.7038) (coordenadas de Madrid)
         - s = 0.0001 (factor de escala en grados por unidad)
     - *Parámetros de Escala y Equivalencias Físicas*
   El facto de escala s=0.001 se seleccionó considerando que:
-    $$
-    \begin{align*}
-    1^\circ \text{de latitud} &\approx 111,3 \text{km} \\
-    1 \text{unidad cartesiana} &= s^\circ = 0.0001^\circ \approx 11,13 \text{m}
-    \end{align*}
-    $$
+
+$$
+\begin{align*}
+1^\circ \text{de latitud} &\approx 111,3 \text{km} \\
+1 \text{unidad cartesiana} &= s^\circ = 0.0001^\circ \approx 11,13 \text{m}
+\end{align*}
+$$
 
     - *El resultado fue el siguiente*:
 
@@ -121,7 +124,7 @@ lo cual es útil para análisis de planificación urbana y simulaciones de infra
 
 ![Distribucion Hoteles](hoteles_concentrados_sobre_mapa_centro_madrid.png "Distribucion Hoteles")    
 
-#### **Distirbucion de Hoteles y lineas de Metro.**
+#### **Distribucion de Hoteles y lineas de Metro.**
 
 ![Hoteles y Metro](hoteles_concentrados_centro_y_metro_madrid.png "Hoteles y Metro")
 
