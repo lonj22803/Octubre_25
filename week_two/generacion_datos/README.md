@@ -74,15 +74,16 @@ de referencia geográfico real:
         OB2SC,40.4448,-3.7158,naranja
         OC3SC,40.4248,-3.7038,naranja
   ```
-    - *Visualización Geográfica*  
-    Si graficaramos las estaciones en un mapa de Madrid, obtenemos la siguiente distribución:
+  - *Visualización Geográfica*  
+Si graficaramos las estaciones en un mapa de Madrid, obtenemos la siguiente distribución:
 
-        ![Sistema Generico Coordenadas Reales](estaciones_sobre_mapa_madrid.png "Sistema Generico Coordenadas Reales")
-        Sistema Generico con coordenadas geográficas simuladas, representando una red de transporte metropolitana en Madrid.
+    ![Sistema Generico Coordenadas Reales](estaciones_sobre_mapa_madrid.png "Sistema Generico Coordenadas Reales")
+    Sistema Generico con coordenadas geográficas simuladas, representando una red de transporte metropolitana en Madrid.
         
-    - *Visualización si se el sistema en Madrid*
-        ![Sistema Generico en Madrid](sistema_generico_madrid.png "Sistema Generico en Madrid")
-        Sistema Generico sobre un mapa de Madrid, mostrando las estaciones y conexiones de las líneas de transporte.
+  - *Visualización si se el sistema en Madrid*  
+  
+      ![Sistema Generico en Madrid](sistema_generico_madrid.png "Sistema Generico en Madrid")
+      Sistema Generico sobre un mapa de Madrid, mostrando las estaciones y conexiones de las líneas de transporte.
 
 ## Nuevos datos para un cruce de informacion. 
 
