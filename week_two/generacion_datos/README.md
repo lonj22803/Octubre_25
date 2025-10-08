@@ -21,8 +21,8 @@ Sistema Generico, con las dos nuevas estaciones creadas para la línea naranja.
     - Para generar el gráfico anterior se usaron coordenadas ficticias, las cuales ya predefinían la distribucion, pero esas coordenadas 
 eran completamente arbitrarias, y no se podían comparar con un caso realista. Por ende se procedió a hacer una conversión a coordenadas más realistas 
 para una ciudad cuyo tamaño fuera considerable. Se seleccionó Madrid como ciudad de referencia y se aplicó una transformación lineal donde cada unidad 
-en las coordenadas originales equivale a 0.0001 grados geográficos (aproximadamente 11,13 metros), resultando en un sistema que cubre un área de 55×62 km 
-con distancias promedio de 11 km entre estaciones, representativo de una red de transporte metropolitana de gran escala.
+en las coordenadas originales equivale a 0.0001 grados geográficos (aproximadamente 11,13 metros), resultando en un sistema cuya area ciruclar tiene un 
+radio aproximado de 3.33 km y con distancias promedio de 2.38 km entre estaciones, representativo de una red de transporte metropolitana de gran escala.
     - *Calculo*:  
   Transformacion lineal:  
   La conversión se realizó mediante una transformación afín que preserva la distribución geométrica original mientras escala las coordenadas a un sistema 
