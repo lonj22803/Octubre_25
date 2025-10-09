@@ -11,6 +11,7 @@ from a_modelo import LLM, json_to_text_metro
 import json
 import os
 import pandas as pd
+import time
 
 #Ruta actual
 ruta_actual=os.path.dirname(__file__)
@@ -195,7 +196,7 @@ if os.path.exists(ruta_csv_resultados):
     df_resultados = pd.read_csv(ruta_csv_resultados, encoding='utf-8-sig')
     print(f"DataFrame cargado desde: {ruta_csv_resultados}")
 else:
-    df_resultados = pd.DataFrame(columns=["Modelo", "Prompt", "Pregunta", "Respuesta"])
+    df_resultados = pd.DataFrame(columns=["Modelo", "Prompt", "Pregunta", "Respuesta", "Tiempo_Respuesta"])
     print("Nuevo DataFrame creado.")
 
 # Cargar progreso
@@ -238,8 +239,7 @@ for idx_model, selection_model in enumerate(list_models[model_start_idx:], start
         # Cambiar prompt dinámicamente
         modelo.set_system_prompt(prompt)
 
-        # Verificar si este prompt ya está completo (buscando en DataFrame o archivo)
-        # Para simplicidad, chequeamos si todas las preguntas para este modelo+prompt ya están en df_resultados
+        # Verificar si este prompt ya está completo (buscando en DataFrame)
         existing_for_this = df_resultados[
             (df_resultados["Modelo"] == selection_model_r) &
             (df_resultados["Prompt"] == f"Prompt {full_prompt_idx + 1}")
@@ -267,7 +267,7 @@ for idx_model, selection_model in enumerate(list_models[model_start_idx:], start
         with open(ruta_archivo_respuestas, file_mode, encoding='utf-8') as archivo_respuestas:
             if file_mode == 'w':
                 archivo_respuestas.write(f"""==== EXPERIMENTO CON PROMPT {full_prompt_idx + 1} ====\n
-                    System Prompt usado:\n{prompt}\n\n""")
+                System Prompt usado:\n{prompt}\n\n""")
                 archivo_respuestas.write("==== RESPUESTAS DEL MODELO ====\n\n")
 
             # Hacer preguntas desde actual_question_start (use_history=False)
@@ -282,32 +282,98 @@ for idx_model, selection_model in enumerate(list_models[model_start_idx:], start
                     (df_resultados["Prompt"] == f"Prompt {full_prompt_idx + 1}") &
                     (df_resultados["Pregunta"] == pregunta)
                     ]
-                if not existing_row.empty:
+
+                tiempo_respuesta = None  # Inicializar tiempo como None
+                respuesta = None
+                es_nueva = existing_row.empty  # Flag para claridad
+
+                if not es_nueva:
                     print(f"Pregunta ya respondida. Usando existente.")
                     respuesta = existing_row["Respuesta"].iloc[0]
+                    tiempo_respuesta = existing_row["Tiempo_Respuesta"].iloc[0]
                 else:
-                    respuesta = modelo.chat(pregunta, use_history=False, max_new_tokens=1024)
-                    print(f"Pregunta respondida")
+                    # NUEVA RESPUESTA: Calcular tiempo LOCALMENTE
+                    start_time = time.perf_counter()
+                    try:
+                        respuesta = modelo.chat(pregunta, use_history=False, max_new_tokens=1024)
+                        print(f"Pregunta respondida")
+                        end_time = time.perf_counter()
+                        tiempo_respuesta = end_time - start_time
+                        print(f"Tiempo de respuesta: {tiempo_respuesta:.2f} segundos")
+                        # Validación básica
+                        if tiempo_respuesta < 0:
+                            print("Warning: Tiempo negativo detectado (posible error de sistema).")
+                            tiempo_respuesta = 0
+                        elif tiempo_respuesta > 300:  # Ajusta según tu setup (>5 min)
+                            print(f"Warning: Tiempo excesivo ({tiempo_respuesta:.2f}s). Posible timeout.")
+                    except KeyboardInterrupt:
+                        print("Interrupción manual detectada. Guardando progreso y saliendo.")
+                        # Guardar progreso final antes de salir
+                        progress = {
+                            "model_index": idx_model,
+                            "prompt_index": full_prompt_idx,
+                            "question_index": full_question_idx - 1,  # Pregunta anterior completada
+                            "completed": False
+                        }
+                        save_progress(progress)
+                        try:
+                            df_resultados.to_csv(ruta_csv_resultados, index=False, encoding='utf-8-sig')
+                        except Exception as e:
+                            print(f"Error al guardar CSV final: {e}")
+                        raise  # Re-lanza para salir
+                    except Exception as e:
+                        print(f"Error en generación: {e}")
+                        tiempo_respuesta = -1
+                        respuesta = f"ERROR: {str(e)}"
 
-                # Guardar en archivo (solo si nueva)
-                if existing_row.empty:
-                    archivo_respuestas.write(f"=== Pregunta {full_question_idx + 1} ===\n")
-                    archivo_respuestas.write(f"Pregunta: {pregunta}\n")
-                    archivo_respuestas.write(f"Respuesta: {respuesta}\n\n\n")
-                    archivo_respuestas.flush()  # Asegurar escritura inmediata
+                # SIEMPRE escribir al archivo (para log completo; opcional: mueve dentro de if es_nueva)
+                archivo_respuestas.write(f"=== Pregunta {full_question_idx + 1} ===\n")
+                archivo_respuestas.write(f"Pregunta: {pregunta}\n")
+                archivo_respuestas.write(f"Respuesta: {respuesta}\n\n")
 
-                # Guardar en DataFrame (si nueva)
-                if existing_row.empty:
-                    new_row = pd.DataFrame({
-                        "Modelo": [selection_model_r],
-                        "Prompt": [f"Prompt {full_prompt_idx + 1}"],
-                        "Pregunta": [pregunta],
-                        "Respuesta": [respuesta]
-                    })
-                    df_resultados = pd.concat([df_resultados, new_row], ignore_index=True)
+                # Manejo de tiempo en archivo
+                if tiempo_respuesta is not None:
+                    if tiempo_respuesta >= 0:
+                        tiempo_str = f"{tiempo_respuesta:.2f}"
+                    else:
+                        tiempo_str = "ERROR"
+                    status = " (existente)" if not es_nueva else ""
+                    archivo_respuestas.write(f"Tiempo de respuesta{status}: {tiempo_str} segundos\n")
+                else:
+                    archivo_respuestas.write("Tiempo de respuesta: N/A\n")
+
+                archivo_respuestas.write("\n")  # Separador
+                archivo_respuestas.flush()
+
+                # Agregar a DataFrame SOLO si es nueva
+                if es_nueva:
+                    try:
+                        # Crear dict para la fila (más simple que DataFrame)
+                        new_data = {
+                            "Modelo": selection_model_r,
+                            "Prompt": f"Prompt {full_prompt_idx + 1}",
+                            "Pregunta": pregunta,
+                            "Respuesta": respuesta,
+                            "Tiempo_Respuesta": tiempo_respuesta if tiempo_respuesta is not None else None
+                        }
+
+                        # Agregar directamente con .loc (no usa concat, evita warning)
+                        df_resultados.loc[len(df_resultados)] = new_data
+
+                        # Opcional: Forzar dtype después de agregar (solo si es necesario)
+                        if "Tiempo_Respuesta" in df_resultados.columns:
+                            df_resultados["Tiempo_Respuesta"] = pd.to_numeric(df_resultados["Tiempo_Respuesta"],
+                                                                              errors='coerce')
+
+                    except Exception as e:
+                        print(f"Error al agregar a DataFrame: {e}")
+
 
                 # Guardar CSV periódicamente (después de cada pregunta)
-                df_resultados.to_csv(ruta_csv_resultados, index=False, encoding='utf-8-sig')
+                try:
+                    df_resultados.to_csv(ruta_csv_resultados, index=False, encoding='utf-8-sig')
+                except Exception as e:
+                    print(f"Error al guardar CSV: {e}")
 
                 # Actualizar progreso después de cada pregunta
                 progress = {
@@ -318,7 +384,7 @@ for idx_model, selection_model in enumerate(list_models[model_start_idx:], start
                 }
                 save_progress(progress)
 
-            print(f"Respuestas guardadas en: {ruta_archivo_respuestas}\n")
+        print(f"Respuestas guardadas en: {ruta_archivo_respuestas}\n")
 
         # Reset question_start después de prompt
         question_start = 0
@@ -348,5 +414,6 @@ if progress["model_index"] >= len(list_models):
 
 print(f"Resultados de todos los experimentos guardados en: {ruta_csv_resultados}\n")
 print("=== EXPERIMENTOS COMPLETADOS ===")
+
 
 

@@ -1,0 +1,17 @@
+﻿Modelo,Prompt,Pregunta,Respuesta,Tiempo_Respuesta
+meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Una ruta sencilla. Puedes tomar la línea amarilla desde la estación AA1SC. La línea amarilla tiene un sentido de ida y vuelta, y la estación AG7BH está en el sentido de ida. Así que solo necesitas tomar el tren desde AA1SC en dirección a AG7BH. La ruta sería: AA1SC → AG7BH.",5.469686086988077
+meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,"La línea Roja y la línea Naranja se conectan en la estación ""RD3VC"" para el sentido de ida, y en la estación ""OC3SC"" para el sentido de vuelta.",2.7103602689458057
+meta-llama_Llama-3.1-8B-Instruct,Prompt 1,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?","Para ir de la estación VF6SC a la estación RA1SC, te recomiendo la siguiente ruta:
+
+1. En la estación VF6SC, toma el sentido de vuelta de la línea verde (estaciones: ['VF6SC', 'AE5VE', 'VD4SC', 'RD3VC', 'BD2VB', 'VA1SC']).
+2. En la estación AE5VE, baja en la estación y toma la línea roja (sentido ida: ['RA1SC', 'RB2SC', 'BE4RC', 'RD3VC', 'RE5SC', 'AD4RF', 'RG6SC']).
+3. En la estación RD3VC, toma la línea roja hacia el sentido ida.
+4. En la estación RB2SC, toma la línea roja hacia el sentido ida.
+5. Finalmente, en la estación RA1SC, llegas a tu destino.
+
+Espero que esta ruta te sea útil. ¡Disfruta tu viaje!",11.9931974230567
+meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,"Para ir de BD2VB a AC3SC, te recomiendo tomar la línea azul en sentido ida hasta llegar a la estación AC3SC. 
+
+La ruta sería: BD2VB (línea azul) → AC3SC (línea azul).
+
+No necesitas transbordar, ya que ambas estaciones están en la línea azul.",4.643889268976636
