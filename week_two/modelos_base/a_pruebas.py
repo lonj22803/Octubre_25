@@ -9,7 +9,7 @@ verificable y que ademas sea escalable.
 import torch
 from numpy.compat import os_PathLike
 
-from a_modelo_sin_razonar import LLM, json_to_text_metro
+from a_modelo import LLM, json_to_text_metro
 import json
 import os
 
@@ -145,52 +145,60 @@ PROMP_LIST=[SYSTEM_PROMPT_ONE, SYSTEM_PROMPT_TWO, SYSTEM_PROMPT_THREE, SYSTEM_PR
 
 LISTA_DE_PREGUNTAS=[
     "¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?",
-    "¿Qué estaciones debo usar para transferirme entre las línea Amarilla y la línea Naranja?",
+    "¿Qué estaciones debo usar para transferirme entre las línea Roja y la línea Naranja?",
     "Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",
     "¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?",
     "¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?",
     "¿Hay alguna estación que sirva como punto de conexión entre mas de 2 líneas de metro?",
     "¿Cual es la linea que tiene mas estaciones?",
-    "¿Cuantas estaciones tienen mas de una linea?",
+    "¿Por cuantas estaciones pasan mas de una linea?",
     "¿Quiero ir a RD3VC?",
-    "Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?"
+    "Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",
     "Estoy en OA1SC",
     "Necesito ir a la estación BC3SC, ¿Como llego alli desde la estación VG7SC?",
-    "¿Cuantas estaciones hay en total en el sistema de metro?"
-    "¿Cuantas lineas de metro hay en total?"
-    "El dia esta soleado, ¿sabes si va a llover hoy? ¿El metro esta cerrado hoy?"
+    "¿Cuantas estaciones hay en total en el sistema de metro?",
+    "¿Cuantas lineas de metro hay en total?",
+    "El dia esta soleado, ¿sabes si va a llover hoy? ¿El metro esta cerrado hoy?",
 ]
 
-
-#Corremos un ciclo for para inicializar el modelo, añadirle el prompt y hacerle las preguntas, ademas de eso almacenamos las respuestas en un archivo de texto
-for idx, prompt in enumerate(PROMP_LIST):
-    print(f"\n=== EXPERIMENTO CON PROMPT {idx+1} ===\n")
-    modelo = LLM(system_prompt=prompt)
-
-    #Carpeta donde se guardaran las respuestas
-    carpeta_respuestas = os.path.join(ruta_actual, "respuestas_experimento_sin_razonar")
-    os.makedirs(carpeta_respuestas, exist_ok=True)
+list_models=["meta-llama/Llama-3.1-8B-Instruct","meta-llama/Llama-3.2-3B-Instruct","Qwen/Qwen3-Next-80B-A3B-Thinking","deepseek-ai/DeepSeek-V3.2-Exp"]
+for selection_model in list_models:
+    print(f"Usando el modelo: {selection_model}\n")
 
 
-    # Crear o abrir el archivo para guardar las respuestas
-    nombre_archivo_respuestas = f"respuestas_experimento_prompt_{idx+1}.txt"
-    ruta_archivo_respuestas = os.path.join(carpeta_respuestas,nombre_archivo_respuestas)
-    with open(ruta_archivo_respuestas, 'w', encoding='utf-8') as archivo_respuestas:
-        archivo_respuestas.write(f"""=== EXPERIMENTO CON PROMPT {idx + 1} ===\n
-            System Prompt usado:\n{prompt}\n\n""")
-        for pregunta in LISTA_DE_PREGUNTAS:
-            print(f"Pregunta {LISTA_DE_PREGUNTAS.index(pregunta)+1}: Realizada al modelo.")
-            respuesta = modelo.chat(pregunta, use_history=False, max_new_tokens=1024)
-            print(f"Pregunta respondida")
+    #Corremos un ciclo for para inicializar el modelo, añadirle el prompt y hacerle las preguntas, ademas de eso almacenamos las respuestas en un archivo de texto
+    for idx, prompt in enumerate(PROMP_LIST):
+        print(f"\n=== EXPERIMENTO CON PROMPT {idx+1} ===\n")
 
-            # Guardar la pregunta y respuesta en el archivo
-            archivo_respuestas.write(f"=== Pregunta {LISTA_DE_PREGUNTAS.index(pregunta)+1} ===\n")
-            archivo_respuestas.write(f"Pregunta: {pregunta}\n")
-            archivo_respuestas.write(f"Respuesta: {respuesta}\n\n\n")
+        modelo = LLM(model_id=selection_model,system_prompt=prompt)
 
-    print(f"Respuestas guardadas en: {ruta_archivo_respuestas}\n")
-    del modelo  # Eliminar instancia del modelo
-    torch.cuda.empty_cache()  # Vaciar caché de GPU
-    torch.cuda.ipc_collect()  # Recolectar memoria compartida entre procesos
+        #Los nombres de los modelon continen el caracter /
+        selection_model_r=selection_model.replace("/","_")
+        #Carpeta donde se guardaran las respuestas
+        carpeta_respuestas = os.path.join(ruta_actual, f"respuestas_experimento_{selection_model_r}")
+        os.makedirs(carpeta_respuestas, exist_ok=True)
 
-    print("Memoria de GPU liberada.\n")
+
+        # Crear o abrir el archivo para guardar las respuestas
+        nombre_archivo_respuestas = f"respuestas_experimento_prompt_{idx+1}.txt"
+        ruta_archivo_respuestas = os.path.join(carpeta_respuestas,nombre_archivo_respuestas)
+        with open(ruta_archivo_respuestas, 'w', encoding='utf-8') as archivo_respuestas:
+            archivo_respuestas.write(f"""==== EXPERIMENTO CON PROMPT {idx + 1} ====\n
+                System Prompt usado:\n{prompt}\n\n""")
+            archivo_respuestas.write("==== RESPUESTAS DEL MODELO ====\n\n")
+            for pregunta in LISTA_DE_PREGUNTAS:
+                print(f"Pregunta {LISTA_DE_PREGUNTAS.index(pregunta)+1}: Realizada al modelo.")
+                respuesta = modelo.chat(pregunta, use_history=False, max_new_tokens=1024)
+                print(f"Pregunta respondida")
+
+                # Guardar la pregunta y respuesta en el archivo
+                archivo_respuestas.write(f"=== Pregunta {LISTA_DE_PREGUNTAS.index(pregunta)+1} ===\n")
+                archivo_respuestas.write(f"Pregunta: {pregunta}\n")
+                archivo_respuestas.write(f"Respuesta: {respuesta}\n\n\n")
+
+            print(f"Respuestas guardadas en: {ruta_archivo_respuestas}\n")
+            del modelo  # Eliminar instancia del modelo
+            torch.cuda.empty_cache()  # Vaciar caché de GPU
+            torch.cuda.ipc_collect()  # Recolectar memoria compartida entre procesos
+
+            print("Memoria de GPU liberada.\n")
