@@ -51,6 +51,18 @@ class LLM:
             self.conversation_history.append({"role": "system", "content": system_prompt})
             print(f"System prompt encapsulated: {system_prompt[:50]}...")
 
+    def set_system_prompt(self, new_system_prompt: str):
+        """
+        Cambia el system prompt dinámicamente y resetea la historia de conversación.
+        No recarga el modelo/pipeline.
+
+        Args:
+            new_system_prompt (str): Nuevo system prompt.
+        """
+        self.system_prompt = new_system_prompt
+        self.reset_history()  # Resetea historia, pero mantiene el nuevo prompt
+        print(f"System prompt actualizado: {new_system_prompt[:50]}...")
+
     def chat(self, user_input: str, max_new_tokens: int = 512, use_history: bool = True, **kwargs) -> str:
         """
         Generates a response in a conversational manner. Maintains history for future interactions if use_history=True.

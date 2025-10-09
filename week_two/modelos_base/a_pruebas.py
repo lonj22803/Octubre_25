@@ -7,11 +7,10 @@ orden, sentar una linea base y organizar el codigo lo maximo posible, para evita
 verificable y que ademas sea escalable.
 """
 import torch
-from numpy.compat import os_PathLike
-
 from a_modelo import LLM, json_to_text_metro
 import json
 import os
+import pandas as pd
 
 #Ruta actual
 ruta_actual=os.path.dirname(__file__)
@@ -143,62 +142,211 @@ SYSTEM_PROMPT_SIX= SYSTEM_PROMPT_THREE + ejemplos_de_preguntas
 
 PROMP_LIST=[SYSTEM_PROMPT_ONE, SYSTEM_PROMPT_TWO, SYSTEM_PROMPT_THREE, SYSTEM_PROMPT_FOUR, SYSTEM_PROMPT_FIVE, SYSTEM_PROMPT_SIX]
 
-LISTA_DE_PREGUNTAS=[
+LISTA_DE_PREGUNTAS = [
     "¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?",
-    "¿Qué estaciones debo usar para transferirme entre las línea Roja y la línea Naranja?",
+    "¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?",
     "Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",
     "¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?",
     "¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?",
-    "¿Hay alguna estación que sirva como punto de conexión entre mas de 2 líneas de metro?",
-    "¿Cual es la linea que tiene mas estaciones?",
-    "¿Por cuantas estaciones pasan mas de una linea?",
+    "¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?",
+    "¿Cuál es la línea que tiene más estaciones?",
+    "¿Por cuántas estaciones pasan más de una línea?",
     "¿Quiero ir a RD3VC?",
     "Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",
-    "Estoy en OA1SC",
-    "Necesito ir a la estación BC3SC, ¿Como llego alli desde la estación VG7SC?",
-    "¿Cuantas estaciones hay en total en el sistema de metro?",
-    "¿Cuantas lineas de metro hay en total?",
-    "El dia esta soleado, ¿sabes si va a llover hoy? ¿El metro esta cerrado hoy?",
+    "Estoy en OA1SC.",
+    "Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",
+    "¿Cuántas estaciones hay en total en el sistema de metro?",
+    "¿Cuántas líneas de metro hay en total?",
+    "El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",
 ]
 
-list_models=["meta-llama/Llama-3.1-8B-Instruct","meta-llama/Llama-3.2-3B-Instruct","Qwen/Qwen3-Next-80B-A3B-Thinking","deepseek-ai/DeepSeek-V3.2-Exp"]
-for selection_model in list_models:
+#Modelos a evaluar
+list_models = ["meta-llama/Llama-3.1-8B-Instruct", "meta-llama/Llama-3.2-3B-Instruct",
+               "Qwen/Qwen3-Coder-30B-A3B-Instruct", "mistralai/Mistral-7B-Instruct-v0.3",
+               "mistralai/Ministral-8B-Instruct-2410", "NousResearch/Hermes-3-Llama-3.1-70B",
+               "LiquidAI/LFM2-8B-A1B"]
+
+# Archivo de progreso
+ruta_progress = os.path.join(ruta_actual, "progress.json")
+
+
+# Función para cargar progreso existente
+def load_progress():
+    if os.path.exists(ruta_progress):
+        with open(ruta_progress, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {
+        "model_index": 0,
+        "prompt_index": 0,
+        "question_index": 0,
+        "completed": False  # Flag para saber si todo está completo
+    }
+
+
+# Función para guardar progreso
+def save_progress(progress):
+    with open(ruta_progress, 'w', encoding='utf-8') as f:
+        json.dump(progress, f, indent=4, ensure_ascii=False)
+
+
+# Cargar DataFrame existente si existe
+ruta_csv_resultados = os.path.join(ruta_actual, "resultados_experimentos_modelos_prompts.csv")
+if os.path.exists(ruta_csv_resultados):
+    df_resultados = pd.read_csv(ruta_csv_resultados, encoding='utf-8-sig')
+    print(f"DataFrame cargado desde: {ruta_csv_resultados}")
+else:
+    df_resultados = pd.DataFrame(columns=["Modelo", "Prompt", "Pregunta", "Respuesta"])
+    print("Nuevo DataFrame creado.")
+
+# Cargar progreso
+progress = load_progress()
+model_start_idx = progress["model_index"]
+prompt_start_idx = progress["prompt_index"]
+question_start_idx = progress["question_index"]
+is_completed = progress["completed"]
+
+if is_completed:
+    print("Todos los experimentos ya están completados. Saliendo.")
+else:
+    print(f"Reanudando desde: Modelo {model_start_idx}, Prompt {prompt_start_idx}, Pregunta {question_start_idx}")
+
+# Bucle por modelos (empezando desde model_start_idx)
+for idx_model, selection_model in enumerate(list_models[model_start_idx:], start=model_start_idx):
     print(f"Usando el modelo: {selection_model}\n")
 
+    # Preparar carpeta para este modelo
+    selection_model_r = selection_model.replace("/", "_")
+    carpeta_respuestas = os.path.join(ruta_actual, f"respuestas_experimento_{selection_model_r}")
+    os.makedirs(carpeta_respuestas, exist_ok=True)
 
-    #Corremos un ciclo for para inicializar el modelo, añadirle el prompt y hacerle las preguntas, ademas de eso almacenamos las respuestas en un archivo de texto
-    for idx, prompt in enumerate(PROMP_LIST):
-        print(f"\n=== EXPERIMENTO CON PROMPT {idx+1} ===\n")
+    # Resetear índices de prompt y pregunta para este modelo (o usar los guardados si se interrumpió en medio)
+    if idx_model == model_start_idx:
+        prompt_start = prompt_start_idx
+        question_start = question_start_idx
+    else:
+        prompt_start = 0
+        question_start = 0
 
-        modelo = LLM(model_id=selection_model,system_prompt=prompt)
+    # Cargar el modelo UNA VEZ por selección
+    modelo = LLM(model_id=selection_model)
 
-        #Los nombres de los modelon continen el caracter /
-        selection_model_r=selection_model.replace("/","_")
-        #Carpeta donde se guardaran las respuestas
-        carpeta_respuestas = os.path.join(ruta_actual, f"respuestas_experimento_{selection_model_r}")
-        os.makedirs(carpeta_respuestas, exist_ok=True)
+    # Bucle por prompts (empezando desde prompt_start)
+    for idx_prompt, prompt in enumerate(PROMP_LIST[prompt_start:], start=prompt_start):
+        full_prompt_idx = prompt_start + idx_prompt  # Índice global para progreso
+        print(f"\n=== EXPERIMENTO CON PROMPT {full_prompt_idx + 1} ===\n")
 
+        # Cambiar prompt dinámicamente
+        modelo.set_system_prompt(prompt)
 
-        # Crear o abrir el archivo para guardar las respuestas
-        nombre_archivo_respuestas = f"respuestas_experimento_prompt_{idx+1}.txt"
-        ruta_archivo_respuestas = os.path.join(carpeta_respuestas,nombre_archivo_respuestas)
-        with open(ruta_archivo_respuestas, 'w', encoding='utf-8') as archivo_respuestas:
-            archivo_respuestas.write(f"""==== EXPERIMENTO CON PROMPT {idx + 1} ====\n
-                System Prompt usado:\n{prompt}\n\n""")
-            archivo_respuestas.write("==== RESPUESTAS DEL MODELO ====\n\n")
-            for pregunta in LISTA_DE_PREGUNTAS:
-                print(f"Pregunta {LISTA_DE_PREGUNTAS.index(pregunta)+1}: Realizada al modelo.")
-                respuesta = modelo.chat(pregunta, use_history=False, max_new_tokens=1024)
-                print(f"Pregunta respondida")
+        # Verificar si este prompt ya está completo (buscando en DataFrame o archivo)
+        # Para simplicidad, chequeamos si todas las preguntas para este modelo+prompt ya están en df_resultados
+        existing_for_this = df_resultados[
+            (df_resultados["Modelo"] == selection_model_r) &
+            (df_resultados["Prompt"] == f"Prompt {full_prompt_idx + 1}")
+            ]
+        if len(existing_for_this) == len(LISTA_DE_PREGUNTAS):
+            print(f"Prompt {full_prompt_idx + 1} ya completado para este modelo. Saltando.")
+            continue
 
-                # Guardar la pregunta y respuesta en el archivo
-                archivo_respuestas.write(f"=== Pregunta {LISTA_DE_PREGUNTAS.index(pregunta)+1} ===\n")
-                archivo_respuestas.write(f"Pregunta: {pregunta}\n")
-                archivo_respuestas.write(f"Respuesta: {respuesta}\n\n\n")
+        # Si no, determinar desde qué pregunta empezar (basado en existentes)
+        existing_questions = set(existing_for_this["Pregunta"].tolist())
+        question_start_for_this = 0
+        for i, pregunta in enumerate(LISTA_DE_PREGUNTAS):
+            if pregunta not in existing_questions:
+                question_start_for_this = i
+                break
+
+        # Si se interrumpió en medio, usar question_start_for_this o el global si aplica
+        actual_question_start = max(question_start,
+                                    question_start_for_this) if idx_model == model_start_idx and full_prompt_idx == prompt_start else question_start_for_this
+
+        # Crear/abrir archivo para este prompt (append si existe)
+        nombre_archivo_respuestas = f"respuestas_experimento_prompt_{full_prompt_idx + 1}.txt"
+        ruta_archivo_respuestas = os.path.join(carpeta_respuestas, nombre_archivo_respuestas)
+        file_mode = 'a' if os.path.exists(ruta_archivo_respuestas) else 'w'
+        with open(ruta_archivo_respuestas, file_mode, encoding='utf-8') as archivo_respuestas:
+            if file_mode == 'w':
+                archivo_respuestas.write(f"""==== EXPERIMENTO CON PROMPT {full_prompt_idx + 1} ====\n
+                    System Prompt usado:\n{prompt}\n\n""")
+                archivo_respuestas.write("==== RESPUESTAS DEL MODELO ====\n\n")
+
+            # Hacer preguntas desde actual_question_start (use_history=False)
+            for idx_preg, pregunta in enumerate(LISTA_DE_PREGUNTAS[actual_question_start:],
+                                                start=actual_question_start):
+                full_question_idx = actual_question_start + idx_preg
+                print(f"Pregunta {full_question_idx + 1}: Realizada al modelo.")
+
+                # Verificar si ya existe en DataFrame antes de generar (duplicado check)
+                existing_row = df_resultados[
+                    (df_resultados["Modelo"] == selection_model_r) &
+                    (df_resultados["Prompt"] == f"Prompt {full_prompt_idx + 1}") &
+                    (df_resultados["Pregunta"] == pregunta)
+                    ]
+                if not existing_row.empty:
+                    print(f"Pregunta ya respondida. Usando existente.")
+                    respuesta = existing_row["Respuesta"].iloc[0]
+                else:
+                    respuesta = modelo.chat(pregunta, use_history=False, max_new_tokens=1024)
+                    print(f"Pregunta respondida")
+
+                # Guardar en archivo (solo si nueva)
+                if existing_row.empty:
+                    archivo_respuestas.write(f"=== Pregunta {full_question_idx + 1} ===\n")
+                    archivo_respuestas.write(f"Pregunta: {pregunta}\n")
+                    archivo_respuestas.write(f"Respuesta: {respuesta}\n\n\n")
+                    archivo_respuestas.flush()  # Asegurar escritura inmediata
+
+                # Guardar en DataFrame (si nueva)
+                if existing_row.empty:
+                    new_row = pd.DataFrame({
+                        "Modelo": [selection_model_r],
+                        "Prompt": [f"Prompt {full_prompt_idx + 1}"],
+                        "Pregunta": [pregunta],
+                        "Respuesta": [respuesta]
+                    })
+                    df_resultados = pd.concat([df_resultados, new_row], ignore_index=True)
+
+                # Guardar CSV periódicamente (después de cada pregunta)
+                df_resultados.to_csv(ruta_csv_resultados, index=False, encoding='utf-8-sig')
+
+                # Actualizar progreso después de cada pregunta
+                progress = {
+                    "model_index": idx_model,
+                    "prompt_index": full_prompt_idx,
+                    "question_index": full_question_idx,
+                    "completed": False
+                }
+                save_progress(progress)
 
             print(f"Respuestas guardadas en: {ruta_archivo_respuestas}\n")
-            del modelo  # Eliminar instancia del modelo
-            torch.cuda.empty_cache()  # Vaciar caché de GPU
-            torch.cuda.ipc_collect()  # Recolectar memoria compartida entre procesos
 
-            print("Memoria de GPU liberada.\n")
+        # Reset question_start después de prompt
+        question_start = 0
+
+    # Después de todos los prompts para este modelo, marcar como completado implícitamente
+    # Liberar memoria
+    del modelo
+    torch.cuda.empty_cache()
+    torch.cuda.ipc_collect()
+    print("Memoria de GPU liberada.\n")
+
+    # Actualizar progreso: siguiente modelo
+    progress = {
+        "model_index": idx_model + 1,
+        "prompt_index": 0,
+        "question_index": 0,
+        "completed": (idx_model + 1 == len(list_models) - 1)
+    }
+    save_progress(progress)
+
+# Al final, si todo completado
+if progress["model_index"] >= len(list_models):
+    progress["completed"] = True
+    save_progress(progress)
+    # Eliminar archivo de progreso si completado (opcional)
+    # os.remove(ruta_progress)
+
+print(f"Resultados de todos los experimentos guardados en: {ruta_csv_resultados}\n")
+print("=== EXPERIMENTOS COMPLETADOS ===")
+
+
