@@ -196,3 +196,39 @@ El tiempo y costo de la viaje dependerá de la frecuencia y tarifa del sistema d
 
 Tiempo de respuesta: 21.84 segundos
 
+=== Pregunta 12 ===
+Pregunta: Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?
+Respuesta:  Para llegar a la estación BC3SC desde VG7SC, debes seguir las siguientes instrucciones:
+
+1. Primero, debes tomar la Línea Verde en dirección a AA1SC, desde la estación VG7SC no es posible tomar esta línea directamente, así que debes tomar la Línea Naranja.
+
+2. Desde VG7SC, toma la Línea Naranja en dirección a BA1SC hasta la estación OC3SC.
+
+3. En la estación OC3SC, transborda a la Línea Roja en dirección a BC3SC.
+
+4. Finalmente, toma la Línea Roja hasta la estación BC3SC.
+
+Recuerda que el orden de las estaciones puede variar en sentido de ida y regreso, siempre revise el sentido antes de tomar el tren.
+
+Saludos y buen viaje!
+
+Tiempo de respuesta: 32.99 segundos
+
+=== Pregunta 13 ===
+Pregunta: ¿Cuántas estaciones hay en total en el sistema de metro?
+Respuesta:  En total, hay 32 estaciones en el sistema de metro.
+
+Tiempo de respuesta: 2.78 segundos
+
+=== Pregunta 14 ===
+Pregunta: ¿Cuántas líneas de metro hay en total?
+Respuesta:  En total hay 5 líneas de metro en este sistema, estas son: amarilla, azul, roja, verde y naranja.
+
+Tiempo de respuesta: 6.71 segundos
+
+=== Pregunta 15 ===
+Pregunta: El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?
+Respuesta:  No entiendo tu pregunta. Puedo ayudarte a guiarte en el sistema de metro. Para viajar de AA1SC a AG7BH por la línea amarilla, debes seguir la siguiente ruta: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH. Si deseas regresar de AG7BH a AA1SC, debes seguir la ruta inversa: AG7BH → AF6SC → AE5VE → AD4RF → AC3SC → AB2SC → AA1SC. Si tienes preguntas adicionales, no dudes en preguntar.
+
+Tiempo de respuesta: 29.81 segundos
+
