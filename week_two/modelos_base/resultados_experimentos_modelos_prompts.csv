@@ -1930,3 +1930,20 @@ Si necesitas trasbordar de una línea a otra, también puedo ayudarte. Por ejemp
 Otra opción sería tomar la línea Amarilla en sentido de vuelta hasta AD4RF, trasbordar a la línea Roja y en sentido de vuelta llegar a BE4RC. Las estaciones que cruzarás son: AE5VE → AD4RF → RE5SC → RD3VC → BE4RC.
 
 Existen más opciones, pero estas son las más cortas y con menos transbordos. Si tienes alguna pregunta más, no dudes en preguntar.",43.17122201400343
+Qwen_Qwen3-Coder-30B-A3B-Instruct,Prompt 1,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Para llegar desde la estación **AA1SC** a la estación **AG7BH**, puedes tomar la **línea Amarilla**. La ruta es directa, ya que ambas estaciones están en la misma línea.
+
+### Ruta:
+- **Inicio**: Estación **AA1SC** (línea Amarilla)
+- **Dirección**: Sentido **ida** (la línea Amarilla va de **AA1SC** a **AG7BH**)
+- **Paradas intermedias**: 
+  - AB2SC
+  - AC3SC
+  - AD4RF
+  - AE5VE
+  - AF6SC
+- **Destino final**: Estación **AG7BH**
+
+### Recomendación:
+No necesitas hacer transbordo, solo sigue la línea Amarilla en sentido ida.
+
+¡Buen viaje! 🚇",3099.1653029440204
