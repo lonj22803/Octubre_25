@@ -12,6 +12,7 @@ import json
 import os
 import pandas as pd
 import time
+import subprocess
 
 #Ruta actual
 ruta_actual=os.path.dirname(__file__)
@@ -163,8 +164,8 @@ LISTA_DE_PREGUNTAS = [
 
 #Modelos a evaluar
 list_models = ["meta-llama/Llama-3.1-8B-Instruct", "meta-llama/Llama-3.2-3B-Instruct",
-               "Qwen/Qwen3-Coder-30B-A3B-Instruct", "mistralai/Mistral-7B-Instruct-v0.3",
-               "mistralai/Ministral-8B-Instruct-2410", "NousResearch/Hermes-3-Llama-3.1-70B",
+               "mistralai/Mistral-7B-Instruct-v0.3",
+                "NousResearch/Hermes-3-Llama-3.1-70B","Qwen/Qwen3-4B-Thinking-2507-FP8"
                "LiquidAI/LFM2-8B-A1B"]
 
 # Archivo de progreso
@@ -395,6 +396,9 @@ for idx_model, selection_model in enumerate(list_models[model_start_idx:], start
     torch.cuda.empty_cache()
     torch.cuda.ipc_collect()
     print("Memoria de GPU liberada.\n")
+
+    # Liberamos el cache de Hugging Face
+
 
     # Actualizar progreso: siguiente modelo
     progress = {
