@@ -14,27 +14,27 @@ import pandas as pd
 import time
 import subprocess
 
-#Ruta actual
-ruta_actual=os.path.dirname(__file__)
-#print("Ruta actual:", ruta_actual)
-#Sube de nivel de directorio
-ruta_semana=os.path.dirname(ruta_actual)
-#print("Ruta semana:", ruta_semana)
-#ruta de los datos
-ruta_lineas=os.path.join(ruta_semana,"generacion_datos","sistema_generico.json")
-#print("Ruta datos:", ruta_lineas)
+# Ruta actual
+ruta_actual = os.path.dirname(__file__)
+# print("Ruta actual:", ruta_actual)
+# Sube de nivel de directorio
+ruta_semana = os.path.dirname(ruta_actual)
+# print("Ruta semana:", ruta_semana)
+# ruta de los datos
+ruta_lineas = os.path.join(ruta_semana, "generacion_datos", "sistema_generico.json")
+# print("Ruta datos:", ruta_lineas)
 
 # Cargamos y revisamos los archivos Json
 with open(ruta_lineas, 'r') as f:
     sistema_generico = json.load(f)
 
 print("=== SISTEMA GENÉRICO CARGADO ===\n")
-#print(sistema_generico, "\n", "Es del tipo :", type(sistema_generico))
+# print(sistema_generico, "\n", "Es del tipo :", type(sistema_generico))
 
 # Extraemos las líneas de metro y las convertimoe en instrucciones
 lineas_metro = json_to_text_metro(sistema_generico)
-print ("=== LÍNEAS DE METRO EN FORMATO TEXTO ===\n")
-#print(lineas_metro, "\n", "Es del tipo :", type(lineas_metro))
+print("=== LÍNEAS DE METRO EN FORMATO TEXTO ===\n")
+# print(lineas_metro, "\n", "Es del tipo :", type(lineas_metro))
 
 """
 Se le entregara 3 SYSTEM PROMPT al modelo:
@@ -43,8 +43,6 @@ Se le entregara 3 SYSTEM PROMPT al modelo:
 3. Incluyendo ambos, json y texto
 4. Incluyendo ejemplos en el prompt
 """
-
-
 
 SYSTEM_PROMPT_ONE = f""" Eres un asistente turístico experto en un sistema de lineas de metro.\n
 
@@ -60,9 +58,9 @@ SYSTEM_PROMPT_ONE = f""" Eres un asistente turístico experto en un sistema de l
 
         Líneas de Metro y sus respectivas estaciones en formato json:\n
         {sistema_generico}
-        
+
         """
-SYSTEM_PROMPT_TWO =f""" Eres un asistente turístico experto en un sistema de lineas de metro.\n
+SYSTEM_PROMPT_TWO = f""" Eres un asistente turístico experto en un sistema de lineas de metro.\n
 
         Instrucciones:\n
         - Responde siempre en español.\n
@@ -77,7 +75,6 @@ SYSTEM_PROMPT_TWO =f""" Eres un asistente turístico experto en un sistema de li
 
         """
 
-
 SYSTEM_PROMPT_THREE = f"""Eres un asistente turístico experto en un sistema de lineas de metro.\n
 
         Instrucciones:\n
@@ -88,16 +85,16 @@ SYSTEM_PROMPT_THREE = f"""Eres un asistente turístico experto en un sistema de 
         - Mantén un tono amigable, claro y conciso, como un guía local.\n
         - Usa ÚNICAMENTE la información del siguiente mapa de metro.\n
         {lineas_metro}\n
-        
+
         El cual tambien esta codificado en formato json para calcular rutas y conexiones a continuacion:\n
         {sistema_generico}\n
-    
+
         - Si la pregunta no es clara, di: No entiendo tu pregunta.\n
         - Si el tema no es ir de un punto a otro punto tu respuesta sera: No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro.\n
-        
+
 """
 
-ejemplos_de_preguntas= """A continuación se presentan algunos ejemplos de respuestas adecuadas a preguntas que pueden hacerte los usuarios:
+ejemplos_de_preguntas = """A continuación se presentan algunos ejemplos de respuestas adecuadas a preguntas que pueden hacerte los usuarios:
 
 Ejemplo 1:\n
 Usuario: ¿Cómo puedo llegar desde la estación RB2SC hasta la estación AD4RF?\n
@@ -138,11 +135,12 @@ Usuario: ¿Cuántas estaciones hay en la línea Azul?\n
 Respuesta: La línea Azul tiene 8 estaciones: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC y AG7BH.\n
 """
 
-SYSTEM_PROMPT_FOUR= SYSTEM_PROMPT_ONE + ejemplos_de_preguntas
-SYSTEM_PROMPT_FIVE= SYSTEM_PROMPT_TWO + ejemplos_de_preguntas
-SYSTEM_PROMPT_SIX= SYSTEM_PROMPT_THREE + ejemplos_de_preguntas
+SYSTEM_PROMPT_FOUR = SYSTEM_PROMPT_ONE + ejemplos_de_preguntas
+SYSTEM_PROMPT_FIVE = SYSTEM_PROMPT_TWO + ejemplos_de_preguntas
+SYSTEM_PROMPT_SIX = SYSTEM_PROMPT_THREE + ejemplos_de_preguntas
 
-PROMP_LIST=[SYSTEM_PROMPT_ONE, SYSTEM_PROMPT_TWO, SYSTEM_PROMPT_THREE, SYSTEM_PROMPT_FOUR, SYSTEM_PROMPT_FIVE, SYSTEM_PROMPT_SIX]
+PROMP_LIST = [SYSTEM_PROMPT_ONE, SYSTEM_PROMPT_TWO, SYSTEM_PROMPT_THREE, SYSTEM_PROMPT_FOUR, SYSTEM_PROMPT_FIVE,
+              SYSTEM_PROMPT_SIX]
 
 LISTA_DE_PREGUNTAS = [
     "¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?",
@@ -162,11 +160,11 @@ LISTA_DE_PREGUNTAS = [
     "El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",
 ]
 
-#Modelos a evaluar
+# Modelos a evaluar
 list_models = ["meta-llama/Llama-3.1-8B-Instruct", "meta-llama/Llama-3.2-3B-Instruct",
-               "mistralai/Mistral-7B-Instruct-v0.3","mistralai/Magistral-Small-2509-GGUF",
-                "NousResearch/Hermes-3-Llama-3.1-70B","Qwen/Qwen3-4B-Thinking-2507-FP8"
-               "LiquidAI/LFM2-8B-A1B"]
+               "mistralai/Mistral-7B-Instruct-v0.3","Qwen/Qwen3-Coder-30B-A3B-Instruct",
+               "NousResearch/Hermes-3-Llama-3.1-70B", "Qwen/Qwen3-4B-Thinking-2507-FP8",
+               "Qwen/Qwen3-235B-A22B-Thinking-2507", "LiquidAI/LFM2-8B-A1B"]
 
 # Archivo de progreso
 ruta_progress = os.path.join(ruta_actual, "progress.json")
@@ -369,7 +367,6 @@ for idx_model, selection_model in enumerate(list_models[model_start_idx:], start
                     except Exception as e:
                         print(f"Error al agregar a DataFrame: {e}")
 
-
                 # Guardar CSV periódicamente (después de cada pregunta)
                 try:
                     df_resultados.to_csv(ruta_csv_resultados, index=False, encoding='utf-8-sig')
@@ -397,7 +394,6 @@ for idx_model, selection_model in enumerate(list_models[model_start_idx:], start
     torch.cuda.ipc_collect()
     print("Memoria de GPU liberada.\n")
 
-
     # Actualizar progreso: siguiente modelo
     progress = {
         "model_index": idx_model + 1,
@@ -407,11 +403,21 @@ for idx_model, selection_model in enumerate(list_models[model_start_idx:], start
     }
     save_progress(progress)
 
-    # Liberamos el cache de Hugging Face ya que algunos modelos usan mucho espacio
-    subprocess.run(["rm", "-rf", "/home/jjlondono/.cache/huggingface/hub/"], check=True)
-    print("Cache de Hugging Face liberada.\n")
-    time.sleep(5)  # Espera breve para asegurar liberación
-    # Puede ser muy radical, pero para eso se almacenan respuestas y progreso
+    # Liberar cache de Hugging Face solo para el modelo actual (menos severo)
+    cache_dir = os.path.expanduser("~/.cache/huggingface/hub")
+    model_cache_subdir = f"models--{selection_model.replace('/', '--')}"
+    model_cache_path = os.path.join(cache_dir, model_cache_subdir)
+    if os.path.exists(model_cache_path):
+        try:
+            subprocess.run(["rm", "-rf", model_cache_path], check=True)
+            print(f"Cache de Hugging Face liberado solo para el modelo {selection_model}.\n")
+        except subprocess.CalledProcessError as e:
+            print(f"Error al eliminar cache del modelo {selection_model}: {e}")
+    else:
+        print(f"No se encontró cache específico para el modelo {selection_model}. Saltando limpieza.\n")
+
+    time.sleep(2)  # Espera breve para asegurar liberación (reducida ya que es más selectivo)
+    # Esto es menos radical: solo borra el subdirectorio del modelo procesado, preservando otros caches.
 
 # Al final, si todo completado
 if progress["model_index"] >= len(list_models):
@@ -422,6 +428,3 @@ if progress["model_index"] >= len(list_models):
 
 print(f"Resultados de todos los experimentos guardados en: {ruta_csv_resultados}\n")
 print("=== EXPERIMENTOS COMPLETADOS ===")
-
-
-

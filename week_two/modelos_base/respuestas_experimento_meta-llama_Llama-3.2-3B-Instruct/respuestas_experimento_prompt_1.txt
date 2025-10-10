@@ -1,0 +1,269 @@
+==== EXPERIMENTO CON PROMPT 1 ====
+
+                System Prompt usado:
+ Eres un asistente turístico experto en un sistema de lineas de metro.
+
+
+        Instrucciones:
+
+        - Responde siempre en español.
+
+        - Indica las líneas y conexiones del metro para viajar entre estaciones.
+
+        - Proporciona rutas claras y detalladas, incluyendo transbordos si es necesario.
+
+        - Si el usuario no especifica un destino claro, punto de partida o estación, di: No tengo informacion suficiente para sugerirte una ruta.
+
+        - Mantén un tono amigable, claro y conciso, como un guía local.
+
+        - Usa ÚNICAMENTE la información del siguiente mapa de metro codificado en formato json para calcular rutas y conexiones, no uses información externa, solo lo incluido en este prompt.
+
+        - Si la pregunta no es clara, di: No entiendo tu pregunta.
+
+        - Si el tema no es ir de un punto a otro punto tu respuesta sera: No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro.
+
+
+        Líneas de Metro y sus respectivas estaciones en formato json:
+
+        {'lineas': {'amarilla': {'estaciones': ['AA1SC', 'AB2SC', 'AC3SC', 'AD4RF', 'AE5VE', 'AF6SC', 'AG7BH'], 'sentido_ida': ['AA1SC', 'AB2SC', 'AC3SC', 'AD4RF', 'AE5VE', 'AF6SC', 'AG7BH'], 'sentido_vuelta': ['AG7BH', 'AF6SC', 'AE5VE', 'AD4RF', 'AC3SC', 'AB2SC', 'AA1SC']}, 'azul': {'estaciones': ['BA1SC', 'BB2OC', 'BC3SC', 'BD2VB', 'BE4RC', 'BF5SC', 'BG6SC', 'AG7BH'], 'sentido_ida': ['BA1SC', 'BB2OC', 'BC3SC', 'BD2VB', 'BE4RC', 'BF5SC', 'BG6SC', 'AG7BH'], 'sentido_vuelta': ['AG7BH', 'BG6SC', 'BF5SC', 'BE4RC', 'BD2VB', 'BC3SC', 'BB2OC', 'BA1SC']}, 'roja': {'estaciones': ['RA1SC', 'RB2SC', 'BE4RC', 'RD3VC', 'RE5SC', 'AD4RF', 'RG6SC'], 'sentido_ida': ['RA1SC', 'RB2SC', 'BE4RC', 'RD3VC', 'RE5SC', 'AD4RF', 'RG6SC'], 'sentido_vuelta': ['RG6SC', 'AD4RF', 'RE5SC', 'RD3VC', 'BE4RC', 'RB2SC', 'RA1SC']}, 'verde': {'estaciones': ['VA1SC', 'BD2VB', 'RD3VC', 'VD4SC', 'AE5VE', 'VF6SC'], 'sentido_ida': ['VA1SC', 'BD2VB', 'RD3VC', 'VD4SC', 'AE5VE', 'VF6SC'], 'sentido_vuelta': ['VF6SC', 'AE5VE', 'VD4SC', 'RD3VC', 'BD2VB', 'VA1SC']}, 'naranja': {'estaciones': ['OA1SC', 'OB2SC', 'BB2OC', 'OC3SC', 'RD3VC'], 'sentido_ida': ['OA1SC', 'OB2SC', 'BB2OC', 'OC3SC', 'RD3VC'], 'sentido_vuelta': ['RD3VC', 'OC3SC', 'BB2OC', 'OB2SC', 'OA1SC']}}}
+
+        
+
+==== RESPUESTAS DEL MODELO ====
+
+=== Pregunta 1 ===
+Pregunta: ¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?
+Respuesta: ¡Claro! Para llegar desde la estación AA1SC a la estación AG7BH, te puedo recomendar la siguiente ruta:
+
+1. Desde la estación AA1SC, toma la línea amarilla en sentido ida hacia AG7BH.
+2. La línea amarilla te llevará directamente a la estación AG7BH.
+
+La ruta es muy simple y no hay necesidad de transbordar. Solo necesitas tomar la línea amarilla en sentido ida, que te llevará desde AA1SC hasta AG7BH en aproximadamente 10-15 minutos, dependiendo del tráfico y la frecuencia de los trenes.
+
+¡Espero que esto te sea útil! Si tienes alguna otra pregunta, no dudes en preguntar.
+
+Tiempo de respuesta: 9.29 segundos
+
+=== Pregunta 2 ===
+Pregunta: ¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?
+Respuesta: Para transferirte entre las líneas Roja y Naranja, debes utilizar las estaciones 'AD4RF' y 'RD3VC'. Estas estaciones están interconectadas y podrás hacer un transbordo fácilmente entre ambas líneas.
+
+Tiempo de respuesta: 2.98 segundos
+
+=== Pregunta 3 ===
+Pregunta: Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?
+Respuesta: ¡Hola! Me alegra ayudarte a planificar tu viaje en el sistema de metro.
+
+Para ir de la estación VF6SC a la estación RA1SC, te recomiendo la siguiente ruta:
+
+1. Desde la estación VF6SC, toma la línea verde y dirígete a la estación AE5VE.
+2. En la estación AE5VE, cambia de línea y toma la línea azul. Dirígete a la estación BE4RC.
+3. En la estación BE4RC, cambia de línea y toma la línea roja. Dirígete a la estación AD4RF.
+4. En la estación AD4RF, cambia de línea y toma la línea amarilla. Dirígete a la estación AA1SC.
+5. Finalmente, en la estación AA1SC, toma el tren que te llevará directamente a la estación RA1SC.
+
+Espero que esta ruta te sea útil. Recuerda verificar los horarios y posibles cambios en la red de metro antes de partir. ¡Disfruta tu viaje!
+
+Tiempo de respuesta: 17.75 segundos
+
+=== Pregunta 4 ===
+Pregunta: ¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?
+Respuesta: Para ir de BD2VB a AC3SC, te recomiendo tomar la línea azul en sentido ida hacia AB2SC, y luego tomar la línea amarilla en sentido ida desde AB2SC hasta AC3SC.
+
+Aquí te muestro la ruta detallada:
+
+1. Desde BD2VB, toma la línea azul en sentido ida.
+2. La estación que llegas es BA1SC.
+3. Desde BA1SC, toma la línea azul en sentido ida hacia AB2OC.
+4. La estación que llegas es AB2OC.
+5. Desde AB2OC, toma la línea amarilla en sentido ida hacia AC3SC.
+6. La estación que llegas es AC3SC.
+
+Espero que esta ruta te sea útil. ¡Disfruta tu viaje!
+
+Tiempo de respuesta: 11.17 segundos
+
+=== Pregunta 5 ===
+Pregunta: ¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?
+Respuesta: Para ir de BB2OC a AF6SC, te propongo las siguientes rutas:
+
+1. Desde BB2OC, toma la línea azul en sentido ida hacia AF6SC, pasando por las estaciones BB2OC, BC3SC, BF5SC y AF6SC.
+
+   Conexiones: 
+   - BB2OC (azul) -> AF6SC (azul)
+
+2. Desde BB2OC, toma la línea azul en sentido ida hacia BA1SC, luego cambia a la línea amarilla en sentido ida hacia AF6SC, pasando por las estaciones BA1SC, AB2SC, AF6SC.
+
+   Conexiones:
+   - BB2OC (azul) -> BA1SC (azul)
+   - BA1SC (azul) -> AB2SC (amarilla)
+   - AB2SC (amarilla) -> AF6SC (amarilla)
+
+3. Desde BB2OC, toma la línea azul en sentido ida hacia BG6SC, luego cambia a la línea amarilla en sentido ida hacia AF6SC, pasando por las estaciones BG6SC, AB2SC, AF6SC.
+
+   Conexiones:
+   - BB2OC (azul) -> BG6SC (azul)
+   - BG6SC (azul) -> AB2SC (amarilla)
+   - AB2SC (amarilla) -> AF6SC (amarilla)
+
+4. Desde BB2OC, toma la línea azul en sentido ida hacia BA1SC, luego cambia a la línea amarilla en sentido ida hacia AF6SC, pasando por las estaciones BA1SC, AB2SC, AD4RF, AE5VE, AF6SC.
+
+   Conexiones:
+   - BB2OC (azul) -> BA1SC (azul)
+   - BA1SC (azul) -> AB2SC (amarilla)
+   - AB2SC (amarilla) -> AD4RF (amarilla)
+   - AD4RF (amarilla) -> AE5VE (amarilla)
+   - AE5VE (amarilla) -> AF6SC (amarilla)
+
+Espero que estas rutas te sean útiles. Si necesitas más ayuda, no dudes en preguntar.
+
+Tiempo de respuesta: 31.01 segundos
+
+=== Pregunta 6 ===
+Pregunta: ¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?
+Respuesta: Sí, hay varias estaciones que sirven como puntos de conexión entre más de dos líneas de metro. Algunas de ellas son:
+
+*   **AG7BH**: Esta estación se encuentra en la línea amarilla y también es conexión con la línea azul.
+*   **AD4RF**: Esta estación se encuentra en la línea amarilla y también es conexión con la línea roja.
+*   **BE4RC**: Esta estación se encuentra en la línea azul y también es conexión con la línea roja.
+*   **RD3VC**: Esta estación se encuentra en la línea roja y también es conexión con la línea verde y la línea naranja.
+
+Tiempo de respuesta: 8.36 segundos
+
+=== Pregunta 7 ===
+Pregunta: ¿Cuál es la línea que tiene más estaciones?
+Respuesta: ¡Hola! Según el mapa de metro que me proporcionaste, la línea azul tiene las más estaciones con un total de 8 estaciones: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC y AG7BH.
+
+¿Quieres saber más sobre alguna de estas líneas o estaciones específicas?
+
+Tiempo de respuesta: 6.31 segundos
+
+=== Pregunta 8 ===
+Pregunta: ¿Por cuántas estaciones pasan más de una línea?
+Respuesta: Después de analizar el mapa de metro, encontré que hay estaciones que son compartidas por más de una línea. A continuación, te proporciono la información sobre las estaciones que pasan más de una línea:
+
+* AA1SC (Línea Amarilla y Línea Roja)
+* AB2SC (Línea Amarilla y Línea Azul)
+* AC3SC (Línea Amarilla y Línea Azul)
+* AD4RF (Línea Amarilla y Línea Roja)
+* AE5VE (Línea Amarilla y Línea Verde)
+* AF6SC (Línea Amarilla y Línea Azul y Línea Verde)
+* AG7BH (Línea Amarilla, Línea Azul y Línea Roja)
+
+En total, hay 7 estaciones que pasan más de una línea.
+
+Tiempo de respuesta: 16.92 segundos
+
+=== Pregunta 9 ===
+Pregunta: ¿Quiero ir a RD3VC?
+Respuesta: ¡Claro que sí! Para ir a RD3VC, puedes tomar la línea roja. La estación RD3VC se encuentra en la línea roja, y puedes llegar a ella desde varias estaciones.
+
+Una opción es tomar la línea azul desde la estación BB2OC y cambiar de línea en RD3VC. La ruta sería:
+
+* Azul desde BA1SC
+* Cambiar de línea en RD3VC
+* Roja hasta RD3VC
+
+Otra opción es tomar la línea verde desde la estación AE5VE y cambiar de línea en RD3VC. La ruta sería:
+
+* Verde desde VA1SC
+* Cambiar de línea en RD3VC
+* Roja hasta RD3VC
+
+Ambas rutas te llevarán directamente a la estación RD3VC. ¡Espero que tengas un buen viaje!
+
+Tiempo de respuesta: 17.33 segundos
+
+=== Pregunta 10 ===
+Pregunta: Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?
+Respuesta: ¡Hola! Me alegra ayudarte a planificar tu viaje en el sistema de metro.
+
+Para llegar a la estación RG6SC desde OA1SC, necesitamos seguir las líneas y conexiones del metro. En este caso, podemos seguir la línea naranja.
+
+La estación RG6SC está en la línea naranja, por lo que debemos tomar la línea naranja desde OA1SC. La estación RG6SC está en el sentido de la línea naranja, por lo que debemos tomar la línea naranja en sentido ida.
+
+La ruta sería:
+
+* Salir de OA1SC en la línea naranja
+* Tomar la estación RD3VC
+* Tomar la estación OC3SC
+* Tomar la estación BB2OC
+* Tomar la estación BF5SC
+* Tomar la estación BE4RC
+* Tomar la estación BD2VB
+* Tomar la estación BC3SC
+* Tomar la estación BA1SC
+* Tomar la estación BG6SC
+
+Por lo tanto, la ruta sería:
+
+OA1SC -> RD3VC -> OC3SC -> BB2OC -> BF5SC -> BE4RC -> BD2VB -> BC3SC -> BA1SC -> BG6SC
+
+Espero que esta información te sea útil. ¡Disfruta tu viaje!
+
+Tiempo de respuesta: 24.46 segundos
+
+=== Pregunta 11 ===
+Pregunta: Estoy en OA1SC.
+Respuesta: Estás en la estación OA1SC, que es parte de la línea Naranja. Para ayudarte a encontrar tu destino, necesito saber dónde te gustaría ir.
+
+¿Quieres ir a una estación específica en la línea Naranja? ¿O prefieres que te sugiera algunas opciones de estaciones cercanas?
+
+Tiempo de respuesta: 5.46 segundos
+
+=== Pregunta 12 ===
+Pregunta: Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?
+Respuesta: ¡Claro que sí! Para llegar a la estación BC3SC desde la estación VG7SC, te recomiendo tomar la línea azul.
+
+Primero, toma la línea azul desde la estación VG7SC y dirígete hacia la estación BB2OC. No hay transbordos necesarios en este caso.
+
+Luego, en la estación BB2OC, toma la línea azul y dirígete hacia la estación BC3SC. No hay transbordos necesarios en este caso.
+
+La ruta sería:
+
+* VG7SC (tu punto de partida)
+* VG7SC -> BB2OC (lugar de transbordo)
+* BB2OC -> BC3SC (tu destino)
+
+Espero que esta ruta te sea útil. ¡Disfruta tu viaje!
+
+Tiempo de respuesta: 16.64 segundos
+
+=== Pregunta 13 ===
+Pregunta: ¿Cuántas estaciones hay en total en el sistema de metro?
+Respuesta: ¡Hola! Me alegra ayudarte a explorar nuestro sistema de metro.
+
+Para calcular el número total de estaciones, podemos sumar las estaciones de cada línea. Según el mapa de metro que tengo disponible, hay:
+
+- Amarilla: 7 estaciones
+- Azul: 8 estaciones
+- Roja: 7 estaciones
+- Verde: 6 estaciones
+- Naranja: 5 estaciones
+
+En total, hay: 7 + 8 + 7 + 6 + 5 = 33 estaciones en el sistema de metro.
+
+Espero que esta información te sea útil. ¿Quieres saber cómo llegar a una estación específica o cómo planificar un viaje?
+
+Tiempo de respuesta: 15.42 segundos
+
+=== Pregunta 14 ===
+Pregunta: ¿Cuántas líneas de metro hay en total?
+Respuesta: ¡Hola! En nuestro sistema de metro, hay 5 líneas diferentes. 
+
+Estas líneas son:
+
+- Amarilla
+- Azul
+- Roja
+- Verde
+- Naranja
+
+Tiempo de respuesta: 3.42 segundos
+
+=== Pregunta 15 ===
+Pregunta: El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?
+Respuesta: No puedo ayudarte con la información del tiempo ni con la disponibilidad de servicios públicos como el metro.
+
+Tiempo de respuesta: 3.69 segundos
+
