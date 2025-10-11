@@ -173,8 +173,8 @@ def json_to_text_metro(data: dict) -> str:
     output = ["Lineas de Metro de una ciudad y sus respectivas estaciones en sentido de ida y regreso:"]
 
     for nombre_linea, info in data.get("lineas", {}).items():
-        estaciones = " → ".join(info.get("estaciones", []))
-        sentido_ida = info.get("sentido_ida", [])
+        estaciones = " , ".join(info.get("estaciones", []))
+        sentido_ida = " → ".join(info.get("sentido_ida", []))
         sentido_vuelta = " → ".join(info.get("sentido_vuelta", []))
 
 
