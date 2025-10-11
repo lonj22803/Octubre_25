@@ -1,0 +1,210 @@
+==== EXPERIMENTO CON PROMPT 2 ====
+
+                System Prompt usado:
+ Eres un asistente turístico experto en un sistema de lineas de metro.
+
+
+        Instrucciones:
+
+        - Responde siempre en español.
+
+        - Indica las líneas y conexiones del metro para viajar entre estaciones.
+
+        - Proporciona rutas claras y detalladas, incluyendo transbordos si es necesario.
+
+        - Si el usuario no especifica un destino claro, punto de partida o estación, di: No tengo informacion suficiente para sugerirte una ruta.
+
+        - Mantén un tono amigable, claro y conciso, como un guía local.
+
+        - Si la pregunta no es clara, di: No entiendo tu pregunta.
+
+        - Si el tema no es ir de un punto a otro punto tu respuesta sera: No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro.
+
+        - Usa ÚNICAMENTE la información de Lineas de Metro y sus estacuciones a continuacion:
+
+        Lineas de Metro de una ciudad y sus respectivas estaciones en sentido de ida y regreso:
+- Línea amarilla:
+  - Estaciones: AA1SC , AB2SC , AC3SC , AD4RF , AE5VE , AF6SC , AG7BH
+  - Sentido ida: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH
+  - Sentido vuelta: AG7BH → AF6SC → AE5VE → AD4RF → AC3SC → AB2SC → AA1SC.
+- Línea azul:
+  - Estaciones: BA1SC , BB2OC , BC3SC , BD2VB , BE4RC , BF5SC , BG6SC , AG7BH
+  - Sentido ida: BA1SC → BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH
+  - Sentido vuelta: AG7BH → BG6SC → BF5SC → BE4RC → BD2VB → BC3SC → BB2OC → BA1SC.
+- Línea roja:
+  - Estaciones: RA1SC , RB2SC , BE4RC , RD3VC , RE5SC , AD4RF , RG6SC
+  - Sentido ida: RA1SC → RB2SC → BE4RC → RD3VC → RE5SC → AD4RF → RG6SC
+  - Sentido vuelta: RG6SC → AD4RF → RE5SC → RD3VC → BE4RC → RB2SC → RA1SC.
+- Línea verde:
+  - Estaciones: VA1SC , BD2VB , RD3VC , VD4SC , AE5VE , VF6SC
+  - Sentido ida: VA1SC → BD2VB → RD3VC → VD4SC → AE5VE → VF6SC
+  - Sentido vuelta: VF6SC → AE5VE → VD4SC → RD3VC → BD2VB → VA1SC.
+- Línea naranja:
+  - Estaciones: OA1SC , OB2SC , BB2OC , OC3SC , RD3VC
+  - Sentido ida: OA1SC → OB2SC → BB2OC → OC3SC → RD3VC
+  - Sentido vuelta: RD3VC → OC3SC → BB2OC → OB2SC → OA1SC.
+
+        
+
+==== RESPUESTAS DEL MODELO ====
+
+=== Pregunta 1 ===
+Pregunta: ¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?
+Respuesta:  Para llegar desde la estación AA1SC hasta AG7BH, debes tomar la línea amarilla y seguir el siguiente recorrido:
+
+- Sentido ida: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH
+
+En resumen, tienes que tomar la línea amarilla en dirección AG7BH, y transbordar en las estaciones AB2SC, AC3SC, AE5VE, AF6SC.
+
+Tiempo de respuesta: 7.09 segundos
+
+=== Pregunta 2 ===
+Pregunta: ¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?
+Respuesta:  Para transferirme entre las líneas Roja y Naranja, debes hacer un transbordo en la estación RD3VC. Así, desde la Línea Roja puedes ir de RA1SC a RD3VC y desde la Línea Naranja puedes ir de OC3SC a RD3VC.
+
+Para viajar desde RA1SC a OC3SC debes seguir las siguientes instrucciones:
+1. Sentido ida: RA1SC → RB2SC → BE4RC → RD3VC → OC3SC
+2. Sentido vuelta: OC3SC → RD3VC → BE4RC → RB2SC → RA1SC
+
+Recuerda que este transbordo requiere cambiar de línea en RD3VC.
+
+Tiempo de respuesta: 10.67 segundos
+
+=== Pregunta 3 ===
+Pregunta: Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?
+Respuesta:  La ruta recomendada para ir de VF6SC a RA1SC es:
+
+1. Salir de VF6SC (Verde) hacia AE5VE.
+2. Transbordar a la Línea Roja en AE5VE y tomar el tren hacia AD4RF.
+3. Transbordar a la Línea Roja en AD4RF y tomar el tren hacia RD3VC.
+4. Transbordar a la Línea Naranja en RD3VC y tomar el tren hacia RB2SC.
+5. Transbordar a la Línea Roja en RB2SC y tomar el tren hacia RA1SC.
+
+Espero que esta ruta te sea útil en tu viaje. ¡Disfruta de tu visita!
+
+Tiempo de respuesta: 10.44 segundos
+
+=== Pregunta 4 ===
+Pregunta: ¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?
+Respuesta:  La mejor ruta para ir de BD2VB a AC3SC es: BD2VB → RD3VC (transbordo a la Línea Verde) → VD4SC → AE5VE (transbordo a la Línea Amarilla) → AF6SC → AG7BH (transbordo a la Línea Azul) → BG6SC → BC3SC (transbordo a la Línea Azul) → AC3SC.
+
+Tiempo de respuesta: 6.44 segundos
+
+=== Pregunta 5 ===
+Pregunta: ¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?
+Respuesta:  Para ir de BB2OC a AF6SC, tienes dos opciones posibles en el sistema de metro.
+
+1. Primera opción: Transbordo en la estación RD3VC.
+   - Ruta: BB2OC → RD3VC (Línea azul) → BE4RC (transbordo) → RE5SC (Línea roja) → AD4RF (transbordo) → AE5VE (Línea verde) → AF6SC.
+
+2. Segunda opción: Transbordo en la estación OC3SC.
+   - Ruta: BB2OC (Línea azul) → BB2OC → OB2SC (Línea naranja) → OC3SC (transbordo) → RD3VC (Línea naranja) → BE4RC (transbordo) → RE5SC (Línea roja) → AD4RF (transbordo) → AE5VE (Línea verde) → AF6SC.
+
+Tiempo de respuesta: 13.27 segundos
+
+=== Pregunta 6 ===
+Pregunta: ¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?
+Respuesta:  Sí, la estación AG7BH sirve como punto de conexión entre las líneas amarilla y azul, mientras que la estación RD3VC sirve como punto de conexión entre las líneas roja, verde y naranja.
+
+Tiempo de respuesta: 3.75 segundos
+
+=== Pregunta 7 ===
+Pregunta: ¿Cuál es la línea que tiene más estaciones?
+Respuesta:  La línea que tiene más estaciones es la línea roja, con un total de 6 estaciones.
+
+Tiempo de respuesta: 1.77 segundos
+
+=== Pregunta 8 ===
+Pregunta: ¿Por cuántas estaciones pasan más de una línea?
+Respuesta:  En el sistema de metro de esta ciudad pasan cinco estaciones por más de una línea: AD4RF, BE4RC, BD2VB, RD3VC y AG7BH. Estas estaciones son comunes entre dos o más líneas. Por ejemplo, AD4RF es común entre la línea amarilla y la línea roja, BE4RC es común entre la línea azul y la línea roja, BD2VB es común entre la línea azul y la línea verde, RD3VC es común entre la línea roja, la línea verde y la línea naranja y AG7BH es común entre la línea amarilla y la línea azul.
+
+Tiempo de respuesta: 9.53 segundos
+
+=== Pregunta 9 ===
+Pregunta: ¿Quiero ir a RD3VC?
+Respuesta:  Para ir a la estación RD3VC, tienes varias opciones de rutas:
+
+1. Por la línea roja:
+   - Ruta: RA1SC → RB2SC → BE4RC → RD3VC
+   - Sentido ida: RA1SC → RB2SC → BE4RC → RD3VC
+
+2. Por la línea verde:
+   - Ruta: VA1SC → BD2VB → RD3VC
+   - Sentido ida: VA1SC → BD2VB → RD3VC
+
+3. Por la línea naranja y luego transbordar a la línea roja:
+   - Ruta: OA1SC → OB2SC → BB2OC → OC3SC → RD3VC (transbordo a la línea roja en la estación RD3VC)
+   - Sentido ida: OA1SC → OB2SC → BB2OC → OC3SC → RD3VC
+
+Espero que estas opciones te ayuden a tu viaje. ¡Espero que disfrutes de tu viaje en el metro de esta ciudad!
+
+Tiempo de respuesta: 15.48 segundos
+
+=== Pregunta 10 ===
+Pregunta: Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?
+Respuesta:  Para llegar a la estación RG6SC, debes tomar la Línea roja. Desde la estación OA1SC, toma el metro en sentido vuelta hasta la estación RB2SC, luego transborda a la Línea roja en sentido ida y continúa hasta la estación RG6SC.
+
+Ruta: OA1SC → OB2SC (transbordo a la Línea roja) → BE4RC → RD3VC → RE5SC → AD4RF → RG6SC.
+
+Tiempo de respuesta: 7.48 segundos
+
+=== Pregunta 11 ===
+Pregunta: Estoy en OA1SC.
+Respuesta:  En el metro de nuestra ciudad, desde la estación OA1SC puedes tomar la línea naranja para llegar a RD3VC, transbordando en BB2OC y OC3SC. Después, desde RD3VC puedes tomar la línea roja para llegar a AD4RF, transbordando en BE4RC. Después de eso, puedes tomar la línea amarilla para llegar a AG7BH.
+
+Por otro lado, si quieres regresar a OA1SC, debes seguir el siguiente itinerario: De AG7BH puedes tomar la línea amarilla hacia AA1SC, transbordando en AF6SC, AE5VE, AD4RF y AC3SC. Después, puedes transbordar a la línea roja hacia RD3VC, y finalmente tomar la línea naranja hacia OA1SC.
+
+Recuerda que es importante mirar los horarios y las frecuencias de cada línea para asegurarte de que puedas tomar los transbordos en el tiempo que necesitas. ¡Espero que esta información te resulte útil en tu viaje!
+
+Tiempo de respuesta: 15.70 segundos
+
+=== Pregunta 12 ===
+Pregunta: Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?
+Respuesta:  Para llegar a la estación BC3SC desde VG7SC, debes realizar los siguientes transbordos:
+
+1. Primero, debes ir de la estación VG7SC hasta la estación AG7BH en la línea verde.
+2. Luego, desde la estación AG7BH debes transbordar a la línea azul y ir hasta la estación BG6SC.
+3. Finalmente, desde la estación BG6SC debes transbordar a la línea roja y ir hasta la estación BC3SC.
+
+Tu ruta completa sería: VG7SC → AG7BH (línea verde) → BG6SC (transbordo) → BC3SC (línea roja).
+
+Tiempo de respuesta: 10.23 segundos
+
+=== Pregunta 13 ===
+Pregunta: ¿Cuántas estaciones hay en total en el sistema de metro?
+Respuesta:  En el sistema de metro que hemos mencionado, hay un total de 36 estaciones entre las cinco líneas: amarilla, azul, roja, verde y naranja.
+
+Tiempo de respuesta: 3.08 segundos
+
+=== Pregunta 14 ===
+Pregunta: ¿Cuántas líneas de metro hay en total?
+Respuesta:  En total, hay 5 líneas de metro en esta ciudad: Línea amarilla, Línea azul, Línea roja, Línea verde y Línea naranja.
+
+Tiempo de respuesta: 3.06 segundos
+
+=== Pregunta 15 ===
+Pregunta: El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?
+Respuesta:  No puedo predecir el clima o informar si el metro está cerrado, solo puedo ayudarte a guiarte en el sistema de metro.
+
+Para viajar desde la estación AA1SC hasta AG7BH por la línea amarilla, debes tomar el metro en la estación AA1SC y viajar hasta AG7BH.
+
+Para viajar desde AG7BH hasta AA1SC por la línea amarilla, debes tomar el metro en la estación AG7BH y viajar hasta AA1SC.
+
+Para viajar desde BA1SC hasta AG7BH por la línea azul, debes tomar el metro en la estación BA1SC y tomar los trenes hacia AG7BH con transbordo en BB2OC, BC3SC, BD2VB, BE4RC, BF5SC y BG6SC.
+
+Para viajar desde AG7BH hasta BA1SC por la línea azul, debes tomar el metro en la estación AG7BH y tomar los trenes hacia BA1SC con transbordo en BG6SC, BF5SC, BE4RC, BD2VB, BC3SC, BB2OC y BA1SC.
+
+Para viajar desde RA1SC hasta AG7BH por la línea roja y la línea azul, debes tomar el metro en la estación RA1SC y tomar los trenes hacia RD3VC, luego cambia a la línea azul hacia AG7BH con transbordo en BE4RC.
+
+Para viajar desde AG7BH hasta RA1SC por la línea roja y la línea azul, debes tomar el metro en la estación AG7BH y tomar los trenes hacia BE4RC, luego cambia a la línea roja hacia RA1SC.
+
+Para viajar desde VA1SC hasta AE5VE por la línea verde, debes tomar el metro en la estación VA1SC y viajar hasta AE5VE.
+
+Para viajar desde AE5VE hasta VA1SC por la línea verde, debes tomar el metro en la estación AE5VE y viajar hasta VA1SC.
+
+Para viajar desde OA1SC hasta RD3VC por la línea naranja, debes tomar el metro en la estación OA1SC y viajar hasta RD3VC.
+
+Para viajar desde RD3VC hasta OA1SC por la línea naranja, debes tomar el metro en la estación RD3VC y viajar hasta OA1SC.
+
+Tiempo de respuesta: 34.20 segundos
+

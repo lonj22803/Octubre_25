@@ -164,9 +164,7 @@ LISTA_DE_PREGUNTAS = [
 
 #Modelos a evaluar
 list_models = ["meta-llama/Llama-3.1-8B-Instruct", "meta-llama/Llama-3.2-3B-Instruct",
-               "mistralai/Mistral-7B-Instruct-v0.3","mistralai/Magistral-Small-2509-GGUF",
-                "NousResearch/Hermes-3-Llama-3.1-70B","Qwen/Qwen3-4B-Thinking-2507-FP8"
-               "LiquidAI/LFM2-8B-A1B"]
+               "mistralai/Mistral-7B-Instruct-v0.3"]
 
 # Archivo de progreso
 ruta_progress = os.path.join(ruta_actual, "progress.json")
