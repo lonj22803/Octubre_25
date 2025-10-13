@@ -31,7 +31,7 @@ except ImportError:
 # - 'resultados_experimento_one.csv': Respuestas del modelo (columnas esperadas: 'Pregunta', 'Respuesta', 'Modelo', 'Prompt', 'Tiempo_Respuesta').
 # - 'preguntas_respuestas.csv': Ground truth (columnas esperadas: 'pregunta', 'respuesta_esperada').
 try:
-    resultados_df = pd.read_csv('resultados_experimento_one.csv')
+    resultados_df = pd.read_csv('resultados_experimentos_two.csv')
     preguntas_df = pd.read_csv('preguntas_respuestas.csv')
 
     # Validar columnas básicas (evita errores downstream)
@@ -195,5 +195,5 @@ print("Ejecutando evaluación mejorada (sin warnings de BLEU)...")
 resultados_mejorados = evaluacion_automatica_mejorada(resultados_df, preguntas_df, umbral_longitud=50)
 
 # Guardar resultados en CSV
-resultados_mejorados.to_csv('evaluacion_resultados_basica.csv', index=False, encoding='utf-8')
-print("Resultados guardados en 'evaluacion_resultados_basica.csv'.")
+resultados_mejorados.to_csv('evaluacion_resultados_basica_two.csv', index=False, encoding='utf-8')
+print("Resultados guardados en 'evaluacion_resultados_basica_two.csv'.")

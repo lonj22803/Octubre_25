@@ -1,29 +1,29 @@
 Modelo,Prompt,Pregunta,Respuesta_Esperada,Longitud_Respuesta,Contiene_Estaciones,Menciona_Ruta,Similitud_Simple,BLEU_Score,Score_Total,Tiempo_Respuesta
-meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",551,True,True,0.2687,0.0065,0.8544,12.08364103094209
-meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",538,True,True,0.1344,0.0279,0.8297,11.437620415934362
 meta-llama_Llama-3.1-8B-Instruct,Prompt 1,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",1072,True,True,0.1063,0.0659,0.8278,23.963858980918303
 meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",633,True,True,0.0391,0.0586,0.8137,14.709781285957432
 meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",2456,True,True,0.05,0.0225,0.8122,75.23673442692962
-meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",743,True,False,0.2464,0.0098,0.5503,25.55891104601324
 meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",191,True,False,0.6436,0.2598,0.6547,5.61656510992907
 meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -44,31 +44,31 @@ meta-llama_Llama-3.1-8B-Instruct,Prompt 1,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,413,True,False,0.2308,0.0901,0.5552,21.112590312957764
 meta-llama_Llama-3.1-8B-Instruct,Prompt 1,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",106,True,False,0.6706,0.4482,0.6789,7.972471843007952
 meta-llama_Llama-3.1-8B-Instruct,Prompt 1,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",561,True,True,0.2805,0.037,0.8598,23.08855026995297
-meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",659,True,True,0.2516,0.0115,0.8515,34.75872972304933
-meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",285,False,False,0.1533,0.0704,0.2377,12.955652128905058
 meta-llama_Llama-3.1-8B-Instruct,Prompt 2,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",445,True,True,0.1997,0.1293,0.8529,24.550432896008715
 meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",406,False,True,0.0602,0.0158,0.5136,26.246577042969875
 meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",2101,True,True,0.0527,0.0374,0.8143,106.82272943295538
-meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",727,True,False,0.2228,0.0104,0.5456,30.58877925190609
 meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",113,True,False,0.4936,0.0231,0.601,3.74176601099316
 meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -89,31 +89,31 @@ meta-llama_Llama-3.1-8B-Instruct,Prompt 2,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,25,False,False,0.3077,0.0,0.0615,0.8821904889773577
 meta-llama_Llama-3.1-8B-Instruct,Prompt 2,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",70,True,False,0.8444,0.5605,0.7249,4.365954734035768
 meta-llama_Llama-3.1-8B-Instruct,Prompt 2,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",165,True,True,0.2848,0.0194,0.8589,7.700393581064418
-meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",279,True,True,0.4472,0.1417,0.9036,18.479905772022903
-meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",454,True,False,0.2885,0.1317,0.5709,25.594575337017886
 meta-llama_Llama-3.1-8B-Instruct,Prompt 3,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",666,True,True,0.1665,0.0756,0.8409,24.120046091033142
 meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",405,True,True,0.0535,0.0186,0.8126,18.229179164976813
 meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",1748,True,True,0.054,0.0719,0.818,49.65185042296071
-meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",170,True,False,0.5411,0.0395,0.6122,6.076042473083362
 meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",171,True,False,0.6596,0.2542,0.6573,9.18251346400939
 meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -134,31 +134,31 @@ meta-llama_Llama-3.1-8B-Instruct,Prompt 3,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,348,True,False,0.2677,0.081,0.5616,15.687831818009728
 meta-llama_Llama-3.1-8B-Instruct,Prompt 3,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",70,True,False,0.8444,0.5605,0.7249,5.224310857011005
 meta-llama_Llama-3.1-8B-Instruct,Prompt 3,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",327,True,True,0.3655,0.0824,0.8813,13.17274226306472
-meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",207,True,True,0.75,0.4982,0.9998,12.514831669046544
-meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",366,True,False,0.032,0.0918,0.5156,21.63576925592497
 meta-llama_Llama-3.1-8B-Instruct,Prompt 4,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",311,True,True,0.3384,0.2907,0.8967,13.959964721929282
 meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",235,True,True,0.0421,0.0631,0.8147,12.48840655805543
 meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",1240,True,True,0.0786,0.1424,0.83,41.92308125493582
-meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",236,True,False,0.35,0.0113,0.5711,5.979222137946636
 meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",139,True,False,0.7323,0.3012,0.6766,8.098972280044109
 meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -179,31 +179,31 @@ meta-llama_Llama-3.1-8B-Instruct,Prompt 4,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,435,True,False,0.2013,0.0877,0.549,17.49739737296477
 meta-llama_Llama-3.1-8B-Instruct,Prompt 4,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",70,True,False,0.8444,0.5605,0.7249,5.156774308998138
 meta-llama_Llama-3.1-8B-Instruct,Prompt 4,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",81,True,False,0.3644,0.0142,0.5743,2.563344871043228
-meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",345,True,True,0.4579,0.175,0.9091,18.437668484984897
-meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",379,True,False,0.0314,0.089,0.5152,16.803341582999565
 meta-llama_Llama-3.1-8B-Instruct,Prompt 5,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",56,False,True,0.0276,0.0004,0.5056,2.0420810700161383
 meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",636,True,True,0.0523,0.0968,0.8201,26.174901432939805
 meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",1062,True,True,0.053,0.1241,0.823,31.167190338950604
-meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",239,True,False,0.4375,0.0128,0.5888,9.731306069996208
 meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",139,True,False,0.7323,0.3012,0.6766,8.297286643995903
 meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -224,31 +224,31 @@ meta-llama_Llama-3.1-8B-Instruct,Prompt 5,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,581,True,False,0.1809,0.0757,0.5437,29.300586964935064
 meta-llama_Llama-3.1-8B-Instruct,Prompt 5,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",100,True,False,0.6909,0.1901,0.6572,5.614810543949716
 meta-llama_Llama-3.1-8B-Instruct,Prompt 5,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",137,True,False,0.543,0.4203,0.6506,3.60770860593766
-meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",203,True,True,0.7593,0.5145,1.0,12.1312663780991
-meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",195,True,True,0.1981,0.0408,0.8437,9.019302219967358
 meta-llama_Llama-3.1-8B-Instruct,Prompt 6,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",56,False,True,0.0276,0.0004,0.5056,3.455468697007745
 meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",270,True,True,0.0636,0.0703,0.8197,14.654926080955192
 meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",2802,True,True,0.0817,0.1315,0.8295,106.34836811595596
-meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",382,True,False,0.3621,0.0087,0.5733,20.31002120103221
 meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",134,True,False,0.3922,0.0248,0.5809,5.597240743925795
 meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -269,31 +269,31 @@ meta-llama_Llama-3.1-8B-Instruct,Prompt 6,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,671,True,False,0.1441,0.0443,0.5333,34.41415084095206
 meta-llama_Llama-3.1-8B-Instruct,Prompt 6,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",70,True,False,0.8444,0.5605,0.7249,4.977240734966472
 meta-llama_Llama-3.1-8B-Instruct,Prompt 6,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",24,False,False,0.1676,0.0002,0.0335,2.1240634999703616
-meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",576,True,True,0.25,0.0123,0.8512,9.292375370976515
-meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",198,True,False,0.2391,0.025,0.5503,2.9812863799743354
 meta-llama_Llama-3.2-3B-Instruct,Prompt 1,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",760,True,True,0.1472,0.0799,0.8374,17.749287497019395
 meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",540,True,True,0.0279,0.0115,0.8067,11.174080321914516
 meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",1324,True,True,0.0707,0.0834,0.8225,31.013037147000432
-meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",545,True,False,0.328,0.0078,0.5664,8.360569496056996
 meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",253,True,False,0.4945,0.1672,0.6156,6.307592956000008
 meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -314,31 +314,31 @@ meta-llama_Llama-3.2-3B-Instruct,Prompt 1,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,513,True,True,0.1939,0.0636,0.8451,15.415850967983715
 meta-llama_Llama-3.2-3B-Instruct,Prompt 1,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",124,True,False,0.6477,0.1921,0.6488,3.4235065270913765
 meta-llama_Llama-3.2-3B-Instruct,Prompt 1,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",109,True,False,0.4167,0.0894,0.5923,3.688943034037948
-meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",686,True,True,0.1857,0.0047,0.8376,26.74398733198177
-meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",427,True,True,0.1308,0.0438,0.8305,10.21386641904246
 meta-llama_Llama-3.2-3B-Instruct,Prompt 2,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",588,False,True,0.1709,0.0994,0.5441,20.02959374792408
 meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",418,True,True,0.0544,0.0166,0.8125,18.35084093990736
 meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",798,True,True,0.0661,0.0559,0.8188,37.09460948698688
-meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",315,True,True,0.446,0.0123,0.8904,7.085576848941855
 meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",335,True,True,0.4344,0.1242,0.8993,8.474029393983074
 meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -359,31 +359,31 @@ meta-llama_Llama-3.2-3B-Instruct,Prompt 2,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,79,True,False,0.8,0.492,0.7092,1.3300624809926376
 meta-llama_Llama-3.2-3B-Instruct,Prompt 2,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",114,True,False,0.625,0.1296,0.638,2.8863872900838032
 meta-llama_Llama-3.2-3B-Instruct,Prompt 2,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",153,True,False,0.5147,0.4058,0.6435,3.02931243297644
-meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",527,True,True,0.3573,0.0847,0.8799,21.371763910050504
-meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",469,True,True,0.1616,0.0435,0.8367,27.14372805401217
 meta-llama_Llama-3.2-3B-Instruct,Prompt 3,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",717,True,True,0.1587,0.0865,0.8404,34.838497976073995
 meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",255,True,True,0.0482,0.0093,0.8106,11.550242095021533
 meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",1546,True,True,0.0383,0.1041,0.8181,47.77583149704151
-meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",204,True,False,0.5123,0.0188,0.6044,3.129696951014921
 meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",137,True,False,0.746,0.2961,0.6788,3.629607458016835
 meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -404,31 +404,31 @@ meta-llama_Llama-3.2-3B-Instruct,Prompt 3,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,405,True,False,0.2264,0.0807,0.5534,17.080053635989316
 meta-llama_Llama-3.2-3B-Instruct,Prompt 3,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",124,True,False,0.6486,0.1214,0.6419,7.687960647046566
 meta-llama_Llama-3.2-3B-Instruct,Prompt 3,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",854,True,True,0.2222,0.0115,0.8456,23.50750326190609
-meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",192,True,True,0.7365,0.5507,1.0,10.296956204925664
-meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",528,True,True,0.1183,0.0936,0.833,21.62225166696589
 meta-llama_Llama-3.2-3B-Instruct,Prompt 4,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",538,True,True,0.1987,0.1799,0.8577,20.244574359967373
 meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",272,True,True,0.0404,0.0794,0.816,10.633615241968071
 meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",2684,True,True,0.0623,0.2119,0.8337,58.766715463018045
-meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",791,True,True,0.2188,0.0051,0.8443,11.82866495696362
 meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",80,True,False,0.2475,0.0078,0.5503,1.6384721179492772
 meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -449,31 +449,31 @@ meta-llama_Llama-3.2-3B-Instruct,Prompt 4,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,530,True,False,0.1667,0.057,0.539,19.42430849408265
 meta-llama_Llama-3.2-3B-Instruct,Prompt 4,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",128,True,False,0.6597,0.3631,0.6682,3.886413026950322
 meta-llama_Llama-3.2-3B-Instruct,Prompt 4,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",111,True,False,0.5263,0.0894,0.6142,3.495588845922612
-meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",262,True,True,0.6474,0.378,0.9673,12.471002647071144
-meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",80,True,False,0.0386,0.0011,0.5078,3.83296546607744
 meta-llama_Llama-3.2-3B-Instruct,Prompt 5,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",780,True,True,0.1399,0.128,0.8408,29.76560918497853
 meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",493,True,True,0.0404,0.0939,0.8175,17.725170503021218
 meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",684,True,True,0.0896,0.0537,0.8233,26.760940378066152
-meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",576,True,False,0.2627,0.0054,0.5531,16.27045280789025
 meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",137,True,False,0.8413,0.3696,0.7052,7.304205900989473
 meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -494,31 +494,31 @@ meta-llama_Llama-3.2-3B-Instruct,Prompt 5,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,451,True,False,0.2038,0.0764,0.5484,22.471901154029183
 meta-llama_Llama-3.2-3B-Instruct,Prompt 5,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",40,True,False,0.5138,0.1727,0.42,1.8830107660032809
 meta-llama_Llama-3.2-3B-Instruct,Prompt 5,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",671,True,False,0.1376,0.0065,0.5282,18.523967802990228
-meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",207,True,True,0.7477,0.4982,0.9994,10.26735221000854
-meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",139,True,True,0.0254,0.0049,0.8056,5.730499058961868
 meta-llama_Llama-3.2-3B-Instruct,Prompt 6,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",278,True,True,0.66,0.4188,0.9739,12.784156360081395
 meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",215,True,True,0.0502,0.0324,0.8133,10.126576379989274
 meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",1358,True,True,0.0521,0.0475,0.8152,51.80001458397601
-meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",56,False,True,0.3297,0.0038,0.5663,1.5282824939349666
 meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",138,True,False,0.8379,0.3405,0.7016,3.9606939259683713
 meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -539,31 +539,31 @@ meta-llama_Llama-3.2-3B-Instruct,Prompt 6,"Necesito ir a la estación BC3SC, ¿c
 meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,412,True,False,0.2157,0.0798,0.5511,15.659934906987472
 meta-llama_Llama-3.2-3B-Instruct,Prompt 6,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",76,True,False,0.7234,0.125,0.6572,4.369471697020344
 meta-llama_Llama-3.2-3B-Instruct,Prompt 6,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",373,True,False,0.2107,0.0239,0.5445,10.356173067935742
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",218,False,True,0.4299,0.0195,0.5879,6.31221024307888
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",261,True,True,0.1895,0.0366,0.8416,4.850235115038231
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",636,False,True,0.1683,0.1017,0.5438,16.961808154010214
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",298,True,True,0.0243,0.0057,0.8054,8.18887732597068
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",844,True,True,0.1245,0.0695,0.8318,20.37798275600653
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",208,True,False,0.4037,0.0163,0.5824,5.884286983986385
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",88,True,False,0.5314,0.0486,0.6111,2.707375624915585
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -584,31 +584,31 @@ mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,"Necesito ir a la estación BC3SC, �
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,507,True,False,0.1113,0.0353,0.5258,21.852818503044546
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",32,True,False,0.52,0.1674,0.4207,1.315171377034858
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 1,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",392,True,True,0.2109,0.01,0.8432,13.263593866024166
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",330,True,True,0.4495,0.1796,0.9079,17.099540455965325
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",400,True,True,0.208,0.0829,0.8499,21.688623810070567
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",601,False,True,0.1788,0.1265,0.5484,26.521103392005895
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",193,False,True,0.0393,0.0033,0.5082,5.423113111988641
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",747,True,True,0.1118,0.0504,0.8274,26.15091807802673
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",253,True,False,0.5161,0.0339,0.6066,7.243053738027811
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",79,True,False,0.6,0.0474,0.6247,1.896862197085284
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -629,31 +629,31 @@ mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,"Necesito ir a la estación BC3SC, �
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,431,True,False,0.2093,0.0771,0.5496,17.87977662193589
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",32,True,False,0.52,0.1674,0.4207,1.5612571639940145
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 2,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",358,True,True,0.3648,0.1311,0.8861,16.81292533793021
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",293,True,True,0.4242,0.1522,0.9001,21.21702151396312
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",777,True,True,0.1124,0.0181,0.8243,34.06060890597291
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",961,True,True,0.1356,0.0826,0.8354,36.15394411399029
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",288,True,True,0.0246,0.0056,0.8055,15.84148889989592
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",375,True,True,0.1291,0.0067,0.8265,26.88334975310136
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",305,True,False,0.3365,0.0114,0.5684,21.254063798929565
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",91,True,False,0.5,0.0494,0.6049,4.423091633943841
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -674,31 +674,31 @@ mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,"Necesito ir a la estación BC3SC, �
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,52,True,False,0.8738,0.5027,0.725,2.778480130014941
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",98,True,False,0.7702,0.4209,0.6961,6.709788598003797
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 3,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",391,True,True,0.3516,0.1344,0.8838,29.80607647600118
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",588,True,True,0.3314,0.1437,0.8806,23.57312447298318
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",2045,True,True,0.031,0.0334,0.8095,68.69848597107921
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",628,True,True,0.3865,0.1836,0.8957,21.74097579694353
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",243,True,True,0.051,0.0652,0.8167,9.450178551021963
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",664,True,True,0.1252,0.1,0.835,42.59965062409174
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",510,True,False,0.2802,0.0146,0.5575,23.1954860559199
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",124,True,False,0.7029,0.0525,0.6458,5.890820669010282
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -719,31 +719,31 @@ mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,"Necesito ir a la estación BC3SC, �
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,650,True,False,0.1502,0.0397,0.534,30.18354454403743
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",85,True,False,0.7248,0.3814,0.6831,4.20537274191156
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 4,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",700,True,True,0.2386,0.071,0.8548,30.8241337609943
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",195,True,True,0.7296,0.5507,1.0,11.000380162964577
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",374,True,False,0.3079,0.1175,0.5733,21.68800199101679
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",747,True,True,0.1401,0.132,0.8412,24.83069928106852
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",612,True,True,0.0213,0.2287,0.8271,22.03018858609721
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",927,True,True,0.1327,0.1657,0.8431,40.15600587904919
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",272,True,False,0.5077,0.0129,0.6028,11.409641720005313
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",139,True,False,0.8379,0.3405,0.7016,13.09472148003988
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
@@ -764,31 +764,31 @@ mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,"Necesito ir a la estación BC3SC, �
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Cuántas estaciones hay en total en el sistema de metro?,Hay un total de 25 estaciones en el sistema de metro.,432,True,True,0.1217,0.0443,0.8288,17.241625637980178
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,¿Cuántas líneas de metro hay en total?,"Hay un total de 5 líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.",526,True,False,0.2238,0.0346,0.5482,38.844066289952025
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 5,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?","No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro, no cuento con informacion del clima o si hay cierres en lineas o estaciones.",700,True,True,0.2309,0.0125,0.8474,33.86924892303068
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,"Lo mas recomendable es coger la linea amarilla en sentido de ida
  Las estaciones que cruzarás son: AA1SC → AB2SC → AC3SC → AD4RF → AE5VE → AF6SC → AG7BH",882,True,True,0.2474,0.1163,0.8611,42.75399538304191
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC 
- Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja. 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?," Para transferirte entre la linea roja y naranja debe hacer transbordo en RD3VC
+ Puedes dirigirte sea sentido ida o vuelta en la linea roja hasta RD3VC, luego trasbordar a la linea naranja.
  Las estaciones que cruzarás son:  RA1SC → RB2SC → BE4RC → RD3VC en sentido ida o RG6SC → AD4RF → RE5SC → RD3VC en sentido vuelta, punto de transbordo linea naranja.",799,True,True,0.0721,0.0657,0.821,43.231478751054965
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?"," Para ir de la estación VF6SC a la estación RA1SC, debes tomar la linea verde en sentido de vuelta hasta RD3VC, luego trasbordar a la linea roja y en sentido de vuelta (regreso) llegar a RA1SC. Ruta: VF6SC → AE5VE → VD4SC → RD3VC → BE4RC → RB2SC → RA1SC",418,True,True,0.2957,0.224,0.8815,24.27424996695481
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?," Hay dos opciones que te recomiendo:
- Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas. 
- Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC 
- Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC 
+ Si solo deseas hacer un transbodor te recomiendo coger la linea verde en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de vuelta (regreso) llegar a AC3SC, esto te costara una estacion mas.
+ Las estaciones que cruzaras son: BD2VB → RD3VC → VD4SC → AE5VE → AD4RF → AC3SC
+ Si deseas pasar por menos estaciones te recomiendo coger la linea verde en sentido de ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida  llegar a AD4RF, luego trasbordar a la linea amarilla y en sentido vuelta (regreso) llegar a AC3SC
  Las estaciones que cruzaras son: BD2VB → RD3VC → RE5SC → AD4RF → AC3SC",590,True,True,0.032,0.3372,0.8401,33.95073796494398
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?," Las opciones posibles para ir de BB2OC a AF6SC son:
- Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC. 
- Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC 
+ Opción 1: Tomar la linea amarilla en sentido ida hasta AG7BH, luego trasbordar a la linea azul y en sentido de vuelta hasta BB2OC.
+ Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → BF5SC → BG6SC → AG7BH → AF6SC
  Opción 2: Tomar la linea naranja en sentido ida hasta RD3VC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
- Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC 
- Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC. 
+ Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC
+ Opción 3: Tomar la linea naranja en sentido ida hasta RD3CV, Luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → OC3SC → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 4: Tomar la linea azul en sentido ida hasta BD2VB, luego trasbordar a la linea verde y en sentido de ida hasta AE5VE, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → RD3VC → VD4SC → AE5VE → AF6SC
  Opción 5: Tomar la linea azul en sentido ida hasta BE4RC, luego trasbordar a la linea roja y en sentido de ida hasta AD4RF, luego trasbordar a la linea amarilla y en sentido de ida llegar a AF6SC.
  Las estaciones que cruzaras son: BB2OC → BC3SC → BD2VB → BE4RC → RD3VC → RE5SC → AD4RF → AE5VE → AF6SC",892,True,True,0.1343,0.0784,0.8347,43.01711283810437
-mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan 
- -Linea roja, 
- -Linea Verde 
+mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,"Si, la unica estación que sirve de conexión para mas de dos lineas es RD3VC, aqui se curzan
+ -Linea roja,
+ -Linea Verde
  Linea naranja",648,True,True,0.2394,0.0066,0.8485,36.1305092520779
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Cuál es la línea que tiene más estaciones?,"La Linea  que tinee mas estaciones es la azul con 8 estaciones, la cuales son: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC, AG7BH",126,True,False,0.8797,0.4341,0.7193,13.936782476026565
 mistralai_Mistral-7B-Instruct-v0.3,Prompt 6,¿Por cuántas estaciones pasan más de una línea?,"Existen 7 estaciones por las que pasan mas de una linea, estas son:
