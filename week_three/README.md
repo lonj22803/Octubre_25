@@ -36,6 +36,6 @@ deben centrar en un plano no de coordenadas cartesianas sino en un plano geográ
 conversion lineal a fin de que los datos generados por el sistema metro se asemejen a datos reales, para esto se tómo como referencia
 la ciudad de Madrid, España, y se tomó como punto central la estacion de Sol y se hizo la conversion lineal a partir de este punto.
 
-[!NOTE]
-Para más detalles mirar el archivo de generación de datos de la semana pasada.
+> [!NOTE]  
+> Para más detalles mirar el archivo de generación de datos de la semana pasada.
 
