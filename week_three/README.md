@@ -27,7 +27,8 @@ en escenarios prácticos, identificando para qué tipos de problemas o aplicacio
 
 ## Metodologia para la construcción del TestBed o Benchmark
 
-![](images/sistema_generico.png)
+![](/mnt/sda1/prueb/Octubre_25_errores/week_three/images/sistema_generico.png)
+
 Sistema de metro
 
 La semana anterior se creó un sistema genérico y a su misma vez en conjunto con el sistema metro, se construyo un sistema 
@@ -59,8 +60,8 @@ cada vez que se necesite y a su vez se tenga información de como se creó, adem
 como las repuestas, para evaluar el modelo. Además de la posibilidad de trasladar el sistema a diferentes ciudades del mundo, asi el modelo podra 
 confundirse con datos geográficos, de entrenamiento y no los datos generados para ser evaluado.
 
-De la semana pasada el sistema de metro y hotelero ya se encuentra sobre la ciudad de Madrid. 
+De la semana pasada el sistema de metro y hotelero ya se encuentra sobre la ciudad de Madrid.
 
-![](images/hoteles_concentrados_centro_y_metro_madrid.png)
+![](/mnt/sda1/prueb/Octubre_25_errores/week_three/images/hoteles_concentrados_centro_y_metro_madrid.png)
 
 

@@ -76,7 +76,7 @@ print("}")
 print(f"\n--- RESUMEN ---")
 print(f"Total de puntos: {len(pos_geo)}")
 print(f"Ciudad centro: Madrid ({40.4168}, {-3.7038})")
-print(f"Escala utilizada: {0.001}")
+print(f"Escala utilizada: {0.0001}")
 
 # Calcular rango geográfico
 lats = [lat for lat, lon in pos_geo.values()]
