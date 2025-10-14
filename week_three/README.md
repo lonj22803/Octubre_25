@@ -51,8 +51,16 @@ de esta manera se puede tener un código más limpio y ordenado, además de que 
 - etc
  
 #### ¿Para que?
-El objetivo es contruir un conjunto de pruebas que sea evolutivo, es decir que pueda ir creciendo en funcion de la complejidad 
-necesaria para evluar el cruce de datos de los modelo de lenguaje, ademas de que se pueda verificar su veracidad y que no se encuentre
-en los datos de entrenamiento de los modelos, para esto se ha decidido crear un sistema generico que permita crear diferentes tipos de sistemas
-cada vez que se necesite y a su vez se tenga informacion de como se creo, ademas que la pregunta se puedan generar cada vez que se necesite asi 
-como las repsuestas, para evaluar el modelo.
+El objetivo es construir un conjunto de pruebas que sea evolutivo y coherente, en otras palabras, que permita crecer en función de la complejidad
+y capacidad del modelo para resolver el problema, lo suficientemente robusto y flexible para adaptarse a diferentes escenarios y tipos de modelos,
+con el fin de evaluar el cruce de datos de los modelos de lenguaje, además de que se pueda verificar su veracidad y que no se encuentre
+en los datos de entrenamiento de los modelos, para esto se ha decidido crear un sistema genérico que permita crear diferentes tipos de sistemas
+cada vez que se necesite y a su vez se tenga información de como se creó, además que la pregunta se puedan generar cada vez que se necesite asi 
+como las repuestas, para evaluar el modelo. Además de la posibilidad de trasladar el sistema a diferentes ciudades del mundo, asi el modelo podra 
+confundirse con datos geográficos, de entrenamiento y no los datos generados para ser evaluado.
+
+De la semana pasada el sistema de metro y hotelero ya se encuentra sobre la ciudad de Madrid. 
+
+![](/mnt/sda1/prueb/Octubre_25_errores/week_two/generacion_datos/hoteles_concentrados_centro_y_metro_madrid.png)
+
+
