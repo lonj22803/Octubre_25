@@ -24,3 +24,18 @@ respuestas en distintos contextos y aplicaciones, y proporcionar criterios claro
 y otra integrando una técnica de extracción de información (RAG — Retrieval Augmented Generation)— para comparar su rendimiento, 
 precisión y capacidad en tareas controladas. El propósito es evaluar y contrastar las fortalezas y limitaciones de cada enfoque 
 en escenarios prácticos, identificando para qué tipos de problemas o aplicaciones cada uno resulta más adecuado.
+
+## Metodologia para la construcción del TestBed o Benchmark
+
+![](/mnt/sda1/prueb/Octubre_25_errores/week_two/generacion_datos/sistema_generico.png)
+Sistema de metro
+
+La semana anterior se creó un sistema genérico y a su misma vez en conjunto con el sistema metro, se construyo un sistema 
+hotelero al rededor del punto central del sistema metro, ahora bien para que estos datos parezcan factibles y reales se
+deben centrar en un plano no de coordenadas cartesianas sino en un plano geográfico como longitud y latitud, para esto se hizo una 
+conversion lineal a fin de que los datos generados por el sistema metro se asemejen a datos reales, para esto se tómo como referencia
+la ciudad de Madrid, España, y se tomó como punto central la estacion de Sol y se hizo la conversion lineal a partir de este punto.
+
+[!NOTE]
+Para más detalles mirar el archivo de generación de datos de la semana pasada.
+
