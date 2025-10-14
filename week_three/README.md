@@ -39,3 +39,20 @@ la ciudad de Madrid, España, y se tomó como punto central la estacion de Sol y
 > [!NOTE]  
 > Para más detalles mirar el archivo de generación de datos de la semana pasada.
 
+### Estandarizacion del codigo
+
+Con el fin de poder escalar y escalar el proyecto se ha decidido estandarizar el código, con programacion orientada a objetos,
+de esta manera se puede tener un código más limpio y ordenado, además de que se permite agregar objeto como:
+- Sistema metro 
+- Sistema hotelero
+- Sistema de restaurantes
+- Aeropuerto 
+- Sistema Turístico
+- etc
+ 
+#### ¿Para que?
+El objetivo es contruir un conjunto de pruebas que sea evolutivo, es decir que pueda ir creciendo en funcion de la complejidad 
+necesaria para evluar el cruce de datos de los modelo de lenguaje, ademas de que se pueda verificar su veracidad y que no se encuentre
+en los datos de entrenamiento de los modelos, para esto se ha decidido crear un sistema generico que permita crear diferentes tipos de sistemas
+cada vez que se necesite y a su vez se tenga informacion de como se creo, ademas que la pregunta se puedan generar cada vez que se necesite asi 
+como las repsuestas, para evaluar el modelo.
