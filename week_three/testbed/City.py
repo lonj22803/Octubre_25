@@ -82,7 +82,7 @@ class TrainSystem():
                 lat2,lon2 = self.station_coordinates[est2]
                 distancia = calcular_distancia_haversine(lat1, lon1, lat2, lon2)
                 distancias.append(distancias)
-                
+
 
 
 
