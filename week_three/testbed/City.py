@@ -134,6 +134,8 @@ class TrainSystem():
         else:
             return {}  # Retorna un diccionario vacío si no hay pares (pocas estaciones)
 
+        def build_graph(self):
+
 
 if __name__ == "__main__":
     sistema_basico_prueba = {
