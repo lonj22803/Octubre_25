@@ -58,35 +58,81 @@ class TrainSystem():
         self.station_coordinates = pos_geo
         return pos_geo
 
+    import math  # Asegúrate de importar math si no está en tu archivo
+
     def geographics_dates(self):
         """
-        Si ya se tienen las coordenadas geográficas de las estaciones, se puede calcular el centroide del sistema
-        de metro, radio del sistema, y la distancia entre estaciones, etc. esto es de interes para creart las demas
-        instancias del benchmark
-        """
+        Calcula análisis geográficos de las estaciones, incluyendo centroide, distancias y estadísticas.
+        Requiere que se haya llamado a add_station primero.
 
-        if self.station_coordinates == {}:
-            raise ValueError("No se han añadido las coordenadas geográficas de las estaciones. Use el método add_station primero, para añadir las estaciones primero.")
-        # Calcular el centroide del sistema de metro
+        Returns:
+            Un diccionario con los resultados del análisis.
+        """
+        global par_cercano, par_lejano, min_dist, max_dist  # Variables globales para almacenar los pares y distancias
+        if not self.station_coordinates:  # Verifica si el diccionario está vacío
+            raise ValueError(
+                "No se han añadido las coordenadas geográficas de las estaciones. Use el método add_station primero.")
+
+        # Calcular el centroide
         lats = [lat for lat, lon in self.station_coordinates.values()]
         lons = [lon for lat, lon in self.station_coordinates.values()]
-        self.centroide = [round(sum(lats) / len(lats),6), round(sum(lons) / len(lons),6)]
+        centroide_lat = sum(lats) / len(lats)
+        centroide_lon = sum(lons) / len(lons)
 
-        distancias=[]
-        #Calculamos la distancia entre todas las estaciones:
-        for i in range(len(self.stations)):
-            for j in range(i + 1, len(self.stations)):
-                est1 = self.stations[i]
-                est2 = self.stations[j]
-                lat1,lon1 = self.station_coordinates[est1]
-                lat2,lon2 = self.station_coordinates[est2]
-                distancia = calcular_distancia_haversine(lat1, lon1, lat2, lon2)
-                distancias.append(distancias)
+        estaciones = list(self.station_coordinates.keys())  # Lista de nombres de estaciones
+        distancias = []  # Lista para almacenar todas las distancias
+        pares_distancias = {}  # Diccionario para pares y sus distancias (para reutilizar)
 
+        for i in range(len(estaciones)):
+            for j in range(i + 1, len(estaciones)):
+                est1 = estaciones[i]
+                est2 = estaciones[j]
+                lat1, lon1 = self.station_coordinates[est1]
+                lat2, lon2 = self.station_coordinates[est2]
+                dist = calcular_distancia_haversine(lat1, lon1, lat2, lon2)
+                distancias.append(dist)
+                pares_distancias[(est1, est2)] = dist  # Almacena la distancia para el par
 
+        if distancias:  # Solo calcula estadísticas si hay distancias
+            distancia_promedio = sum(distancias) / len(distancias)
+            distancia_maxima = max(distancias)
+            distancia_minima = min(distancias)
+            total_pares = len(distancias)
 
+            # Encontrar par más cercano y más lejano usando el diccionario
+            if pares_distancias:
+                min_dist = min(pares_distancias.values())
+                par_cercano = next(key for key, value in pares_distancias.items() if
+                                   value == min_dist)  # Primer par con distancia mínima
 
+                max_dist = max(pares_distancias.values())
+                par_lejano = next(key for key, value in pares_distancias.items() if
+                                  value == max_dist)  # Primer par con distancia máxima
 
+            # Calcular radio del sistema (distancia máxima desde el centroide)
+            distancias_desde_centro = [
+                calcular_distancia_haversine(centroide_lat, centroide_lon, lat, lon)
+                for lat, lon in self.station_coordinates.values()
+            ]
+            radio_sistema = max(distancias_desde_centro) if distancias_desde_centro else 0
+
+            self.centroide=[round(centroide_lat,6),round(centroide_lon,6)]
+
+            return {
+                'centroide_lat': round(centroide_lat, 6),
+                'centroide_lon': round(centroide_lon, 6),
+                'radio_sistema': round(radio_sistema, 2),  # En km
+                'distancia_promedio': round(distancia_promedio, 2),
+                'distancia_maxima': round(distancia_maxima, 2),
+                'distancia_minima': round(distancia_minima, 2),
+                'total_pares': total_pares,
+                'par_cercano': par_cercano,  # Tupla (est1, est2)
+                'min_dist': round(min_dist, 2),
+                'par_lejano': par_lejano,  # Tupla (est1, est2)
+                'max_dist': round(max_dist, 2)
+            }
+        else:
+            return {}  # Retorna un diccionario vacío si no hay pares (pocas estaciones)
 
 
 if __name__ == "__main__":
@@ -153,6 +199,12 @@ if __name__ == "__main__":
     sistema_metro.load_system(sistema_basico_prueba)
     print("Líneas del sistema de metro de prueba:", sistema_metro.lines, "\nTotal son:", len(sistema_metro.lines), " líneas")
     print("Estaciones del sistema de metro de prueba:", sistema_metro.stations,"\nTotal son:", len(sistema_metro.stations), " estaciones")
-    sistema_metro.add_station(posiciones_estaciones, (40.4168, -3.7038))
-    print("Coordenadas geográficas de las estaciones:", sistema_metro.station_coordinates)
+    #sistema_metro.add_station(posiciones_estaciones, (40.4168, -3.7038))
+    #print("Coordenadas geográficas de las estaciones:", sistema_metro.station_coordinates)
+    analisis_geo = sistema_metro.geographics_dates()
+    #print("Centro del sistema de metro (latitud, longitud):", (analisis_geo['centroide_lat'], analisis_geo['centroide_lon']))
+    #print ("Centro del sistema de metro (latitud, longitud):", sistema_metro.centroide)
+    #print("Radio del sistema de metro (km):", analisis_geo['radio_sistema'])
+
+
 
