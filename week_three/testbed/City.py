@@ -1,5 +1,3 @@
-from IPython.core.pylabtools import figsize
-
 from funciones_propias import *
 import os
 import  networkx as nx
@@ -10,6 +8,7 @@ from shapely.geometry import Point
 from pyproj import Transformer
 import numpy as np
 import pandas as pd
+import random
 
 class TrainSystem:
     """
@@ -184,7 +183,7 @@ class TrainSystem:
             'max_dist': round(max_dist, 2)
         }
 
-    def graphics_trian_city(self, color_map: dict, lat_city: float = 40.429800, lon_city: float = -3.705770):
+    def graphics_trian_city(self, color_map: dict, lat_city: float = 40.4168, lon_city: float = 3.7038):
         """
         Representa gráficamente el sistema de metro sobre un mapa de la ciudad.
         Permite visualizar el trazado de líneas, estaciones y su relación con el centro urbano.
@@ -265,9 +264,6 @@ class TrainSystem:
         # -----------------------------
         # Dibujar centros y círculos
         # -----------------------------
-        centro_ciudad = gpd.GeoSeries([Point(lon_city, lat_city)], crs="EPSG:4326").to_crs(epsg=3857)
-        centro_ciudad.plot(ax=ax, color='red', markersize=100, zorder=4, label='Centro de la Ciudad')
-
         centro_sistema.plot(ax=ax, color='blue', markersize=100, zorder=4, label='Centro del Sistema de Metro')
 
         circulo_sistema = centro_sistema.buffer(radio_metros)
@@ -311,11 +307,143 @@ class TrainSystem:
         print(f"Coordenadas de estaciones guardadas en {filename}")
         return
 
+class Hotel():
+    """
+    Clase para representar un hotel en la ciudad, que hereda del sistema de metro.
+    El centro en latitud y longitud del hotel se utiliza para centrar el sistema de metro.
+    Hereda de la clase TrainSystem.
+    El centro en longitud y latitud para generar de manera automatica los hoteles con una
+    distribucion de probabilidad de exponbencial respecto al centro de la ciudad.
+    """
+    def __init__(self, lat: float, lon: float, num_hoteles: int, max_distancia_km: float, mean_distancia_km: float,
+                 mean_precio: float, std_precio: float):
+        """
+        Inicializa un hoteles con su ubicación y parámetros de distribución.
+        :param lat: centro en latitud
+        :param lon: cemtro en longitud
+        :param num_hoteles: número de hoteles a generar
+        :param max_distancia_km: distancia máxima desde el centro en km
+        :param mean_distancia_km: media de la distribución exponencial en km
+        :param mean_precio: precio medio de los hoteles
+        :param std_precio: desviación estándar del precio de los hoteles
+        """
+        self.city_center = (lat, lon)
+        self.num_hoteles = num_hoteles
+        self.max_distancia_km = max_distancia_km
+        self.mean_distancia_km = mean_distancia_km
+        self.mean_precio = mean_precio
+        self.std_precio = std_precio
+        self.hoteles = pd.DataFrame()
 
+    def hotel_generation_points(self):
+        """
+        Genera puntos de hoteles alrededor del centro de la ciudad con una distribución
+        exponencial respecto a la distancia desde el centro.
+        :return: DataFrame con las coordenadas y precios de los hoteles generados.
+        """
+        latitudes = []
+        longitudes = []
+        precios = []
+        precios_todo_incluido = []
+        calificacion_hotel = []
 
+        for _ in range(self.num_hoteles):
+            # Generar una distancia aleatoria con distribución exponencial
+            distancia = np.random.exponential(self.mean_distancia_km)
+            while distancia > self.max_distancia_km:
+                distancia = np.random.exponential(self.mean_distancia_km)
 
+            # Generar un ángulo aleatorio
+            angulo = random.uniform(0, 2 * np.pi)
 
+            # Calcular las coordenadas del hotel
+            delta_lat = (distancia / 111) * np.cos(angulo)  # Aproximación: 1 grado latitud ≈ 111 km
+            delta_lon = (distancia / (111 * np.cos(np.radians(self.city_center[0])))) * np.sin(angulo)  # Ajuste por latitud
 
+            lat_hotel = self.city_center[0] + delta_lat
+            lon_hotel = self.city_center[1] + delta_lon
+
+            latitudes.append(round(lat_hotel, 6))
+            longitudes.append(round(lon_hotel, 6))
+
+            # Generar un precio aleatorio con distribución normal
+            precio = max(20, np.random.normal(self.mean_precio, self.std_precio))  # Precio mínimo de 20
+            precios.append(round(precio, 2))
+            #generamos precios todo incluido para otra columna
+            precio_todo_incluido = precio * 1.3  # Suponiendo un 30% más para todo incluido
+            precios_todo_incluido.append(round(precio_todo_incluido, 2))
+            #generamos calificación del hotel entre 1 y 5 en una distribución de poisson
+            calificacion = min(5, max(1, int(np.random.poisson(3))))  # Media en 3, entre 1 y 5
+            calificacion_hotel.append(calificacion)
+
+        self.hoteles = pd.DataFrame({
+            'latitud': latitudes,
+            'longitud': longitudes,
+            'precio': precios,
+            'precio_todo_incluido': precios_todo_incluido,
+            'calificacion': calificacion_hotel
+        })
+
+        return self.hoteles
+
+    def plot_hotels(self, lat_city=None, lon_city=None):
+        """
+        Grafica los hoteles generados en un mapa con los centros de la ciudad y del sistema de hoteles.
+        :param lat_city: latitud del centro de la ciudad (opcional)
+        :param lon_city: longitud del centro de la ciudad (opcional)
+        """
+        if self.hoteles.empty:
+            raise ValueError("Primero debes generar los hoteles con hotel_generation_points()")
+
+        # -----------------------------
+        # Convertir hoteles a GeoDataFrame
+        # -----------------------------
+        gdf_hoteles = gpd.GeoDataFrame(
+            self.hoteles,
+            geometry=gpd.points_from_xy(self.hoteles['longitud'], self.hoteles['latitud']),
+            crs="EPSG:4326"
+        ).to_crs(epsg=3857)
+
+        # Centro del sistema de hoteles
+        centro_hoteles = gpd.GeoSeries([Point(self.city_center[1], self.city_center[0])], crs="EPSG:4326").to_crs(
+            epsg=3857)
+
+        # Centro de la ciudad si se proporciona
+        if lat_city is not None and lon_city is not None:
+            centro_ciudad = gpd.GeoSeries([Point(lon_city, lat_city)], crs="EPSG:4326").to_crs(epsg=3857)
+        else:
+            centro_ciudad = None
+
+        # -----------------------------
+        # Crear figura
+        # -----------------------------
+        fig, ax = plt.subplots(figsize=(12, 10))
+
+        # Dibujar hoteles
+        gdf_hoteles.plot(ax=ax, color='green', markersize=150, alpha=0.7, label='Hoteles')
+
+        # Dibujar centros
+        centro_hoteles.plot(ax=ax, color='blue', markersize=50, label='Centro Hoteles', zorder=3)
+
+        # -----------------------------
+        # Ajustar límites
+        # -----------------------------
+        buffer = 5000  # metros alrededor del centro de los hoteles
+        cx, cy = centro_hoteles.geometry[0].x, centro_hoteles.geometry[0].y
+        ax.set_xlim(cx - buffer, cx + buffer)
+        ax.set_ylim(cy - buffer, cy + buffer)
+
+        # Añadir mapa base
+        ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
+
+        # -----------------------------
+        # Configuración final
+        # -----------------------------
+        ax.set_title("Distribución de Hoteles en la Ciudad", fontsize=16, fontweight='bold')
+        ax.legend()
+        ax.set_axis_off()
+        plt.tight_layout()
+        plt.show()
 
 
 if __name__ == "__main__":
@@ -398,6 +526,14 @@ if __name__ == "__main__":
     }
     sistema_metro.graphics_trian_city(color_map=color_map)
     sistema_metro.guardar_sistema("sistema_generico.json")
+
+    hoteles = Hotel(lat=sistema_metro.centroide_latlon[0], lon=sistema_metro.centroide_latlon[1], num_hoteles=100, max_distancia_km=(analisis_geo['radio_sistema']*0.8), mean_distancia_km=1, mean_precio=100, std_precio=20)
+    df_hoteles = hoteles.hotel_generation_points()
+    print("Hoteles generados:\n", df_hoteles)
+
+    hoteles.plot_hotels(lat_city=40.4168, lon_city=-3.7038)
+
+
 
 
 

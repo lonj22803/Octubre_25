@@ -14,7 +14,7 @@ import os
 center_lat, center_lon = 40.4298, -3.6918  # Centro de Madrid
 num_hotels = 35  # Número de hoteles a generar
 max_distance_km = 3 # Radio máximo en km desde el centro para colocar hoteles
-mean_dist_km = 1.0  # Media de la distribución exponencial para concentrar más en el centro (ajusta para más/menos concentración)
+mean_dist_km = 1.0  # Meedia de la distribución exponencial para concentrar más en el centro (ajusta para más/menos concentración)
 mean_price = 160
 std_price = 30
 
