@@ -50,6 +50,7 @@ color_map = {
 # Creamos un grafo
 G = nx.Graph()
 
+print("OJO: ",sistema_generico["lineas"].items())
 # Añadimos nodos y aristas por línea
 for color, info in sistema_generico["lineas"].items():
     estaciones = info["sentido_ida"]
