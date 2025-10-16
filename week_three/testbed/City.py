@@ -475,20 +475,8 @@ class Hotel:
         plt.savefig(ruta_salida, dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
 
- # Para contar frecuencias
 
-import pandas as pd
-import numpy as np
-import random
-import geopandas as gpd
-from shapely.geometry import Point
-import matplotlib.pyplot as plt
-import contextily as ctx
-import os
-from collections import Counter  # Para contar frecuencias
-
-
-class Restaurantes(TrainSystem):  # Hereda de TrainSystem
+class Restaurantes:
     """
     Clase para representar restaurantes en la ciudad, que hereda del sistema de metro.
     El centro en latitud y longitud se utiliza para centrar el sistema.
@@ -727,6 +715,7 @@ if __name__ == "__main__":
     print("Estaciones del sistema de metro de prueba:", sistema_metro.stations,"\nTotal son:", len(sistema_metro.stations), " estaciones")
     sistema_metro.add_station(posiciones_estaciones, (40.4168, -3.7038))
     print("Coordenadas geográficas de las estaciones:", sistema_metro.station_coordinates)
+    sistema_metro.guardar_estaciones_csv("estaciones_generico.csv")
     analisis_geo = sistema_metro.geographics_dates()
     print("Centro del sistema de metro (latitud, longitud):", (analisis_geo['centroide_lat'], analisis_geo['centroide_lon']))
     print ("Centro del sistema de metro (metros):", sistema_metro.centroide_m)
