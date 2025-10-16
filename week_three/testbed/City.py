@@ -443,6 +443,9 @@ class Hotel():
         ax.legend()
         ax.set_axis_off()
         plt.tight_layout()
+        #guardamos la imagen
+        ruta_salida = os.path.join(os.path.dirname(__file__), "hoteles_mapa.png")
+        plt.savefig(ruta_salida, dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
 
 

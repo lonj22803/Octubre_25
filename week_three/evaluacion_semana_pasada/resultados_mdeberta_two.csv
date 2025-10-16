@@ -1,0 +1,361 @@
+modelo,pregunta,prompt,es_correcta,confianza,prob_entailment,prob_neutral,prob_contradiction
+meta-llama_Llama-3.1-8B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 1,True,0.9692087173461914,0.9692087173461914,0.02901979722082615,0.0017713971901685
+meta-llama_Llama-3.1-8B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 1,True,0.5640958547592163,0.5640958547592163,0.3036148250102997,0.13228930532932281
+meta-llama_Llama-3.1-8B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 1,False,0.010570747777819633,0.010570747777819633,0.9845821261405945,0.004847116302698851
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 1,False,0.47939467430114746,0.47939467430114746,0.15600961446762085,0.3645957410335541
+meta-llama_Llama-3.1-8B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 1,False,0.045840468257665634,0.045840468257665634,0.0410853810608387,0.9130741953849792
+meta-llama_Llama-3.1-8B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 1,True,0.9156756401062012,0.9156756401062012,0.0565781369805336,0.027746209874749184
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 1,True,0.9936973452568054,0.9936973452568054,0.004058449063450098,0.0022441702894866467
+meta-llama_Llama-3.1-8B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 1,True,0.7847456932067871,0.7847456932067871,0.1980295181274414,0.01722477562725544
+meta-llama_Llama-3.1-8B-Instruct,¿Quiero ir a RD3VC?,Prompt 1,False,0.0024871707428246737,0.0024871707428246737,0.02049734629690647,0.977015495300293
+meta-llama_Llama-3.1-8B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 1,True,0.6570435166358948,0.6570435166358948,0.19448009133338928,0.14847640693187714
+meta-llama_Llama-3.1-8B-Instruct,Estoy en OA1SC.,Prompt 1,True,0.9944959282875061,0.9944959282875061,0.004688951186835766,0.0008151758811436594
+meta-llama_Llama-3.1-8B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 1,True,0.871595561504364,0.871595561504364,0.11614291369915009,0.012261482886970043
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 1,False,0.07192611694335938,0.07192611694335938,0.01080030482262373,0.9172736406326294
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 1,True,0.9962831139564514,0.9962831139564514,0.003121078247204423,0.0005958073888905346
+meta-llama_Llama-3.1-8B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 1,False,0.10515901446342468,0.10515901446342468,0.8882501721382141,0.0065908366814255714
+meta-llama_Llama-3.1-8B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 2,True,0.9102792143821716,0.9102792143821716,0.08819838613271713,0.0015224867966026068
+meta-llama_Llama-3.1-8B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 2,False,0.07859029620885849,0.07859029620885849,0.012207318097352982,0.9092023372650146
+meta-llama_Llama-3.1-8B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 2,True,0.7069576382637024,0.7069576382637024,0.23146945238113403,0.06157293915748596
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 2,False,0.07799259573221207,0.07799259573221207,0.9123696684837341,0.009637730196118355
+meta-llama_Llama-3.1-8B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 2,False,0.11109548807144165,0.11109548807144165,0.040915779769420624,0.8479887247085571
+meta-llama_Llama-3.1-8B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 2,False,0.0015625851228833199,0.0015625851228833199,0.003549689194187522,0.9948877692222595
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 2,True,0.9847628474235535,0.9847628474235535,0.012286835350096226,0.0029502958059310913
+meta-llama_Llama-3.1-8B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 2,True,0.9127270579338074,0.9127270579338074,0.011600951664149761,0.07567193359136581
+meta-llama_Llama-3.1-8B-Instruct,¿Quiero ir a RD3VC?,Prompt 2,True,0.944687008857727,0.944687008857727,0.040514398366212845,0.014798537828028202
+meta-llama_Llama-3.1-8B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 2,False,0.013951361179351807,0.013951361179351807,0.9842911958694458,0.0017574377125129104
+meta-llama_Llama-3.1-8B-Instruct,Estoy en OA1SC.,Prompt 2,True,0.958922803401947,0.958922803401947,0.03913099691271782,0.0019461556803435087
+meta-llama_Llama-3.1-8B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 2,True,0.9837118983268738,0.9837118983268738,0.014977293089032173,0.0013107798295095563
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 2,True,0.6363351941108704,0.6363351941108704,0.19288846850395203,0.1707763373851776
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 2,False,0.06235933676362038,0.06235933676362038,0.9363876581192017,0.001253053080290556
+meta-llama_Llama-3.1-8B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 2,True,0.8916329145431519,0.8916329145431519,0.10641584545373917,0.001951289363205433
+meta-llama_Llama-3.1-8B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 3,False,0.23431773483753204,0.23431773483753204,0.7208198308944702,0.04486244171857834
+meta-llama_Llama-3.1-8B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 3,False,0.45622459053993225,0.45622459053993225,0.0368678905069828,0.5069075226783752
+meta-llama_Llama-3.1-8B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 3,False,0.27338939905166626,0.27338939905166626,0.09754206985235214,0.6290684938430786
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 3,False,0.061703670769929886,0.061703670769929886,0.837498664855957,0.10079768300056458
+meta-llama_Llama-3.1-8B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 3,False,0.05067341402173042,0.05067341402173042,0.03159429132938385,0.9177323579788208
+meta-llama_Llama-3.1-8B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 3,True,0.8771098256111145,0.8771098256111145,0.09907397627830505,0.02381618693470955
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 3,True,0.9975000023841858,0.9975000023841858,0.0018001015996560454,0.0006999399629421532
+meta-llama_Llama-3.1-8B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 3,True,0.9661818146705627,0.9661818146705627,0.025502867996692657,0.008315221406519413
+meta-llama_Llama-3.1-8B-Instruct,¿Quiero ir a RD3VC?,Prompt 3,False,0.027897188439965248,0.027897188439965248,0.4103222191333771,0.561780571937561
+meta-llama_Llama-3.1-8B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 3,False,0.327738881111145,0.327738881111145,0.02030237205326557,0.651958703994751
+meta-llama_Llama-3.1-8B-Instruct,Estoy en OA1SC.,Prompt 3,True,0.9178839921951294,0.9178839921951294,0.07257520407438278,0.009540792554616928
+meta-llama_Llama-3.1-8B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 3,True,0.977776288986206,0.977776288986206,0.020706793293356895,0.0015169454272836447
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 3,False,0.0013405850622802973,0.0013405850622802973,0.0018005690071731806,0.9968588352203369
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 3,True,0.990461528301239,0.990461528301239,0.007725441828370094,0.0018129788804799318
+meta-llama_Llama-3.1-8B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 3,True,0.8406503200531006,0.8406503200531006,0.15476146340370178,0.004588284529745579
+meta-llama_Llama-3.1-8B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 4,True,0.8906448483467102,0.8906448483467102,0.10713347047567368,0.0022217100486159325
+meta-llama_Llama-3.1-8B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 4,False,0.02980688214302063,0.02980688214302063,0.09742723405361176,0.8727658987045288
+meta-llama_Llama-3.1-8B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 4,False,0.04847347363829613,0.04847347363829613,0.7436952590942383,0.2078312635421753
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 4,False,0.3156266212463379,0.3156266212463379,0.4139133095741272,0.2704600691795349
+meta-llama_Llama-3.1-8B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 4,False,0.0232925396412611,0.0232925396412611,0.006168991327285767,0.9705384969711304
+meta-llama_Llama-3.1-8B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 4,False,0.2558303475379944,0.2558303475379944,0.24900765717029572,0.4951619505882263
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 4,True,0.9976651668548584,0.9976651668548584,0.0016652682097628713,0.0006695474148727953
+meta-llama_Llama-3.1-8B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 4,True,0.8187541365623474,0.8187541365623474,0.10145861655473709,0.07978720963001251
+meta-llama_Llama-3.1-8B-Instruct,¿Quiero ir a RD3VC?,Prompt 4,False,0.433767706155777,0.433767706155777,0.5643689632415771,0.0018633395666256547
+meta-llama_Llama-3.1-8B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 4,False,0.002090137219056487,0.002090137219056487,0.011055939830839634,0.9868539571762085
+meta-llama_Llama-3.1-8B-Instruct,Estoy en OA1SC.,Prompt 4,True,0.9975782036781311,0.9975782036781311,0.0019880516920238733,0.0004337827558629215
+meta-llama_Llama-3.1-8B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 4,True,0.9812093377113342,0.9812093377113342,0.016236262395977974,0.00255437265150249
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 4,False,0.38330814242362976,0.38330814242362976,0.018196599557995796,0.5984952449798584
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 4,True,0.9836063385009766,0.9836063385009766,0.014091054908931255,0.0023026829585433006
+meta-llama_Llama-3.1-8B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 4,False,0.13142667710781097,0.13142667710781097,0.49342790246009827,0.37514543533325195
+meta-llama_Llama-3.1-8B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 5,True,0.9420680403709412,0.9420680403709412,0.05631596967577934,0.001615990069694817
+meta-llama_Llama-3.1-8B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 5,False,0.06224828213453293,0.06224828213453293,0.3390733003616333,0.5986784100532532
+meta-llama_Llama-3.1-8B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 5,False,0.001314863096922636,0.001314863096922636,0.00708596408367157,0.9915992021560669
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 5,False,0.04814261943101883,0.04814261943101883,0.838661253452301,0.11319611966609955
+meta-llama_Llama-3.1-8B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 5,False,0.016922490671277046,0.016922490671277046,0.0071425167843699455,0.9759349822998047
+meta-llama_Llama-3.1-8B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 5,True,0.9036330580711365,0.9036330580711365,0.07510215044021606,0.02126491442322731
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 5,True,0.9466928839683533,0.9466928839683533,0.050709135830402374,0.002597936661913991
+meta-llama_Llama-3.1-8B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 5,True,0.893764078617096,0.893764078617096,0.07476965337991714,0.031466227024793625
+meta-llama_Llama-3.1-8B-Instruct,¿Quiero ir a RD3VC?,Prompt 5,False,0.44991379976272583,0.44991379976272583,0.5430128574371338,0.007073318585753441
+meta-llama_Llama-3.1-8B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 5,False,0.008232583291828632,0.008232583291828632,0.05778614059090614,0.9339812994003296
+meta-llama_Llama-3.1-8B-Instruct,Estoy en OA1SC.,Prompt 5,True,0.9943658113479614,0.9943658113479614,0.00470872363075614,0.0009255337063223124
+meta-llama_Llama-3.1-8B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 5,True,0.9914801120758057,0.9914801120758057,0.007538693957030773,0.0009811122436076403
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 5,True,0.5321199893951416,0.5321199893951416,0.020101306959986687,0.44777870178222656
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 5,True,0.8483949899673462,0.8483949899673462,0.13705730438232422,0.014547716826200485
+meta-llama_Llama-3.1-8B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 5,True,0.963898241519928,0.963898241519928,0.022883011028170586,0.01321874838322401
+meta-llama_Llama-3.1-8B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 6,True,0.9656449556350708,0.9656449556350708,0.03324727341532707,0.001107771066017449
+meta-llama_Llama-3.1-8B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 6,False,0.043353211134672165,0.043353211134672165,0.07273129373788834,0.8839155435562134
+meta-llama_Llama-3.1-8B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 6,False,0.28387749195098877,0.28387749195098877,0.0540878102183342,0.6620346307754517
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 6,True,0.8139219880104065,0.8139219880104065,0.03050202503800392,0.15557602047920227
+meta-llama_Llama-3.1-8B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 6,False,0.009998789057135582,0.009998789057135582,0.0028440183959901333,0.9871571660041809
+meta-llama_Llama-3.1-8B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 6,False,0.0026107728481292725,0.0026107728481292725,0.9936095476150513,0.003779647871851921
+meta-llama_Llama-3.1-8B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 6,True,0.9466928839683533,0.9466928839683533,0.050709135830402374,0.002597936661913991
+meta-llama_Llama-3.1-8B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 6,True,0.7896355390548706,0.7896355390548706,0.17607177793979645,0.03429263085126877
+meta-llama_Llama-3.1-8B-Instruct,¿Quiero ir a RD3VC?,Prompt 6,False,0.03886706009507179,0.03886706009507179,0.9307005405426025,0.030432356521487236
+meta-llama_Llama-3.1-8B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 6,False,0.00874719675630331,0.00874719675630331,0.054202549159526825,0.9370502829551697
+meta-llama_Llama-3.1-8B-Instruct,Estoy en OA1SC.,Prompt 6,True,0.9960730075836182,0.9960730075836182,0.0032541470136493444,0.000672921712975949
+meta-llama_Llama-3.1-8B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 6,True,0.9583958387374878,0.9583958387374878,0.0404403880238533,0.0011637808056548238
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 6,False,0.0757848471403122,0.0757848471403122,0.008818212896585464,0.9153969287872314
+meta-llama_Llama-3.1-8B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 6,True,0.9745954275131226,0.9745954275131226,0.02194494754076004,0.00345958792604506
+meta-llama_Llama-3.1-8B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 6,False,0.1278427392244339,0.1278427392244339,0.8624123334884644,0.009744882583618164
+meta-llama_Llama-3.2-3B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 1,False,0.33644816279411316,0.33644816279411316,0.6612926125526428,0.0022591932211071253
+meta-llama_Llama-3.2-3B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 1,False,0.3876308798789978,0.3876308798789978,0.24717652797698975,0.3651926517486572
+meta-llama_Llama-3.2-3B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 1,False,0.03419656306505203,0.03419656306505203,0.9546396732330322,0.011163795366883278
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 1,False,0.3591417968273163,0.3591417968273163,0.4595273733139038,0.1813308596611023
+meta-llama_Llama-3.2-3B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 1,False,0.014782367274165154,0.014782367274165154,0.012170962058007717,0.9730466604232788
+meta-llama_Llama-3.2-3B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 1,True,0.9613843560218811,0.9613843560218811,0.03588584437966347,0.0027298068162053823
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 1,False,0.008628626354038715,0.008628626354038715,0.10864011943340302,0.8827311992645264
+meta-llama_Llama-3.2-3B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 1,False,0.2722471356391907,0.2722471356391907,0.11938250809907913,0.6083703637123108
+meta-llama_Llama-3.2-3B-Instruct,¿Quiero ir a RD3VC?,Prompt 1,False,0.08652173727750778,0.08652173727750778,0.9033966660499573,0.010081635788083076
+meta-llama_Llama-3.2-3B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 1,True,0.7712222933769226,0.7712222933769226,0.15724073350429535,0.07153700292110443
+meta-llama_Llama-3.2-3B-Instruct,Estoy en OA1SC.,Prompt 1,True,0.957251787185669,0.957251787185669,0.037412263453006744,0.00533598056063056
+meta-llama_Llama-3.2-3B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 1,False,0.016974199563264847,0.016974199563264847,0.9675690531730652,0.015456784516572952
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 1,False,0.30408477783203125,0.30408477783203125,0.4337177872657776,0.2621974050998688
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 1,True,0.8463246822357178,0.8463246822357178,0.14865364134311676,0.00502173462882638
+meta-llama_Llama-3.2-3B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 1,False,0.008005569688975811,0.008005569688975811,0.41244572401046753,0.579548716545105
+meta-llama_Llama-3.2-3B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 2,False,0.036258596926927567,0.036258596926927567,0.9596302509307861,0.004111117217689753
+meta-llama_Llama-3.2-3B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 2,True,0.6403192281723022,0.6403192281723022,0.21029165387153625,0.1493891179561615
+meta-llama_Llama-3.2-3B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 2,False,0.01666327938437462,0.01666327938437462,0.8947769403457642,0.0885598361492157
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 2,False,0.2178979068994522,0.2178979068994522,0.5492908358573914,0.23281127214431763
+meta-llama_Llama-3.2-3B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 2,False,0.02108161710202694,0.02108161710202694,0.013658546842634678,0.965259850025177
+meta-llama_Llama-3.2-3B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 2,False,0.10106045007705688,0.10106045007705688,0.7995764017105103,0.09936315566301346
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 2,True,0.9828107357025146,0.9828107357025146,0.01324792392551899,0.00394138740375638
+meta-llama_Llama-3.2-3B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 2,False,0.3854348957538605,0.3854348957538605,0.19531360268592834,0.4192515015602112
+meta-llama_Llama-3.2-3B-Instruct,¿Quiero ir a RD3VC?,Prompt 2,False,0.0040841372683644295,0.0040841372683644295,0.9943833351135254,0.0015325610293075442
+meta-llama_Llama-3.2-3B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 2,False,0.2670268416404724,0.2670268416404724,0.4990274906158447,0.23394577205181122
+meta-llama_Llama-3.2-3B-Instruct,Estoy en OA1SC.,Prompt 2,True,0.9373119473457336,0.9373119473457336,0.04702286794781685,0.015665151178836823
+meta-llama_Llama-3.2-3B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 2,False,0.019682321697473526,0.019682321697473526,0.9596827626228333,0.02063489519059658
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 2,False,0.12298036366701126,0.12298036366701126,0.008841830305755138,0.8681777715682983
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 2,False,0.10940498113632202,0.10940498113632202,0.8830140829086304,0.007580941077321768
+meta-llama_Llama-3.2-3B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 2,True,0.8052033185958862,0.8052033185958862,0.18133778870105743,0.013458882458508015
+meta-llama_Llama-3.2-3B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 3,False,0.17674154043197632,0.17674154043197632,0.818399965763092,0.004858431406319141
+meta-llama_Llama-3.2-3B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 3,False,0.13956712186336517,0.13956712186336517,0.8450694680213928,0.01536343153566122
+meta-llama_Llama-3.2-3B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 3,False,0.021055500954389572,0.021055500954389572,0.9698452949523926,0.00909916590899229
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 3,True,0.5165596604347229,0.5165596604347229,0.046273794025182724,0.4371664524078369
+meta-llama_Llama-3.2-3B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 3,False,0.07388092577457428,0.07388092577457428,0.08665913343429565,0.8394598960876465
+meta-llama_Llama-3.2-3B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 3,False,0.4630948305130005,0.4630948305130005,0.434972882270813,0.1019323468208313
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 3,True,0.98736572265625,0.98736572265625,0.009507345966994762,0.003126951400190592
+meta-llama_Llama-3.2-3B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 3,True,0.8391943573951721,0.8391943573951721,0.050446756184101105,0.11035889387130737
+meta-llama_Llama-3.2-3B-Instruct,¿Quiero ir a RD3VC?,Prompt 3,False,0.020036211237311363,0.020036211237311363,0.8893143534660339,0.09064941108226776
+meta-llama_Llama-3.2-3B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 3,True,0.8459653854370117,0.8459653854370117,0.1147642657160759,0.03927037492394447
+meta-llama_Llama-3.2-3B-Instruct,Estoy en OA1SC.,Prompt 3,True,0.9014624953269958,0.9014624953269958,0.03544698283076286,0.06309047341346741
+meta-llama_Llama-3.2-3B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 3,True,0.5848345756530762,0.5848345756530762,0.38917025923728943,0.025995152071118355
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 3,False,0.06701262295246124,0.06701262295246124,0.006406563334167004,0.9265808463096619
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 3,False,0.0911729633808136,0.0911729633808136,0.9079868197441101,0.0008402339299209416
+meta-llama_Llama-3.2-3B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 3,True,0.8866286277770996,0.8866286277770996,0.1068478673696518,0.006523594725877047
+meta-llama_Llama-3.2-3B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 4,True,0.9931859970092773,0.9931859970092773,0.005914441775530577,0.000899550796020776
+meta-llama_Llama-3.2-3B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 4,False,0.0017773890867829323,0.0017773890867829323,0.029681645333766937,0.9685409665107727
+meta-llama_Llama-3.2-3B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 4,True,0.6401482224464417,0.6401482224464417,0.0638054609298706,0.29604628682136536
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 4,False,0.03837430104613304,0.03837430104613304,0.9396759867668152,0.021949680522084236
+meta-llama_Llama-3.2-3B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 4,False,0.010099264793097973,0.010099264793097973,0.003461383981630206,0.9864394664764404
+meta-llama_Llama-3.2-3B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 4,False,0.05538070574402809,0.05538070574402809,0.05018344521522522,0.8944358825683594
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 4,False,0.47599172592163086,0.47599172592163086,0.007917475886642933,0.5160908102989197
+meta-llama_Llama-3.2-3B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 4,False,0.06262476742267609,0.06262476742267609,0.14949926733970642,0.7878760099411011
+meta-llama_Llama-3.2-3B-Instruct,¿Quiero ir a RD3VC?,Prompt 4,True,0.5595322251319885,0.5595322251319885,0.27116382122039795,0.16930395364761353
+meta-llama_Llama-3.2-3B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 4,True,0.9632081985473633,0.9632081985473633,0.019124383106827736,0.017667390406131744
+meta-llama_Llama-3.2-3B-Instruct,Estoy en OA1SC.,Prompt 4,False,0.01792234741151333,0.01792234741151333,0.9786763787269592,0.0034012438263744116
+meta-llama_Llama-3.2-3B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 4,False,0.48337122797966003,0.48337122797966003,0.49299687147140503,0.023631971329450607
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 4,False,0.011763610877096653,0.011763610877096653,0.0037831685040146112,0.9844531416893005
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 4,False,0.013611962087452412,0.013611962087452412,0.9850195646286011,0.0013684590812772512
+meta-llama_Llama-3.2-3B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 4,True,0.963898241519928,0.963898241519928,0.022883011028170586,0.01321874838322401
+meta-llama_Llama-3.2-3B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 5,True,0.9984955787658691,0.9984955787658691,0.001161300577223301,0.00034314903314225376
+meta-llama_Llama-3.2-3B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 5,False,0.29222118854522705,0.29222118854522705,0.16314424574375153,0.5446345806121826
+meta-llama_Llama-3.2-3B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 5,True,0.5206285119056702,0.5206285119056702,0.10971392691135406,0.3696575462818146
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 5,False,0.1638989895582199,0.1638989895582199,0.046176303178071976,0.7899247407913208
+meta-llama_Llama-3.2-3B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 5,False,0.11214468628168106,0.11214468628168106,0.026550062000751495,0.8613052368164062
+meta-llama_Llama-3.2-3B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 5,False,0.012712164781987667,0.012712164781987667,0.14199838042259216,0.8452894687652588
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 5,True,0.98736572265625,0.98736572265625,0.009507345966994762,0.003126951400190592
+meta-llama_Llama-3.2-3B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 5,False,0.30533865094184875,0.30533865094184875,0.19749680161476135,0.4971645176410675
+meta-llama_Llama-3.2-3B-Instruct,¿Quiero ir a RD3VC?,Prompt 5,False,0.01220320537686348,0.01220320537686348,0.8560795783996582,0.1317172646522522
+meta-llama_Llama-3.2-3B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 5,False,0.1653481274843216,0.1653481274843216,0.030770279467105865,0.8038815855979919
+meta-llama_Llama-3.2-3B-Instruct,Estoy en OA1SC.,Prompt 5,True,0.9824466705322266,0.9824466705322266,0.014865218661725521,0.002688163425773382
+meta-llama_Llama-3.2-3B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 5,False,0.0039324345998466015,0.0039324345998466015,0.99284827709198,0.0032192387152463198
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 5,False,0.4325580894947052,0.4325580894947052,0.06444591283798218,0.5029959678649902
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 5,False,0.12420825660228729,0.12420825660228729,0.8736249804496765,0.002166739199310541
+meta-llama_Llama-3.2-3B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 5,True,0.963898241519928,0.963898241519928,0.022883011028170586,0.01321874838322401
+meta-llama_Llama-3.2-3B-Instruct,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 6,True,0.9983699917793274,0.9983699917793274,0.0012868287740275264,0.0003431826480664313
+meta-llama_Llama-3.2-3B-Instruct,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 6,True,0.9029141664505005,0.9029141664505005,0.03400233015418053,0.0630834698677063
+meta-llama_Llama-3.2-3B-Instruct,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 6,False,0.07646696269512177,0.07646696269512177,0.8749979734420776,0.04853510856628418
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 6,False,0.0623619444668293,0.0623619444668293,0.7460420727729797,0.19159598648548126
+meta-llama_Llama-3.2-3B-Instruct,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 6,False,0.022569432854652405,0.022569432854652405,0.00611881585791707,0.9713118076324463
+meta-llama_Llama-3.2-3B-Instruct,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 6,False,0.028448764234781265,0.028448764234781265,0.053956251591444016,0.9175950288772583
+meta-llama_Llama-3.2-3B-Instruct,¿Cuál es la línea que tiene más estaciones?,Prompt 6,True,0.9950147271156311,0.9950147271156311,0.0037316575180739164,0.001253668568097055
+meta-llama_Llama-3.2-3B-Instruct,¿Por cuántas estaciones pasan más de una línea?,Prompt 6,False,0.03317922726273537,0.03317922726273537,0.9509848356246948,0.015835870057344437
+meta-llama_Llama-3.2-3B-Instruct,¿Quiero ir a RD3VC?,Prompt 6,True,0.9108291268348694,0.9108291268348694,0.08189720660448074,0.007273645605891943
+meta-llama_Llama-3.2-3B-Instruct,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 6,False,0.28795838356018066,0.28795838356018066,0.5398179292678833,0.17222368717193604
+meta-llama_Llama-3.2-3B-Instruct,Estoy en OA1SC.,Prompt 6,True,0.9948694705963135,0.9948694705963135,0.004308702889829874,0.0008218258153647184
+meta-llama_Llama-3.2-3B-Instruct,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 6,True,0.75159752368927,0.75159752368927,0.24230267107486725,0.006099774967879057
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 6,False,0.2131185084581375,0.2131185084581375,0.016923516988754272,0.769957959651947
+meta-llama_Llama-3.2-3B-Instruct,¿Cuántas líneas de metro hay en total?,Prompt 6,True,0.9246046543121338,0.9246046543121338,0.06278102844953537,0.012614300474524498
+meta-llama_Llama-3.2-3B-Instruct,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 6,True,0.965964674949646,0.965964674949646,0.03236005827784538,0.0016753793461248279
+mistralai_Mistral-7B-Instruct-v0.3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 1,True,0.9886549711227417,0.9886549711227417,0.009338573552668095,0.002006427152082324
+mistralai_Mistral-7B-Instruct-v0.3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 1,True,0.7550060749053955,0.7550060749053955,0.2022412270307541,0.04275267571210861
+mistralai_Mistral-7B-Instruct-v0.3,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 1,True,0.982697069644928,0.982697069644928,0.004383545368909836,0.012919439934194088
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 1,False,0.05822545289993286,0.05822545289993286,0.0880078449845314,0.8537667393684387
+mistralai_Mistral-7B-Instruct-v0.3,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 1,False,0.090624138712883,0.090624138712883,0.01743415743112564,0.8919417858123779
+mistralai_Mistral-7B-Instruct-v0.3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 1,False,0.0035689305514097214,0.0035689305514097214,0.005152089986950159,0.9912789463996887
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la línea que tiene más estaciones?,Prompt 1,False,0.0018405128503218293,0.0018405128503218293,0.001504713436588645,0.996654748916626
+mistralai_Mistral-7B-Instruct-v0.3,¿Por cuántas estaciones pasan más de una línea?,Prompt 1,False,0.18956007063388824,0.18956007063388824,0.6620854735374451,0.1483544409275055
+mistralai_Mistral-7B-Instruct-v0.3,¿Quiero ir a RD3VC?,Prompt 1,False,0.0004771083185914904,0.0004771083185914904,0.004459240473806858,0.9950637221336365
+mistralai_Mistral-7B-Instruct-v0.3,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 1,False,0.10669552534818649,0.10669552534818649,0.037592947483062744,0.8557114601135254
+mistralai_Mistral-7B-Instruct-v0.3,Estoy en OA1SC.,Prompt 1,False,0.0037823335733264685,0.0037823335733264685,0.8065893054008484,0.18962830305099487
+mistralai_Mistral-7B-Instruct-v0.3,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 1,True,0.9116086363792419,0.9116086363792419,0.007084940560162067,0.08130640536546707
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 1,False,0.0005988188204355538,0.0005988188204355538,0.001013689674437046,0.9983875751495361
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas líneas de metro hay en total?,Prompt 1,True,0.968933641910553,0.968933641910553,0.027042798697948456,0.004023561254143715
+mistralai_Mistral-7B-Instruct-v0.3,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 1,True,0.6814802885055542,0.6814802885055542,0.13327163457870483,0.18524806201457977
+mistralai_Mistral-7B-Instruct-v0.3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 2,True,0.8957419395446777,0.8957419395446777,0.02892685867846012,0.07533112168312073
+mistralai_Mistral-7B-Instruct-v0.3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 2,True,0.7695058584213257,0.7695058584213257,0.09804436564445496,0.13244977593421936
+mistralai_Mistral-7B-Instruct-v0.3,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 2,False,0.4112790822982788,0.4112790822982788,0.4950645864009857,0.09365639090538025
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 2,False,0.09176822751760483,0.09176822751760483,0.47834619879722595,0.429885596036911
+mistralai_Mistral-7B-Instruct-v0.3,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 2,False,0.0145792867988348,0.0145792867988348,0.0085543068125844,0.9768664240837097
+mistralai_Mistral-7B-Instruct-v0.3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 2,False,0.2228592187166214,0.2228592187166214,0.7272183299064636,0.049922432750463486
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la línea que tiene más estaciones?,Prompt 2,False,0.000538879947271198,0.000538879947271198,0.0005801746156066656,0.998880922794342
+mistralai_Mistral-7B-Instruct-v0.3,¿Por cuántas estaciones pasan más de una línea?,Prompt 2,False,0.2812407910823822,0.2812407910823822,0.5913835763931274,0.12737558782100677
+mistralai_Mistral-7B-Instruct-v0.3,¿Quiero ir a RD3VC?,Prompt 2,False,0.01565493270754814,0.01565493270754814,0.9549375772476196,0.029407471418380737
+mistralai_Mistral-7B-Instruct-v0.3,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 2,False,0.023478640243411064,0.023478640243411064,0.020586874336004257,0.955934464931488
+mistralai_Mistral-7B-Instruct-v0.3,Estoy en OA1SC.,Prompt 2,False,0.04657779633998871,0.04657779633998871,0.5146410465240479,0.43878114223480225
+mistralai_Mistral-7B-Instruct-v0.3,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 2,True,0.9472869634628296,0.9472869634628296,0.010582251474261284,0.04213078320026398
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 2,False,0.0002805227122735232,0.0002805227122735232,0.001066044787876308,0.9986534118652344
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas líneas de metro hay en total?,Prompt 2,False,0.0351581797003746,0.0351581797003746,0.9639504551887512,0.0008914241334423423
+mistralai_Mistral-7B-Instruct-v0.3,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 2,True,0.5393484830856323,0.5393484830856323,0.025721590965986252,0.43492987751960754
+mistralai_Mistral-7B-Instruct-v0.3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 3,False,0.006067872047424316,0.006067872047424316,0.008187675848603249,0.9857445359230042
+mistralai_Mistral-7B-Instruct-v0.3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 3,True,0.8067619204521179,0.8067619204521179,0.09849249571561813,0.09474559128284454
+mistralai_Mistral-7B-Instruct-v0.3,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 3,True,0.8358597159385681,0.8358597159385681,0.040387801826000214,0.12375252693891525
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 3,False,0.12085599452257156,0.12085599452257156,0.4785873293876648,0.40055665373802185
+mistralai_Mistral-7B-Instruct-v0.3,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 3,False,0.06962862610816956,0.06962862610816956,0.04852486029267311,0.8818464875221252
+mistralai_Mistral-7B-Instruct-v0.3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 3,False,0.006797987036406994,0.006797987036406994,0.029652204364538193,0.9635498523712158
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la línea que tiene más estaciones?,Prompt 3,False,0.00030793933547101915,0.00030793933547101915,0.000479764596093446,0.9992122650146484
+mistralai_Mistral-7B-Instruct-v0.3,¿Por cuántas estaciones pasan más de una línea?,Prompt 3,False,0.0618780218064785,0.0618780218064785,0.9118886590003967,0.026233278214931488
+mistralai_Mistral-7B-Instruct-v0.3,¿Quiero ir a RD3VC?,Prompt 3,False,0.12727850675582886,0.12727850675582886,0.21440793573856354,0.6583135724067688
+mistralai_Mistral-7B-Instruct-v0.3,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 3,False,0.1640303134918213,0.1640303134918213,0.10757727921009064,0.7283924221992493
+mistralai_Mistral-7B-Instruct-v0.3,Estoy en OA1SC.,Prompt 3,False,0.07448364794254303,0.07448364794254303,0.8494130373001099,0.0761033147573471
+mistralai_Mistral-7B-Instruct-v0.3,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 3,True,0.9529611468315125,0.9529611468315125,0.014518565498292446,0.0325203612446785
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 3,False,0.0004596706130541861,0.0004596706130541861,0.0013478881446644664,0.9981924891471863
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas líneas de metro hay en total?,Prompt 3,True,0.9270909428596497,0.9270909428596497,0.05576663836836815,0.017142394557595253
+mistralai_Mistral-7B-Instruct-v0.3,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 3,False,0.3199474811553955,0.3199474811553955,0.2936096787452698,0.38644278049468994
+mistralai_Mistral-7B-Instruct-v0.3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 4,True,0.994788408279419,0.994788408279419,0.004541296046227217,0.0006702124956063926
+mistralai_Mistral-7B-Instruct-v0.3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 4,False,0.15572988986968994,0.15572988986968994,0.02346510998904705,0.8208049535751343
+mistralai_Mistral-7B-Instruct-v0.3,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 4,False,0.061884548515081406,0.061884548515081406,0.6508903503417969,0.28722506761550903
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 4,False,0.022591540589928627,0.022591540589928627,0.9634311199188232,0.013977325521409512
+mistralai_Mistral-7B-Instruct-v0.3,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 4,False,0.01029431726783514,0.01029431726783514,0.002291389275342226,0.9874141812324524
+mistralai_Mistral-7B-Instruct-v0.3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 4,False,0.005407854914665222,0.005407854914665222,0.9740509986877441,0.020541148260235786
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la línea que tiene más estaciones?,Prompt 4,False,0.0005941367126069963,0.0005941367126069963,0.0011264034546911716,0.9982794523239136
+mistralai_Mistral-7B-Instruct-v0.3,¿Por cuántas estaciones pasan más de una línea?,Prompt 4,False,0.0014706974616274238,0.0014706974616274238,0.005593894515186548,0.9929353594779968
+mistralai_Mistral-7B-Instruct-v0.3,¿Quiero ir a RD3VC?,Prompt 4,False,0.3138813078403473,0.3138813078403473,0.5546452403068542,0.13147343695163727
+mistralai_Mistral-7B-Instruct-v0.3,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 4,True,0.9040576219558716,0.9040576219558716,0.025266382843255997,0.07067594677209854
+mistralai_Mistral-7B-Instruct-v0.3,Estoy en OA1SC.,Prompt 4,False,0.2607893943786621,0.2607893943786621,0.6528468132019043,0.08636382967233658
+mistralai_Mistral-7B-Instruct-v0.3,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 4,False,0.005984195042401552,0.005984195042401552,0.793519139289856,0.20049668848514557
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 4,False,0.06188901141285896,0.06188901141285896,0.013323944061994553,0.9247870445251465
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas líneas de metro hay en total?,Prompt 4,True,0.9733079075813293,0.9733079075813293,0.02525070682168007,0.0014414343750104308
+mistralai_Mistral-7B-Instruct-v0.3,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 4,False,0.13875898718833923,0.13875898718833923,0.825172483921051,0.03606856241822243
+mistralai_Mistral-7B-Instruct-v0.3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 5,True,0.9972646236419678,0.9972646236419678,0.0023063865955919027,0.00042899808613583446
+mistralai_Mistral-7B-Instruct-v0.3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 5,False,0.010715902782976627,0.010715902782976627,0.009018996730446815,0.9802651405334473
+mistralai_Mistral-7B-Instruct-v0.3,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 5,False,0.08530014008283615,0.08530014008283615,0.7311177253723145,0.18358208239078522
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 5,False,0.2834264636039734,0.2834264636039734,0.27779847383499146,0.43877512216567993
+mistralai_Mistral-7B-Instruct-v0.3,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 5,False,0.04473785310983658,0.04473785310983658,0.4016493260860443,0.5536128878593445
+mistralai_Mistral-7B-Instruct-v0.3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 5,True,0.9747908115386963,0.9747908115386963,0.018368970602750778,0.006840278394520283
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la línea que tiene más estaciones?,Prompt 5,False,0.0040608737617731094,0.0040608737617731094,0.0019101831130683422,0.9940289258956909
+mistralai_Mistral-7B-Instruct-v0.3,¿Por cuántas estaciones pasan más de una línea?,Prompt 5,False,0.27091288566589355,0.27091288566589355,0.10402131080627441,0.6250658631324768
+mistralai_Mistral-7B-Instruct-v0.3,¿Quiero ir a RD3VC?,Prompt 5,False,0.010259359143674374,0.010259359143674374,0.7196871042251587,0.270053505897522
+mistralai_Mistral-7B-Instruct-v0.3,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 5,True,0.8431136608123779,0.8431136608123779,0.04090575501322746,0.11598058044910431
+mistralai_Mistral-7B-Instruct-v0.3,Estoy en OA1SC.,Prompt 5,True,0.6787121891975403,0.6787121891975403,0.26966914534568787,0.051618658006191254
+mistralai_Mistral-7B-Instruct-v0.3,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 5,True,0.5275026559829712,0.5275026559829712,0.1687249094247818,0.3037724196910858
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 5,False,0.02787497080862522,0.02787497080862522,0.02955535799264908,0.9425697922706604
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas líneas de metro hay en total?,Prompt 5,False,0.14360655844211578,0.14360655844211578,0.8315534591674805,0.024840010330080986
+mistralai_Mistral-7B-Instruct-v0.3,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 5,True,0.5546514987945557,0.5546514987945557,0.34341004490852356,0.10193846374750137
+mistralai_Mistral-7B-Instruct-v0.3,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 6,True,0.9975195527076721,0.9975195527076721,0.0020556277595460415,0.00042473283247090876
+mistralai_Mistral-7B-Instruct-v0.3,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 6,True,0.5811591148376465,0.5811591148376465,0.07576971501111984,0.34307119250297546
+mistralai_Mistral-7B-Instruct-v0.3,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 6,False,0.009603052400052547,0.009603052400052547,0.6883764863014221,0.30202049016952515
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 6,True,0.7310436367988586,0.7310436367988586,0.21749679744243622,0.051459506154060364
+mistralai_Mistral-7B-Instruct-v0.3,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 6,False,0.07413707673549652,0.07413707673549652,0.04084575176239014,0.8850172162055969
+mistralai_Mistral-7B-Instruct-v0.3,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 6,True,0.9579148888587952,0.9579148888587952,0.0366167388856411,0.005468475632369518
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuál es la línea que tiene más estaciones?,Prompt 6,False,0.001894746907055378,0.001894746907055378,0.0018613545689731836,0.996243953704834
+mistralai_Mistral-7B-Instruct-v0.3,¿Por cuántas estaciones pasan más de una línea?,Prompt 6,True,0.6486316919326782,0.6486316919326782,0.2714889943599701,0.07987935841083527
+mistralai_Mistral-7B-Instruct-v0.3,¿Quiero ir a RD3VC?,Prompt 6,False,0.05611134693026543,0.05611134693026543,0.8420626521110535,0.1018260046839714
+mistralai_Mistral-7B-Instruct-v0.3,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 6,False,0.36587798595428467,0.36587798595428467,0.17068873345851898,0.46343323588371277
+mistralai_Mistral-7B-Instruct-v0.3,Estoy en OA1SC.,Prompt 6,False,0.27166736125946045,0.27166736125946045,0.051669295877218246,0.6766633987426758
+mistralai_Mistral-7B-Instruct-v0.3,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 6,False,0.10495945811271667,0.10495945811271667,0.7133816480636597,0.18165884912014008
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 6,False,0.0006600023480132222,0.0006600023480132222,0.0027061630971729755,0.9966338276863098
+mistralai_Mistral-7B-Instruct-v0.3,¿Cuántas líneas de metro hay en total?,Prompt 6,False,0.002995261689648032,0.002995261689648032,0.010531206615269184,0.9864734411239624
+mistralai_Mistral-7B-Instruct-v0.3,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 6,False,0.05281312018632889,0.05281312018632889,0.032619256526231766,0.9145675897598267
+mistralai_Ministral-8B-Instruct-2410,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 1,True,0.9640814661979675,0.9640814661979675,0.03191788122057915,0.004000574816018343
+mistralai_Ministral-8B-Instruct-2410,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 1,False,0.003923519980162382,0.003923519980162382,0.008536813780665398,0.9875396490097046
+mistralai_Ministral-8B-Instruct-2410,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 1,False,0.1685185581445694,0.1685185581445694,0.8037150502204895,0.027766361832618713
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 1,False,0.14835353195667267,0.14835353195667267,0.8238457441329956,0.027800798416137695
+mistralai_Ministral-8B-Instruct-2410,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 1,False,0.13823282718658447,0.13823282718658447,0.0972314104437828,0.7645357251167297
+mistralai_Ministral-8B-Instruct-2410,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 1,True,0.9715533256530762,0.9715533256530762,0.02248026244342327,0.00596641656011343
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la línea que tiene más estaciones?,Prompt 1,True,0.9663378596305847,0.9663378596305847,0.025222785770893097,0.008439269848167896
+mistralai_Ministral-8B-Instruct-2410,¿Por cuántas estaciones pasan más de una línea?,Prompt 1,True,0.6649762988090515,0.6649762988090515,0.012254728935658932,0.3227689862251282
+mistralai_Ministral-8B-Instruct-2410,¿Quiero ir a RD3VC?,Prompt 1,False,0.024152062833309174,0.024152062833309174,0.9686700701713562,0.007177882362157106
+mistralai_Ministral-8B-Instruct-2410,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 1,False,0.4567963778972626,0.4567963778972626,0.14463910460472107,0.39856448769569397
+mistralai_Ministral-8B-Instruct-2410,Estoy en OA1SC.,Prompt 1,True,0.9799962043762207,0.9799962043762207,0.011515225283801556,0.00848863273859024
+mistralai_Ministral-8B-Instruct-2410,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 1,True,0.9595202803611755,0.9595202803611755,0.03796592354774475,0.002513862680643797
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 1,False,0.0003675982297863811,0.0003675982297863811,0.0007344218320213258,0.998897910118103
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas líneas de metro hay en total?,Prompt 1,True,0.9941644072532654,0.9941644072532654,0.004613524302840233,0.0012221288634464145
+mistralai_Ministral-8B-Instruct-2410,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 1,True,0.963898241519928,0.963898241519928,0.022883011028170586,0.01321874838322401
+mistralai_Ministral-8B-Instruct-2410,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 2,False,0.05809326842427254,0.05809326842427254,0.9375467896461487,0.004359912127256393
+mistralai_Ministral-8B-Instruct-2410,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 2,False,0.11757544428110123,0.11757544428110123,0.8550803065299988,0.027344217523932457
+mistralai_Ministral-8B-Instruct-2410,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 2,False,0.003941740375012159,0.003941740375012159,0.9913301467895508,0.004728079307824373
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 2,True,0.8973718881607056,0.8973718881607056,0.07716803252696991,0.02546011097729206
+mistralai_Ministral-8B-Instruct-2410,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 2,False,0.1051199808716774,0.1051199808716774,0.2586246132850647,0.6362553834915161
+mistralai_Ministral-8B-Instruct-2410,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 2,False,0.010804017074406147,0.010804017074406147,0.2421007603406906,0.7470952272415161
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la línea que tiene más estaciones?,Prompt 2,False,0.000893999298568815,0.000893999298568815,0.0008549863123334944,0.9982509016990662
+mistralai_Ministral-8B-Instruct-2410,¿Por cuántas estaciones pasan más de una línea?,Prompt 2,False,0.010319871827960014,0.010319871827960014,0.001280357246287167,0.988399863243103
+mistralai_Ministral-8B-Instruct-2410,¿Quiero ir a RD3VC?,Prompt 2,False,0.11951133608818054,0.11951133608818054,0.8189963102340698,0.06149235740303993
+mistralai_Ministral-8B-Instruct-2410,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 2,True,0.9185830354690552,0.9185830354690552,0.06411678344011307,0.017300143837928772
+mistralai_Ministral-8B-Instruct-2410,Estoy en OA1SC.,Prompt 2,False,0.014495699666440487,0.014495699666440487,0.9827644228935242,0.002739915158599615
+mistralai_Ministral-8B-Instruct-2410,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 2,True,0.9250611662864685,0.9250611662864685,0.06573519855737686,0.009203637950122356
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 2,False,0.00030580523889511824,0.00030580523889511824,0.0005315413582138717,0.9991626739501953
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas líneas de metro hay en total?,Prompt 2,False,0.026837963610887527,0.026837963610887527,0.9723056554794312,0.0008563913870602846
+mistralai_Ministral-8B-Instruct-2410,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 2,False,0.028530467301607132,0.028530467301607132,0.9394399523735046,0.03202958405017853
+mistralai_Ministral-8B-Instruct-2410,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 3,True,0.9108825325965881,0.9108825325965881,0.03614601865410805,0.052971456199884415
+mistralai_Ministral-8B-Instruct-2410,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 3,True,0.653459370136261,0.653459370136261,0.1630406528711319,0.1835000216960907
+mistralai_Ministral-8B-Instruct-2410,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 3,False,0.03017462231218815,0.03017462231218815,0.9545701742172241,0.015255209989845753
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 3,False,0.45883163809776306,0.45883163809776306,0.49646180868148804,0.0447065494954586
+mistralai_Ministral-8B-Instruct-2410,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 3,False,0.045530613511800766,0.045530613511800766,0.10610880702733994,0.8483605980873108
+mistralai_Ministral-8B-Instruct-2410,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 3,True,0.9852321147918701,0.9852321147918701,0.008900465443730354,0.005867366679012775
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la línea que tiene más estaciones?,Prompt 3,True,0.9891477823257446,0.9891477823257446,0.005794867407530546,0.005057444795966148
+mistralai_Ministral-8B-Instruct-2410,¿Por cuántas estaciones pasan más de una línea?,Prompt 3,True,0.8873222470283508,0.8873222470283508,0.006760173477232456,0.10591748356819153
+mistralai_Ministral-8B-Instruct-2410,¿Quiero ir a RD3VC?,Prompt 3,False,0.007311680354177952,0.007311680354177952,0.9827852845191956,0.009903025813400745
+mistralai_Ministral-8B-Instruct-2410,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 3,False,0.09173815697431564,0.09173815697431564,0.8669216632843018,0.041340120136737823
+mistralai_Ministral-8B-Instruct-2410,Estoy en OA1SC.,Prompt 3,True,0.9855622053146362,0.9855622053146362,0.012343625538051128,0.002094162628054619
+mistralai_Ministral-8B-Instruct-2410,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 3,True,0.8793280124664307,0.8793280124664307,0.11193856596946716,0.008733381517231464
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 3,False,0.00047603060374967754,0.00047603060374967754,0.0008893139311112463,0.9986346364021301
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas líneas de metro hay en total?,Prompt 3,False,0.00791238248348236,0.00791238248348236,0.9917464256286621,0.00034121470525860786
+mistralai_Ministral-8B-Instruct-2410,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 3,False,0.3378021717071533,0.3378021717071533,0.6256186962127686,0.0365791991353035
+mistralai_Ministral-8B-Instruct-2410,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 4,True,0.8409596085548401,0.8409596085548401,0.028243599459528923,0.13079677522182465
+mistralai_Ministral-8B-Instruct-2410,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 4,True,0.5105469822883606,0.5105469822883606,0.10079292953014374,0.38866010308265686
+mistralai_Ministral-8B-Instruct-2410,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 4,True,0.5857912302017212,0.5857912302017212,0.11062436550855637,0.3035843074321747
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 4,False,0.2765691876411438,0.2765691876411438,0.29121285676956177,0.43221795558929443
+mistralai_Ministral-8B-Instruct-2410,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 4,False,0.06727511435747147,0.06727511435747147,0.0554935485124588,0.8772313594818115
+mistralai_Ministral-8B-Instruct-2410,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 4,True,0.5360370874404907,0.5360370874404907,0.39048826694488525,0.07347472012042999
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la línea que tiene más estaciones?,Prompt 4,True,0.9880326986312866,0.9880326986312866,0.009185855276882648,0.002781403250992298
+mistralai_Ministral-8B-Instruct-2410,¿Por cuántas estaciones pasan más de una línea?,Prompt 4,False,0.23809577524662018,0.23809577524662018,0.6257182359695435,0.13618603348731995
+mistralai_Ministral-8B-Instruct-2410,¿Quiero ir a RD3VC?,Prompt 4,False,0.001610031584277749,0.001610031584277749,0.9923437237739563,0.006046207156032324
+mistralai_Ministral-8B-Instruct-2410,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 4,True,0.7079893946647644,0.7079893946647644,0.11838075518608093,0.17362983524799347
+mistralai_Ministral-8B-Instruct-2410,Estoy en OA1SC.,Prompt 4,False,0.31836485862731934,0.31836485862731934,0.23948080837726593,0.44215428829193115
+mistralai_Ministral-8B-Instruct-2410,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 4,True,0.9816203117370605,0.9816203117370605,0.016719067469239235,0.0016606070566922426
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 4,True,0.5680717825889587,0.5680717825889587,0.032282669097185135,0.39964553713798523
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas líneas de metro hay en total?,Prompt 4,False,0.40161722898483276,0.40161722898483276,0.5951170921325684,0.0032656656112521887
+mistralai_Ministral-8B-Instruct-2410,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 4,True,0.963898241519928,0.963898241519928,0.022883011028170586,0.01321874838322401
+mistralai_Ministral-8B-Instruct-2410,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 5,True,0.9943952560424805,0.9943952560424805,0.0046994504518806934,0.0009052599198184907
+mistralai_Ministral-8B-Instruct-2410,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 5,True,0.6796299815177917,0.6796299815177917,0.16947096586227417,0.15089909732341766
+mistralai_Ministral-8B-Instruct-2410,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 5,False,0.4859597384929657,0.4859597384929657,0.17022019624710083,0.3438200354576111
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 5,False,0.28125759959220886,0.28125759959220886,0.5315951108932495,0.1871473342180252
+mistralai_Ministral-8B-Instruct-2410,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 5,False,0.06109592318534851,0.06109592318534851,0.043061353266239166,0.8958427309989929
+mistralai_Ministral-8B-Instruct-2410,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 5,False,0.012451390735805035,0.012451390735805035,0.05728396028280258,0.9302645921707153
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la línea que tiene más estaciones?,Prompt 5,True,0.9880862236022949,0.9880862236022949,0.00940793752670288,0.002505844458937645
+mistralai_Ministral-8B-Instruct-2410,¿Por cuántas estaciones pasan más de una línea?,Prompt 5,False,0.012443375773727894,0.012443375773727894,0.004631712567061186,0.9829248785972595
+mistralai_Ministral-8B-Instruct-2410,¿Quiero ir a RD3VC?,Prompt 5,False,0.001316576381213963,0.001316576381213963,0.993228018283844,0.005455447360873222
+mistralai_Ministral-8B-Instruct-2410,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 5,True,0.6902943253517151,0.6902943253517151,0.13537771999835968,0.17432790994644165
+mistralai_Ministral-8B-Instruct-2410,Estoy en OA1SC.,Prompt 5,False,0.427111953496933,0.427111953496933,0.4835636019706726,0.08932442218065262
+mistralai_Ministral-8B-Instruct-2410,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 5,True,0.8554848432540894,0.8554848432540894,0.12137763202190399,0.023137526586651802
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 5,False,0.0016358521534129977,0.0016358521534129977,0.005210637580603361,0.9931535720825195
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas líneas de metro hay en total?,Prompt 5,True,0.9684531092643738,0.9684531092643738,0.02107321470975876,0.01047371607273817
+mistralai_Ministral-8B-Instruct-2410,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 5,True,0.963898241519928,0.963898241519928,0.022883011028170586,0.01321874838322401
+mistralai_Ministral-8B-Instruct-2410,¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?,Prompt 6,True,0.9827920794487,0.9827920794487,0.01518996525555849,0.0020179711282253265
+mistralai_Ministral-8B-Instruct-2410,¿Qué estaciones debo usar para transferirme entre las líneas Roja y Naranja?,Prompt 6,False,0.019720878452062607,0.019720878452062607,0.034954898059368134,0.9453242421150208
+mistralai_Ministral-8B-Instruct-2410,"Quiero ir de la estación VF6SC a la estación RA1SC, ¿qué ruta me recomiendas?",Prompt 6,False,0.30634236335754395,0.30634236335754395,0.6487661600112915,0.04489147290587425
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la mejor ruta para ir de BD2VB a AC3SC?,Prompt 6,True,0.9506019949913025,0.9506019949913025,0.01811174862086773,0.03128620982170105
+mistralai_Ministral-8B-Instruct-2410,¿Dime todas las rutas posibles para ir de BB2OC a AF6SC?,Prompt 6,False,0.07495004683732986,0.07495004683732986,0.06489528715610504,0.8601546883583069
+mistralai_Ministral-8B-Instruct-2410,¿Hay alguna estación que sirva como punto de conexión entre más de 2 líneas de metro?,Prompt 6,False,0.15389502048492432,0.15389502048492432,0.8126739859580994,0.033431023359298706
+mistralai_Ministral-8B-Instruct-2410,¿Cuál es la línea que tiene más estaciones?,Prompt 6,False,0.0345584973692894,0.0345584973692894,0.8750745058059692,0.09036693722009659
+mistralai_Ministral-8B-Instruct-2410,¿Por cuántas estaciones pasan más de una línea?,Prompt 6,True,0.9609390497207642,0.9609390497207642,0.008151045069098473,0.030909927561879158
+mistralai_Ministral-8B-Instruct-2410,¿Quiero ir a RD3VC?,Prompt 6,False,0.18867625296115875,0.18867625296115875,0.808205783367157,0.003117989981546998
+mistralai_Ministral-8B-Instruct-2410,"Estoy en la estación OA1SC, ¿cómo llego a la estación RG6SC?",Prompt 6,True,0.8179907202720642,0.8179907202720642,0.16290993988513947,0.01909932866692543
+mistralai_Ministral-8B-Instruct-2410,Estoy en OA1SC.,Prompt 6,True,0.9826096296310425,0.9826096296310425,0.014983713626861572,0.00240672891959548
+mistralai_Ministral-8B-Instruct-2410,"Necesito ir a la estación BC3SC, ¿cómo llego allí desde la estación VG7SC?",Prompt 6,True,0.9816203117370605,0.9816203117370605,0.016719067469239235,0.0016606070566922426
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas estaciones hay en total en el sistema de metro?,Prompt 6,False,0.0005004825652576983,0.0005004825652576983,0.0010054451413452625,0.998494029045105
+mistralai_Ministral-8B-Instruct-2410,¿Cuántas líneas de metro hay en total?,Prompt 6,True,0.9811657667160034,0.9811657667160034,0.015606481581926346,0.0032277898862957954
+mistralai_Ministral-8B-Instruct-2410,"El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",Prompt 6,True,0.963898241519928,0.963898241519928,0.022883011028170586,0.01321874838322401
