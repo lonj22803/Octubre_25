@@ -9,6 +9,7 @@ from pyproj import Transformer
 import numpy as np
 import pandas as pd
 import random
+from collections import Counter
 
 class TrainSystem:
     """
@@ -474,214 +475,189 @@ class Hotel:
         plt.savefig(ruta_salida, dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
 
+ # Para contar frecuencias
 
+import pandas as pd
+import numpy as np
+import random
 import geopandas as gpd
+from shapely.geometry import Point
 import matplotlib.pyplot as plt
 import contextily as ctx
-from shapely.geometry import Point
 import os
+from collections import Counter  # Para contar frecuencias
 
-class Airport:
+
+class Restaurantes(TrainSystem):  # Hereda de TrainSystem
     """
-    Clase para representar un aeropuerto en la ciudad, que hereda del sistema de metro.
-    El centro en latitud y longitud del aeropuerto se utiliza para centrar el sistema de metro.
+    Clase para representar restaurantes en la ciudad, que hereda del sistema de metro.
+    El centro en latitud y longitud se utiliza para centrar el sistema.
     Hereda de la clase TrainSystem.
-    El centro en longitud y latitud para generar de manera automatica los aeropuertos con una
-    distribucion de probabilidad exponbencial respecto al centro de la ciudad.
+    Genera restaurantes alrededor de estaciones con cruces, priorizando aquellas con más líneas.
     """
-    def __init__(self, lat: float=None, lon: float=None):
+
+    def __init__(self, lat: float, lon: float, num_restaurantes: int, max_distancia_km: float, mean_distancia_km: float,
+                 lambda_poisson: float, alpha: float, beta: float, mean_tiempo: float, std_tiempo: float):
         """
-        Inicializa un aeropuerto con su ubicación y parámetros de distribución.
-        :param lat: centro en latitud
-        :param lon: centro en longitud
+        Inicializa los restaurantes con su ubicación y parámetros de distribución.
+        :param lat: Centro en latitud.
+        :param lon: Centro en longitud.
+        :param num_restaurantes: Número de restaurantes a generar.
+        :param max_distancia_km: Distancia máxima desde el centro en km.
+        :param mean_distancia_km: Media de la distribución exponencial en km.
+        :param lambda_poisson: Parámetro lambda para la distribución Poisson (precio promedio).
+        :param alpha: Parámetro alpha para la distribución Beta (calificación).
+        :param beta: Parámetro beta para la distribución Beta (calificación).
+        :param mean_tiempo: Media para la distribución normal del tiempo promedio (en minutos).
+        :param std_tiempo: Desviación estándar para la distribución normal del tiempo promedio.
         """
-        self.airport_center = [lat, lon]
+        self.city_center = (lat, lon)
+        self.num_restaurantes = num_restaurantes
+        self.max_distancia_km = max_distancia_km
+        self.mean_distancia_km = mean_distancia_km
+        self.lambda_poisson = lambda_poisson  # Para precios
+        self.alpha = alpha  # Para calificación
+        self.beta = beta  # Para calificación
+        self.mean_tiempo = mean_tiempo  # Para tiempo promedio
+        self.std_tiempo = std_tiempo  # Para tiempo promedio
+        self.restaurantes = pd.DataFrame()  # DataFrame para almacenar los restaurantes
 
-    def adq_ubication(self, station_coordinates: dict, centroide_latlon: tuple):
+    def restaurant_generation_points(self, system, stations, station_coordinates):
         """
-        Adquiere la ubicación del aeropuerto a partir de las estaciones del sistema de metro
-        partiendo del centroide del sistema de metro.
-        A partir de la distancia minima entre estaciones y el centroide del sistema de metro
-        busca el punto mas lejano al centroide y lo utiliza para ubicar el aeropuerto.
+        Genera puntos de restaurantes alrededor de las estaciones de metro con cruces.
+        Prioriza estaciones con más líneas: aquellas con mayor repetición tendrán más restaurantes.
+        Crea una distribución proporcional basada en la frecuencia de las estaciones.
+        :return: DataFrame con las coordenadas, precios, calificaciones, tipos de comida y tiempo promedio de los restaurantes.
         """
-        if not station_coordinates:
-            raise ValueError("No se han añadido las coordenadas geográficas de las estaciones. Use el método add_station primero.")
-        if not centroide_latlon:
-            raise ValueError("No se ha calculado el centroide del sistema de metro. Use el método geographics_dates primero.")
+        nombre_restaurantes = [f"RST{i + 1}" for i in range(self.num_restaurantes)]
+        latitudes = []
+        longitudes = []
+        precios_promedio = []
+        calificaciones = []
+        tipos_comida = []
+        tiempos_promedio = []  # Nueva lista para tiempo promedio
 
-        min_distancia = float('inf')
-        estacion_mas_cercana = None
+        # Identificar estaciones y contar frecuencias
+        stations_all_lines = []
+        for line, data in system.items():
+            stations_all_lines.extend(data["estaciones"])
 
-        for estacion, (lat, lon) in station_coordinates.items():
-            distancia = calcular_distancia_haversine(lat, lon, centroide_latlon[0], centroide_latlon[1])
-            if distancia < min_distancia:
-                min_distancia = distancia
-                estacion_mas_cercana = (lat, lon)
+        freq = Counter(stations_all_lines)  # Contador de frecuencias
+        repeat_stations = [station for station in freq if freq[station] > 1]  # Solo estaciones con >1 línea
 
-        if estacion_mas_cercana is None:
-            raise ValueError("No se pudo determinar la estación más cercana al centroide.")
+        if not repeat_stations:
+            raise ValueError("No se encontraron estaciones con más de una línea de metro.")
 
-        # Ahora buscamos la estación más lejana al centroide
-        max_distancia = 0
-        estacion_mas_lejana = None
+        # Ordenar estaciones por frecuencia descendente (prioridad)
+        repeat_stations_sorted = sorted(repeat_stations, key=lambda x: freq[x], reverse=True)
+        weights = [freq[station] for station in repeat_stations_sorted]  # Pesos basados en frecuencia
 
-        for estacion, (lat, lon) in station_coordinates.items():
-            distancia = calcular_distancia_haversine(lat, lon, centroide_latlon[0], centroide_latlon[1])
-            if distancia > max_distancia:
-                max_distancia = distancia
-                estacion_mas_lejana = (lat, lon)
+        # Distribuir el número de restaurantes proporcionalmente
+        num_rest_por_estacion = np.random.multinomial(self.num_restaurantes, pvals=[w / sum(weights) for w in weights])
 
-        if estacion_mas_lejana is None:
-            raise ValueError("No se pudo determinar la estación más lejana al centroide.")
+        coords_repeat_stations = [station_coordinates[station] for station in repeat_stations_sorted if
+                                  station in station_coordinates]
 
-        self.airport_center = estacion_mas_lejana
-        return self.airport_center
+        print("Estaciones con cruces (ordenadas por frecuencia):", repeat_stations_sorted)
+        print("Número de restaurantes por estación:", num_rest_por_estacion)
 
-    def plot_airport(self, lat_city=None, lon_city=None):
+        for i, (lat_est, lon_est) in enumerate(coords_repeat_stations):
+            for _ in range(num_rest_por_estacion[i]):  # Asigna según la distribución
+                if len(latitudes) >= self.num_restaurantes:
+                    break
+
+                # Generar distancia y ángulo aleatorio (distribución exponencial)
+                distancia = np.random.exponential(self.mean_distancia_km)
+                while distancia > self.max_distancia_km:
+                    distancia = np.random.exponential(self.mean_distancia_km)
+                angulo = random.uniform(0, 2 * np.pi)
+
+                # Calcular nuevas coordenadas
+                delta_lat = (distancia / 111) * np.cos(angulo)  # 111 km por grado de latitud
+                delta_lon = (distancia / (111 * np.cos(np.radians(lat_est)))) * np.sin(angulo)
+                nueva_lat = lat_est + delta_lat
+                nueva_lon = lon_est + delta_lon
+
+                latitudes.append(round(nueva_lat, 6))
+                longitudes.append(round(nueva_lon, 6))
+
+                # Generar atributos
+                precio_promedio = np.random.poisson(self.lambda_poisson)  # Distribución Poisson
+                precios_promedio.append(max(5, precio_promedio))  # Asegurar un mínimo realista
+                calificacion = np.random.beta(self.alpha, self.beta) * 4 + 1  # Escalar a 1-5
+                calificaciones.append(round(calificacion, 1))
+                tipo_comida = np.random.choice(
+                    ['comida típica', 'comida rápida', 'comida extranjera'])  # Distribución uniforme
+                tipos_comida.append(tipo_comida)
+                tiempo_promedio = np.random.normal(self.mean_tiempo, self.std_tiempo)  # Distribución normal
+                tiempos_promedio.append(max(0, round(tiempo_promedio, 1)))  # Asegurar no negativo y redondear
+
+        self.restaurantes = pd.DataFrame({
+            'nombre_restaurante': nombre_restaurantes[:len(latitudes)],
+            'latitud': latitudes,
+            'longitud': longitudes,
+            'precio_promedio': precios_promedio,
+            'calificacion': calificaciones,
+            'tipo_comida': tipos_comida,
+            'tiempo_promedio': tiempos_promedio
+        })
+
+        return self.restaurantes
+
+    def save_restaurantes_csv(self, filename: str):
         """
-        Grafica el centro del aeropuerto en un mapa con el centro de la ciudad si se proporciona.
-        :param lat_city: latitud del centro de la ciudad (opcional)
-        :param lon_city: longitud del centro de la ciudad (opcional)
+        Guarda los datos de los restaurantes en un archivo CSV.
+        :param filename: Nombre del archivo donde se guardarán los datos.
         """
-        if self.airport_center is None:
-            raise ValueError("El centro del aeropuerto no ha sido definido. Usa el método adq_ubication primero.")
+        if self.restaurantes.empty:
+            raise ValueError("No hay datos de restaurantes para guardar. Genera los restaurantes primero.")
+        self.restaurantes.to_csv(filename, index=False)
+        print(f"Datos de restaurantes guardados en {filename}")
 
-        # Crear GeoSeries para el aeropuerto
-        punto_aeropuerto = gpd.GeoSeries([Point(self.airport_center[1], self.airport_center[0])], crs="EPSG:4326")
-        gdf_aeropuerto = gpd.GeoDataFrame(geometry=punto_aeropuerto).to_crs(epsg=3857)
+    def plot_restaurantes(self, lat_city=None, lon_city=None):
+        """
+        Grafica los restaurantes generados en un mapa con los centros de la ciudad y del sistema de restaurantes.
+        :param lat_city: Latitud del centro de la ciudad (opcional).
+        :param lon_city: Longitud del centro de la ciudad (opcional).
+        """
+        if self.restaurantes.empty:
+            raise ValueError("Primero debes generar los restaurantes con restaurant_generation_points()")
 
-        # Centro de la ciudad si se proporciona
+        gdf_restaurantes = gpd.GeoDataFrame(
+            self.restaurantes,
+            geometry=gpd.points_from_xy(self.restaurantes['longitud'], self.restaurantes['latitud']),
+            crs="EPSG:4326"
+        ).to_crs(epsg=3857)
+
+        centro_restaurantes = gpd.GeoSeries([Point(self.city_center[1], self.city_center[0])], crs="EPSG:4326").to_crs(
+            epsg=3857)
+
         if lat_city is not None and lon_city is not None:
             centro_ciudad = gpd.GeoSeries([Point(lon_city, lat_city)], crs="EPSG:4326").to_crs(epsg=3857)
         else:
             centro_ciudad = None
 
-        # Crear figura
         fig, ax = plt.subplots(figsize=(12, 10))
 
-        # Dibujar el aeropuerto
-        gdf_aeropuerto.plot(ax=ax, color='red', markersize=200, alpha=0.7, label='Aeropuerto')
+        gdf_restaurantes.plot(ax=ax, color='red', markersize=150, alpha=0.7, label='Restaurantes')
+        centro_restaurantes.plot(ax=ax, color='blue', markersize=50, label='Centro Restaurantes', zorder=3)
 
-        # Dibujar el centro de la ciudad si se proporciona
         if centro_ciudad is not None:
-            centro_ciudad.plot(ax=ax, color='blue', markersize=50, label='Centro Ciudad')
+            centro_ciudad.plot(ax=ax, color='purple', markersize=50, label='Centro Ciudad', zorder=3)
 
-        # Ajustar límites alrededor del centro del aeropuerto
-        cx, cy = gdf_aeropuerto.geometry[0].x, gdf_aeropuerto.geometry[0].y
-        buffer = 5000  # metros alrededor del centro del aeropuerto
+        buffer = 5000  # metros
+        cx, cy = centro_restaurantes.geometry[0].x, centro_restaurantes.geometry[0].y
         ax.set_xlim(cx - buffer, cx + buffer)
         ax.set_ylim(cy - buffer, cy + buffer)
 
-        # Añadir mapa base
         ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
 
-        # Configuración final
-        ax.set_title("Ubicación del Aeropuerto", fontsize=16, fontweight='bold')
+        ax.set_title("Distribución de Restaurantes en la Ciudad", fontsize=16, fontweight='bold')
         ax.legend()
         ax.set_axis_off()
         plt.tight_layout()
-
-        # Guardar la imagen
-        ruta_salida = os.path.join(os.path.dirname(__file__), "aeropuerto_mapa.png")
+        ruta_salida = os.path.join(os.path.dirname(__file__), "restaurantes_mapa.png")
         plt.savefig(ruta_salida, dpi=300, bbox_inches='tight', facecolor='white')
-        plt.show()
-
-
-
-
-
-
-"""===== Clase unificadora de sistema de metro y hoteles ====="""
-
-class IntegratedSystem(TrainSystem):
-    """
-    Clase que hereda de TrainSystem y recibe un objeto Hotel para acceder a sus datos.
-    Permite graficar el sistema de metro junto con los hoteles en un mapa, sin generar hoteles.
-    """
-
-    def __init__(self, hotel_object):
-        """
-        Inicializa la clase heredando de TrainSystem y recibiendo un objeto Hotel.
-
-        :param hotel_object: Un objeto de la clase Hotel que ya ha generado hoteles.
-        """
-        TrainSystem.__init__(self)  # Inicializa TrainSystem
-        if not isinstance(hotel_object, Hotel):
-            raise ValueError("El parámetro debe ser un objeto de la clase Hotel.")
-        self.hotel_object = hotel_object  # Almacena el objeto Hotel para acceder a sus datos
-
-    def plot_everything(self, color_map: dict, lat_city: float = 40.4168, lon_city: float = -3.7038):
-        """
-        Grafica el sistema de metro y los hoteles (del objeto Hotel proporcionado) en un solo mapa.
-
-        :param color_map: Diccionario con colores para las líneas del metro.
-        :param lat_city: Latitud del centro de la ciudad (opcional).
-        :param lon_city: Longitud del centro de la ciudad (opcional).
-        """
-        # 1. Verificar que el sistema de metro esté cargado
-        if not hasattr(self, 'system') or not self.system:
-            raise ValueError("El sistema de metro no ha sido cargado. Usa load_system primero.")
-
-        # Crear el grafo del sistema de metro
-        G = nx.Graph()
-        for color_key, datos_linea in self.system.items():
-            estaciones = datos_linea["sentido_ida"]
-            for i in range(len(estaciones) - 1):
-                G.add_edge(estaciones[i], estaciones[i + 1],
-                           color=color_map.get(color_key, 'gray'))  # Usa color del mapa
-
-        transformer = Transformer.from_crs("EPSG:4326", "EPSG:3857", always_xy=True)
-        pos_web = {
-            estacion: transformer.transform(lon, lat)
-            for estacion, (lat, lon) in self.station_coordinates.items()
-        }
-
-        fig, ax = plt.subplots(figsize=(12, 10))
-
-        # Dibujar el grafo del metro
-        edges = G.edges()
-        colors = [G[u][v]['color'] for u, v in edges]
-        nx.draw(
-            G, pos_web, with_labels=True, node_size=650, node_color="white",
-            edge_color=colors, width=4, font_size=6, font_weight="bold", ax=ax
-        )
-
-        # 2. Agregar los hoteles del objeto Hotel
-        if hasattr(self.hotel_object, 'hoteles') and not self.hotel_object.hoteles.empty:
-            gdf_hoteles = gpd.GeoDataFrame(
-                self.hotel_object.hoteles,
-                geometry=gpd.points_from_xy(self.hotel_object.hoteles['longitud'],
-                                            self.hotel_object.hoteles['latitud']),
-                crs="EPSG:4326"
-            ).to_crs(epsg=3857)
-
-            gdf_hoteles.plot(ax=ax, color='green', markersize=150, alpha=0.7, label='Hoteles')
-        else:
-            print("No se encontraron hoteles generados en el objeto Hotel proporcionado.")
-
-        # 3. Añadir centros y círculos
-        centro_sistema = gpd.GeoSeries([Point(self.centroide_latlon[1], self.centroide_latlon[0])],
-                                       crs="EPSG:4326").to_crs(epsg=3857)
-        radio_metros = self.radio_km * 1000  # Convertir km a metros
-        cx, cy = centro_sistema.geometry[0].x, centro_sistema.geometry[0].y
-
-        ax.set_xlim(cx - radio_metros * 1.2, cx + radio_metros * 1.2)
-        ax.set_ylim(cy - radio_metros * 1.2, cy + radio_metros * 1.2)
-
-        ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
-
-        centro_sistema.plot(ax=ax, color='blue', markersize=100, zorder=4, label='Centro del Sistema de Metro')
-        circulo_sistema = centro_sistema.buffer(radio_metros)
-        circulo_sistema.plot(ax=ax, facecolor='none', edgecolor='blue', linestyle='--', linewidth=2, zorder=2)
-
-
-        ax.set_title('Sistema de Metro y Hoteles Integrados', fontsize=16, fontweight='bold')
-        ax.legend(loc='upper right')
-        ax.set_axis_off()
-        plt.tight_layout()
-
-        # Guardar y mostrar la imagen
-        plt.savefig("sistema_y_hoteles_integrados.png", dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
 
 
@@ -766,28 +742,19 @@ if __name__ == "__main__":
     sistema_metro.graphics_trian_city(color_map=color_map)
     sistema_metro.guardar_sistema("sistema_generico.json")
 
-    hoteles = Hotel(lat=sistema_metro.centroide_latlon[0], lon=sistema_metro.centroide_latlon[1], num_hoteles=150, max_distancia_km=1, mean_distancia_km=0.5, mean_precio=100, std_precio=20)
+    hoteles = Hotel(lat=sistema_metro.centroide_latlon[0], lon=sistema_metro.centroide_latlon[1], num_hoteles=60, max_distancia_km=1, mean_distancia_km=0.5, mean_precio=100, std_precio=20)
     df_hoteles = hoteles.hotel_generation_points(system=sistema_metro.system, stations=sistema_metro.stations, station_coordinates=sistema_metro.station_coordinates)
     print("Hoteles generados:\n", df_hoteles)
     hoteles.save_hotels_csv("hoteles_generados.csv")
 
     hoteles.plot_hotels(lat_city=40.4168, lon_city=-3.7038)
 
-    # Ahora crea IntegratedSystem y pasa el objeto hoteles
-    integrated_system = IntegratedSystem(hotel_object=hoteles)  # Pasa el objeto Hotel
-
-    integrated_system.load_system(sistema_basico_prueba)
-    integrated_system.add_station(posiciones_estaciones, (40.4168, -3.7038))
-    analisis_geo = integrated_system.geographics_dates()
-
-    # Graficar todo junto, usando los hoteles del objeto pasado
-    integrated_system.plot_everything(color_map=color_map, lat_city=40.4168, lon_city=-3.7038)
-
-
-    aeropuerto = Airport()
-    ubicacion_aeropuerto = aeropuerto.adq_ubication(station_coordinates=sistema_metro.station_coordinates, centroide_latlon=sistema_metro.centroide_latlon)
-    print("Ubicación del aeropuerto (latitud, longitud):", ubicacion_aeropuerto)
-    aeropuerto.plot_airport(lat_city=40.4168, lon_city=-3.7038)
+    restaurantes = Restaurantes(lat=sistema_metro.centroide_latlon[0], lon=sistema_metro.centroide_latlon[1], num_restaurantes=150, max_distancia_km=0.5,
+                                mean_distancia_km=1, lambda_poisson=15, alpha=4, beta=2, mean_tiempo=30, std_tiempo=5)
+    restaurantes.restaurant_generation_points(system=sistema_metro.system, stations=sistema_metro.stations, station_coordinates=sistema_metro.station_coordinates)
+    print("Restaurantes generados:\n", restaurantes.restaurantes)
+    restaurantes.save_restaurantes_csv("restaurantes.csv")
+    restaurantes.plot_restaurantes(lat_city=40.4168, lon_city=-3.7038)
 
 
 
