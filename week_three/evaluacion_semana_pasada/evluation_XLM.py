@@ -46,7 +46,7 @@ def evaluar_respuesta(pregunta, respuesta_base, respuesta_usuario):
     prob_contradiction = probs[0].item()
 
     return {
-        "es_correcta": prob_entailment > 0.5,
+        "es_correcta": prob_entailment > 0.7,
         "confianza": prob_entailment,
         "probabilidades": {
             "entailment": prob_entailment,
