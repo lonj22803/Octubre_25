@@ -307,7 +307,7 @@ class TrainSystem:
         print(f"Coordenadas de estaciones guardadas en {filename}")
         return
 
-class Hotel():
+class Hotel:
     """
     Clase para representar un hotel en la ciudad, que hereda del sistema de metro.
     El centro en latitud y longitud del hotel se utiliza para centrar el sistema de metro.
@@ -335,48 +335,62 @@ class Hotel():
         self.std_precio = std_precio
         self.hoteles = pd.DataFrame()
 
-    def hotel_generation_points(self):
+    def hotel_generation_points(self, system, stations,station_coordinates):
         """
-        Genera puntos de hoteles alrededor del centro de la ciudad con una distribución
-        exponencial respecto a la distancia desde el centro.
+        Genera puntos de hoteles alrededor de las estaciones de metro donde se cuentran mas de
+        una linea de metro y a partir de ellos crea una distribución de probabilidad exponencial
+        para generar los hoteles, al rededor de esos puntos, toma todos los toteles que se desean
+        generar y los distribuye en la ciudad.
         :return: DataFrame con las coordenadas y precios de los hoteles generados.
         """
+        nombre_hoteles = [f"Hotel_{i+1}" for i in range(self.num_hoteles)]
         latitudes = []
         longitudes = []
         precios = []
         precios_todo_incluido = []
         calificacion_hotel = []
 
-        for _ in range(self.num_hoteles):
-            # Generar una distancia aleatoria con distribución exponencial
-            distancia = np.random.exponential(self.mean_distancia_km)
-            while distancia > self.max_distancia_km:
+        #Identificamos las estaciones con mas de una linea de metro
+        stations_all_lines =[]
+        for line, date in system.items():
+            stations_all_lines.extend(date["estaciones"])
+
+        repeat_stations = [station for station in set(stations_all_lines) if stations_all_lines.count(station) > 1]
+
+        #Obtenemos las coordenadas de esas estaciones
+        coords_repeat_stations = [station_coordinates[station] for station in repeat_stations if station in station_coordinates]
+        if not coords_repeat_stations:
+            raise ValueError("No se encontraron estaciones con más de una línea de metro o no tienen coordenadas asignadas.")
+        print("====Las estaciones que tienen mas de una linea de metro =====\n ", repeat_stations)
+
+        #Generamos los hoteles alrededor de esas estaciones
+        hotel_for_station = max(1, self.num_hoteles // len(coords_repeat_stations))
+        for (lat_est, lon_est) in coords_repeat_stations:
+            for _ in range(hotel_for_station):
+                if len(latitudes) >= self.num_hoteles:
+                    break
+                # Generar distancia y ángulo aleatorio
                 distancia = np.random.exponential(self.mean_distancia_km)
+                while distancia > self.max_distancia_km:
+                    distancia = np.random.exponential(self.mean_distancia_km)
+                angulo = random.uniform(0, 2 * np.pi)
 
-            # Generar un ángulo aleatorio
-            angulo = random.uniform(0, 2 * np.pi)
+                # Calcular nuevas coordenadas
+                delta_lat = (distancia / 111) * np.cos(angulo)
+                delta_lon = (distancia / (111 * np.cos(np.radians(lat_est)))) * np.sin(angulo)
+                nueva_lat = lat_est + delta_lat
+                nueva_lon = lon_est + delta_lon
+                latitudes.append(round(nueva_lat, 6))
+                longitudes.append(round(nueva_lon, 6))
+                precio = max(20, np.random.normal(self.mean_precio, self.std_precio))
+                precios.append(round(precio, 2))
+                precios_todo_incluido.append(round(precio * 1.3, 2))  # Suponiendo que todo incluido es un 30% más caro
+                calificacion_hotel.append(round(random.uniform(1, 5), 1))
 
-            # Calcular las coordenadas del hotel
-            delta_lat = (distancia / 111) * np.cos(angulo)  # Aproximación: 1 grado latitud ≈ 111 km
-            delta_lon = (distancia / (111 * np.cos(np.radians(self.city_center[0])))) * np.sin(angulo)  # Ajuste por latitud
 
-            lat_hotel = self.city_center[0] + delta_lat
-            lon_hotel = self.city_center[1] + delta_lon
-
-            latitudes.append(round(lat_hotel, 6))
-            longitudes.append(round(lon_hotel, 6))
-
-            # Generar un precio aleatorio con distribución normal
-            precio = max(20, np.random.normal(self.mean_precio, self.std_precio))  # Precio mínimo de 20
-            precios.append(round(precio, 2))
-            #generamos precios todo incluido para otra columna
-            precio_todo_incluido = precio * 1.3  # Suponiendo un 30% más para todo incluido
-            precios_todo_incluido.append(round(precio_todo_incluido, 2))
-            #generamos calificación del hotel entre 1 y 5 en una distribución de poisson
-            calificacion = min(5, max(1, int(np.random.poisson(3))))  # Media en 3, entre 1 y 5
-            calificacion_hotel.append(calificacion)
 
         self.hoteles = pd.DataFrame({
+            'nombre_hotel': nombre_hoteles[:len(latitudes)],
             'latitud': latitudes,
             'longitud': longitudes,
             'precio': precios,
@@ -385,6 +399,18 @@ class Hotel():
         })
 
         return self.hoteles
+
+    def save_hotels_csv(self, filename: str):
+        """
+        Guarda los datos de los hoteles en un archivo CSV.
+        :param filename: Nombre del archivo donde se guardarán los datos.
+        :return:
+        """
+        if self.hoteles.empty:
+            raise ValueError("No hay datos de hoteles para guardar. Genera los hoteles primero.")
+        self.hoteles.to_csv(filename, index=False)
+        print(f"Datos de hoteles guardados en {filename}")
+        return
 
     def plot_hotels(self, lat_city=None, lon_city=None):
         """
@@ -446,6 +472,105 @@ class Hotel():
         #guardamos la imagen
         ruta_salida = os.path.join(os.path.dirname(__file__), "hoteles_mapa.png")
         plt.savefig(ruta_salida, dpi=300, bbox_inches='tight', facecolor='white')
+        plt.show()
+
+
+
+
+
+
+
+"""===== Clase unificadora de sistema de metro y hoteles ====="""
+
+class IntegratedSystem(TrainSystem):
+    """
+    Clase que hereda de TrainSystem y recibe un objeto Hotel para acceder a sus datos.
+    Permite graficar el sistema de metro junto con los hoteles en un mapa, sin generar hoteles.
+    """
+
+    def __init__(self, hotel_object):
+        """
+        Inicializa la clase heredando de TrainSystem y recibiendo un objeto Hotel.
+
+        :param hotel_object: Un objeto de la clase Hotel que ya ha generado hoteles.
+        """
+        TrainSystem.__init__(self)  # Inicializa TrainSystem
+        if not isinstance(hotel_object, Hotel):
+            raise ValueError("El parámetro debe ser un objeto de la clase Hotel.")
+        self.hotel_object = hotel_object  # Almacena el objeto Hotel para acceder a sus datos
+
+    def plot_everything(self, color_map: dict, lat_city: float = 40.4168, lon_city: float = -3.7038):
+        """
+        Grafica el sistema de metro y los hoteles (del objeto Hotel proporcionado) en un solo mapa.
+
+        :param color_map: Diccionario con colores para las líneas del metro.
+        :param lat_city: Latitud del centro de la ciudad (opcional).
+        :param lon_city: Longitud del centro de la ciudad (opcional).
+        """
+        # 1. Verificar que el sistema de metro esté cargado
+        if not hasattr(self, 'system') or not self.system:
+            raise ValueError("El sistema de metro no ha sido cargado. Usa load_system primero.")
+
+        # Crear el grafo del sistema de metro
+        G = nx.Graph()
+        for color_key, datos_linea in self.system.items():
+            estaciones = datos_linea["sentido_ida"]
+            for i in range(len(estaciones) - 1):
+                G.add_edge(estaciones[i], estaciones[i + 1],
+                           color=color_map.get(color_key, 'gray'))  # Usa color del mapa
+
+        transformer = Transformer.from_crs("EPSG:4326", "EPSG:3857", always_xy=True)
+        pos_web = {
+            estacion: transformer.transform(lon, lat)
+            for estacion, (lat, lon) in self.station_coordinates.items()
+        }
+
+        fig, ax = plt.subplots(figsize=(12, 10))
+
+        # Dibujar el grafo del metro
+        edges = G.edges()
+        colors = [G[u][v]['color'] for u, v in edges]
+        nx.draw(
+            G, pos_web, with_labels=True, node_size=650, node_color="white",
+            edge_color=colors, width=4, font_size=6, font_weight="bold", ax=ax
+        )
+
+        # 2. Agregar los hoteles del objeto Hotel
+        if hasattr(self.hotel_object, 'hoteles') and not self.hotel_object.hoteles.empty:
+            gdf_hoteles = gpd.GeoDataFrame(
+                self.hotel_object.hoteles,
+                geometry=gpd.points_from_xy(self.hotel_object.hoteles['longitud'],
+                                            self.hotel_object.hoteles['latitud']),
+                crs="EPSG:4326"
+            ).to_crs(epsg=3857)
+
+            gdf_hoteles.plot(ax=ax, color='green', markersize=150, alpha=0.7, label='Hoteles')
+        else:
+            print("No se encontraron hoteles generados en el objeto Hotel proporcionado.")
+
+        # 3. Añadir centros y círculos
+        centro_sistema = gpd.GeoSeries([Point(self.centroide_latlon[1], self.centroide_latlon[0])],
+                                       crs="EPSG:4326").to_crs(epsg=3857)
+        radio_metros = self.radio_km * 1000  # Convertir km a metros
+        cx, cy = centro_sistema.geometry[0].x, centro_sistema.geometry[0].y
+
+        ax.set_xlim(cx - radio_metros * 1.2, cx + radio_metros * 1.2)
+        ax.set_ylim(cy - radio_metros * 1.2, cy + radio_metros * 1.2)
+
+        ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
+
+        centro_sistema.plot(ax=ax, color='blue', markersize=100, zorder=4, label='Centro del Sistema de Metro')
+        circulo_sistema = centro_sistema.buffer(radio_metros)
+        circulo_sistema.plot(ax=ax, facecolor='none', edgecolor='blue', linestyle='--', linewidth=2, zorder=2)
+
+
+        ax.set_title('Sistema de Metro y Hoteles Integrados', fontsize=16, fontweight='bold')
+        ax.legend(loc='upper right')
+        ax.set_axis_off()
+        plt.tight_layout()
+
+        # Guardar y mostrar la imagen
+        plt.savefig("sistema_y_hoteles_integrados.png", dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
 
 
@@ -530,11 +655,22 @@ if __name__ == "__main__":
     sistema_metro.graphics_trian_city(color_map=color_map)
     sistema_metro.guardar_sistema("sistema_generico.json")
 
-    hoteles = Hotel(lat=sistema_metro.centroide_latlon[0], lon=sistema_metro.centroide_latlon[1], num_hoteles=100, max_distancia_km=(analisis_geo['radio_sistema']*0.8), mean_distancia_km=1, mean_precio=100, std_precio=20)
-    df_hoteles = hoteles.hotel_generation_points()
+    hoteles = Hotel(lat=sistema_metro.centroide_latlon[0], lon=sistema_metro.centroide_latlon[1], num_hoteles=150, max_distancia_km=1, mean_distancia_km=0.5, mean_precio=100, std_precio=20)
+    df_hoteles = hoteles.hotel_generation_points(system=sistema_metro.system, stations=sistema_metro.stations, station_coordinates=sistema_metro.station_coordinates)
     print("Hoteles generados:\n", df_hoteles)
+    hoteles.save_hotels_csv("hoteles_generados.csv")
 
     hoteles.plot_hotels(lat_city=40.4168, lon_city=-3.7038)
+
+    # Ahora crea IntegratedSystem y pasa el objeto hoteles
+    integrated_system = IntegratedSystem(hotel_object=hoteles)  # Pasa el objeto Hotel
+
+    integrated_system.load_system(sistema_basico_prueba)
+    integrated_system.add_station(posiciones_estaciones, (40.4168, -3.7038))
+    analisis_geo = integrated_system.geographics_dates()
+
+    # Graficar todo junto, usando los hoteles del objeto pasado
+    integrated_system.plot_everything(color_map=color_map, lat_city=40.4168, lon_city=-3.7038)
 
 
 
