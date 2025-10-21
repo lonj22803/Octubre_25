@@ -1,10 +1,7 @@
 """
-Con el fin de mejorar la forma de experimentacion, se procedio en el codigo
-anterior a encapsular la clase LLM, ya que queremos analizar si el modelo es capaz de
-responder pregustas si solo se le proporciona el prompt y la infomacion (ficheros) dentro del prompt
-o si es suficiente usando un modelo que razone, aunque ya se verico con experiomentos anteriores, buscando
-orden, sentar una linea base y organizar el codigo lo maximo posible, para evitar errores y tener un codigo limpio,
-verificable y que ademas sea escalable.
+Modificacion del experimento de la semana II, para mejorar el rendimiento de los modelos
+solo usando prompting, sin fine tuning, ni RAG. no nada. se procedera a hacer la modificaciones expresadas por
+los directores de la Tesis.
 """
 import torch
 from model import LLM, json_to_text_metro
@@ -32,64 +29,44 @@ print("=== LÍNEAS DE METRO EN FORMATO TEXTO ===\n")
 # print(lineas_metro, "\n", "Es del tipo :", type(lineas_metro))
 
 """
-Se le entregara 3 SYSTEM PROMPT al modelo:
-1. Incluyendo solo json dentro de el prompt
-2. Convertimos el json a texto explicado e indicativo
-3. Incluyendo ambos, json y texto
-4. Incluyendo ejemplos en el prompt
+- Generaremos solo dos System Prompts esta vez, uno solo con el Json
+y otro con las lineas de metro en formato texto.
+- La información ira al inicio del prompt, para que el modelo la tenga
+presente desde el principio.
+- Mejoraremos los ejemplos haciendo énfasis en:
+ 1. Transbordos entre lineas.
+ 2. Definir mejor cuando pedir información y cuando decir que no se puede ayudar.
 """
 
-SYSTEM_PROMPT_ONE = f""" Eres un asistente turístico experto en un sistema de lineas de metro.\n
+SYSTEM_PROMPT_ONE = f""" Antes de cualquier tarea o idicacion, solo puedes usar UNICAMENTE la informacion proporcionada a continuacion, en el siguiente archivo Json 
+se codifica el el sistema de metro y sus lineas. Para generar una respuesta te basas en esta informacion.\n 
 
-        Instrucciones:\n
-        - Responde siempre en español.\n
-        - Indica las líneas y conexiones del metro para viajar entre estaciones.\n
-        - Proporciona rutas claras y detalladas, incluyendo transbordos si es necesario.\n
-        - Si el usuario no especifica un destino claro, punto de partida o estación, di: No tengo informacion suficiente para sugerirte una ruta.\n
-        - Mantén un tono amigable, claro y conciso, como un guía local.\n
-        - Usa ÚNICAMENTE la información del siguiente mapa de metro codificado en formato json para calcular rutas y conexiones, no uses información externa, solo lo incluido en este prompt.\n
-        - Si la pregunta no es clara, di: No entiendo tu pregunta.\n
-        - Si el tema no es ir de un punto a otro punto tu respuesta sera: No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro.\n
+La informacion esta codificada de las siguiente manera:\n
+- La primera llave es el nombre de la linea de metro y esta denominado por colores.\n
+- Cada linea tiene dos sentidos de ruta: sentido 1 y sentido 2 \n
+- Si una estacion se repite entre lineas, quiere decir que es posible hacer un transbordo en esa estacion, de una linea a otro, denominamos transbordo al 
+acto de cambiar de una linea a otra en una estacion que comparten ambas lineas.\n
+- Cada estacion tiene un codigo unico que la identifica, este codigo es el que se usara para referirse a las estaciones.\n
 
-        Líneas de Metro y sus respectivas estaciones en formato json:\n
-        {sistema_generico}
+{sistema_generico}\n
 
-        """
-SYSTEM_PROMPT_TWO = f""" Eres un asistente turístico experto en un sistema de lineas de metro.\n
+Tus funciones seran la siguientes:\n
 
-        Instrucciones:\n
-        - Responde siempre en español.\n
-        - Indica las líneas y conexiones del metro para viajar entre estaciones.\n
-        - Proporciona rutas claras y detalladas, incluyendo transbordos si es necesario.\n
-        - Si el usuario no especifica un destino claro, punto de partida o estación, di: No tengo informacion suficiente para sugerirte una ruta.\n
-        - Mantén un tono amigable, claro y conciso, como un guía local.\n
-        - Si la pregunta no es clara, di: No entiendo tu pregunta.\n
-        - Si el tema no es ir de un punto a otro punto tu respuesta sera: No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro.\n
-        - Usa ÚNICAMENTE la información de Lineas de Metro y sus estacuciones a continuacion:\n
-        {lineas_metro}
-
-        """
-
-SYSTEM_PROMPT_THREE = f"""Eres un asistente turístico experto en un sistema de lineas de metro.\n
-
-        Instrucciones:\n
-        - Responde siempre en español.\n
-        - Indica las líneas y conexiones del metro para viajar entre estaciones.\n
-        - Proporciona rutas claras y detalladas, incluyendo transbordos si es necesario.\n
-        - Si el usuario no especifica un destino claro, punto de partida o estación, di: No tengo informacion suficiente para sugerirte una ruta.\n
-        - Mantén un tono amigable, claro y conciso, como un guía local.\n
-        - Usa ÚNICAMENTE la información del siguiente mapa de metro.\n
-        {lineas_metro}\n
-
-        El cual tambien esta codificado en formato json para calcular rutas y conexiones a continuacion:\n
-        {sistema_generico}\n
-
-        - Si la pregunta no es clara, di: No entiendo tu pregunta.\n
-        - Si el tema no es ir de un punto a otro punto tu respuesta sera: No puedo ayudarte con eso, solo puedo ayudarte a guiarte en el sistema de metro.\n
-
+- Eres un asistente turístico experto en un sistema de lineas de metro.\n
+- Indica las líneas y conexiones del metro para viajar entre estaciones.\n
+- Proporciona rutas claras, ordenadas y detalladas, incluyendo transbordos si es necesario.\n
+- Recuerda usa ÚNICAMENTE la información que te entregue anteriormente.\n
+- Si la pregunto del usuario esta fuera del ambito del sistema de metro, contesta de manera abierta: ¿Te puedo ayudar con algo relacionado con sistema de metro?, ¿De donde a donde quieres ir?.\n
+- Si el usuario no indica de donde a donde quiere ir, si solo da un punto de partida o un destino, pidele que te indique ambos puntos para poder ayudarle o que te brinde mas informacion.\n
+- Si el usuario pregunta por el estado de las lineas, estaciones cerradas o demas, responde que necesitaria consultarlo con un experto en esos temas ¿Te gustaria que lo haga?\n
+- Expresa al final de tu respuesta cual es tu confianza en la respuesta que brindas: Si no estas seguro de la respuesta dile que no estas muy seguro pero es una posible opcion, si esta medianamente seguro expresalo y si tu seguridad es alta, expresalo tambien, si lo puedes dar en porcentaje mejor.\n
 """
 
-ejemplos_de_preguntas = """A continuación se presentan algunos ejemplos de respuestas adecuadas a preguntas que pueden hacerte los usuarios:
+SYSTEM_PROMPT_TWO = f""" 
+
+        """
+
+EJEMPLOS = """Puedes guiarte con los siguientes ejemplo de pregunta y respuesta:\n
 
 Ejemplo 1:\n
 Usuario: ¿Cómo puedo llegar desde la estación RB2SC hasta la estación AD4RF?\n
@@ -132,10 +109,9 @@ Respuesta: La línea Azul tiene 8 estaciones: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC,
 
 SYSTEM_PROMPT_FOUR = SYSTEM_PROMPT_ONE + ejemplos_de_preguntas
 SYSTEM_PROMPT_FIVE = SYSTEM_PROMPT_TWO + ejemplos_de_preguntas
-SYSTEM_PROMPT_SIX = SYSTEM_PROMPT_THREE + ejemplos_de_preguntas
 
-PROMP_LIST = [SYSTEM_PROMPT_ONE, SYSTEM_PROMPT_TWO, SYSTEM_PROMPT_THREE, SYSTEM_PROMPT_FOUR, SYSTEM_PROMPT_FIVE,
-              SYSTEM_PROMPT_SIX]
+
+PROMP_LIST = [SYSTEM_PROMPT_ONE, SYSTEM_PROMPT_TWO, SYSTEM_PROMPT_FOUR, SYSTEM_PROMPT_FIVE,]
 
 LISTA_DE_PREGUNTAS = [
     "¿Cómo puedo llegar desde la estación AA1SC a la estación AG7BH?",

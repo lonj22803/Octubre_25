@@ -78,13 +78,12 @@ en la medida en que se modifique el código y logremos guiar la generación de d
 se resaltan algunos puntos importantes que deben cambiar.
 
 1.  Nunca trabajar con una sola distribución de probabilidad para una variable, sino que esta sea la combinación
-de diferentes gaussianas, o incluso de otros tipos de distribuciones, para lograr un comportamiento más realista.
+de diferentes gaussianas, o incluso de otros tipos de distribuciones, para lograr un comportamiento más realista.  
 
     **Ejemplo:** Un hotel está dado en el centro de una ciudad, pero también dada una probabilidad más alta de estar cerca
         de una estación por la cual cruzan varias líneas de metro. Ahora bien, la combinación de un hotel, dada una estación central,
         da más probabilidad de que exista un restaurante cerca; a su vez, la combinación de estos puntos de interés sugiere que debe
         existir una atracción turística próxima, y así sucesivamente.
-
 
 2.  Los precios deben girar en función de una distribución de probabilidad, pero estos también deben ser una
 probabilidad conjunta con puntos turísticos y paradas de metro, para que el modelo pueda aprender a relacionar qué zonas

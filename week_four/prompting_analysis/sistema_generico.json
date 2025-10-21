@@ -1,141 +1,98 @@
 {
     "amarilla": {
-        "estaciones": [
-            "AA1SC",
-            "AB2SC",
-            "AC3SC",
-            "AD4RF",
-            "AE5VE",
-            "AF6SC",
-            "AG7BH"
+        "sentido_one": [
+            "AA1SC1SC",
+            "AB2SC2SC",
+            "AC3SC3SC",
+            "AD4RF4SC",
+            "AE5VE5SC",
+            "AF6SC6SC",
+            "AG7BH7SC"
         ],
-        "sentido_ida": [
-            "AA1SC",
-            "AB2SC",
-            "AC3SC",
-            "AD4RF",
-            "AE5VE",
-            "AF6SC",
-            "AG7BH"
-        ],
-        "sentido_vuelta": [
-            "AG7BH",
-            "AF6SC",
-            "AE5VE",
-            "AD4RF",
-            "AC3SC",
-            "AB2SC",
-            "AA1SC"
+        "sentido_two": [
+            "AG7BH7SC",
+            "AF6SC6SC",
+            "AE5VE5SC",
+            "AD4RF4SC",
+            "AC3SC3SC",
+            "AB2SC2SC",
+            "AA1SC1SC"
         ]
     },
     "azul": {
-        "estaciones": [
-            "BA1SC",
-            "BB2OC",
-            "BC3SC",
-            "BD2VB",
-            "BE4RC",
-            "BF5SC",
-            "BG6SC",
-            "AG7BH"
+        "sentido_one": [
+            "BA1SC1SC",
+            "BB2OC2SC",
+            "BC3SC3SC",
+            "BD2VB2SC",
+            "BE4RC4SC",
+            "BF5SC5SC",
+            "BG6SC6SC",
+            "AG7BH7SC"
         ],
-        "sentido_ida": [
-            "BA1SC",
-            "BB2OC",
-            "BC3SC",
-            "BD2VB",
-            "BE4RC",
-            "BF5SC",
-            "BG6SC",
-            "AG7BH"
-        ],
-        "sentido_vuelta": [
-            "AG7BH",
-            "BG6SC",
-            "BF5SC",
-            "BE4RC",
-            "BD2VB",
-            "BC3SC",
-            "BB2OC",
-            "BA1SC"
+        "sentido_two": [
+            "AG7BH7SC",
+            "BG6SC6SC",
+            "BF5SC5SC",
+            "BE4RC4SC",
+            "BD2VB2SC",
+            "BC3SC3SC",
+            "BB2OC2SC",
+            "BA1SC1SC"
         ]
     },
     "roja": {
-        "estaciones": [
-            "RA1SC",
-            "RB2SC",
-            "BE4RC",
-            "RD3VC",
-            "RE5SC",
-            "AD4RF",
-            "RG6SC"
+        "sentido_one": [
+            "RA1SC1SC",
+            "RB2SC2SC",
+            "BE4RC4SC",
+            "RD3VC3OD",
+            "RE5SC5SC",
+            "AD4RF4SC",
+            "RG6SC6SC"
         ],
-        "sentido_ida": [
-            "RA1SC",
-            "RB2SC",
-            "BE4RC",
-            "RD3VC",
-            "RE5SC",
-            "AD4RF",
-            "RG6SC"
-        ],
-        "sentido_vuelta": [
-            "RG6SC",
-            "AD4RF",
-            "RE5SC",
-            "RD3VC",
-            "BE4RC",
-            "RB2SC",
-            "RA1SC"
+        "sentido_two": [
+            "RG6SC6SC",
+            "AD4RF4SC",
+            "RE5SC5SC",
+            "RD3VC3OD",
+            "BE4RC4SC",
+            "RB2SC2SC",
+            "RA1SC1SC"
         ]
     },
     "verde": {
-        "estaciones": [
-            "VA1SC",
-            "BD2VB",
-            "RD3VC",
-            "VD4SC",
-            "AE5VE",
-            "VF6SC"
+        "sentido_one": [
+            "VA1SC1SC",
+            "BD2VB2SC",
+            "RD3VC3OD",
+            "VD4SC4SC",
+            "AE5VE5SC",
+            "VF6SC6SC"
         ],
-        "sentido_ida": [
-            "VA1SC",
-            "BD2VB",
-            "RD3VC",
-            "VD4SC",
-            "AE5VE",
-            "VF6SC"
-        ],
-        "sentido_vuelta": [
-            "VF6SC",
-            "AE5VE",
-            "VD4SC",
-            "RD3VC",
-            "BD2VB",
-            "VA1SC"
+        "sentido_two": [
+            "VF6SC6SC",
+            "AE5VE5SC",
+            "VD4SC4SC",
+            "RD3VC3OD",
+            "BD2VB2SC",
+            "VA1SC1SC"
         ]
     },
     "naranja": {
-        "estaciones": [
-            "OA1SC",
-            "OB2SC",
-            "BB2OC",
-            "OC3SC",
-            "RD3VC"
+        "sentido_one": [
+            "OA1SC1SC",
+            "OB2SC2SC",
+            "BB2OC2SC",
+            "OC3SC3SC",
+            "RD3VC3OD"
         ],
-        "sentido_ida": [
-            "OA1SC",
-            "OB2SC",
-            "BB2OC",
-            "OC3SC",
-            "RD3VC"
-        ],
-        "sentido_vuelta": [
-            "RD3VC",
-            "OC3SC",
-            "BB2OC",
-            "OB2SC",
-            "OA1SC"
+        "sentido_two": [
+            "RD3VC3OD",
+            "OC3SC3SC",
+            "BB2OC2SC",
+            "OB2SC2SC",
+            "OA1SC1SC"
         ]
     }
 }
