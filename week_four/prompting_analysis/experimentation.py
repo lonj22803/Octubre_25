@@ -93,10 +93,10 @@ Las estaciones que cruzarás son: AE5VE5SC → AD4RF4SC → RE5SC5SC → RD3VC3O
 Existen más opciones, pero estas son las más cortas, con menos transbordos y de las cuales estoy completamente seguro que son una buena opción.\n
 --- Falta ---
 Ejemplo 4:\n
-Usuario: ¿Cómo llego de VA1SC a OA1SC?\n
-Respuesta: Toma la línea Verde en sentido de ida hasta BD2VB, luego trasborda a la línea Azul y en sentido de vuelta llega a BB2OC. 
-Después trasborda a la línea Naranja y en sentido de vuelta llegarás a OA1SC. 
-Las estaciones que cruzarás son: VA1SC → BD2VB → BB3OC → BB2OC → OB2SC → OA1SC\n
+Usuario: ¿Cómo llego de VA1SC1SC a OA1SC1SC?\n
+Respuesta: Toma la línea Verde en sentido de ida hasta BD2VB2SC, luego trasborda a la línea Azul y en sentido de vuelta llega a BB2OC2SC. 
+Después trasborda a la línea Naranja y en sentido de vuelta llegarás a OA1SC1SC. 
+Las estaciones que cruzarás son: VA1SC1SC → BD2VB2SC → BB2OC2SC → BB2OC2SC → OB2SC2SCC → OA1SC1SC\n
 
 Ejemplo 5:\n
 Usuario: ¿Alguna linea no esta operativa hoy?\n
