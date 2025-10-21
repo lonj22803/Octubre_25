@@ -44,6 +44,7 @@ se codifica el el sistema de metro y sus lineas. Para generar una respuesta te b
 La informacion esta codificada de las siguiente manera:\n
 - La primera llave es el nombre de la linea de metro y esta denominado por colores.\n
 - Cada linea tiene dos sentidos de ruta: sentido 1 y sentido 2 \n
+- El sentido es muy importante, ya que indica la direccion y el orden en cual se recorren las estaciones, por lo que debes respetar el orden de las estaciones en cada sentido.\n
 - Si una estacion se repite entre lineas, quiere decir que es posible hacer un transbordo en esa estacion, de una linea a otro, denominamos transbordo al 
 acto de cambiar de una linea a otra en una estacion que comparten ambas lineas.\n
 - Cada estacion tiene un codigo unico que la identifica, este codigo es el que se usara para referirse a las estaciones.\n
@@ -69,29 +70,28 @@ SYSTEM_PROMPT_TWO = f"""
 EJEMPLOS = """Puedes guiarte con los siguientes ejemplo de pregunta y respuesta:\n
 
 Ejemplo 1:\n
-Usuario: ¿Cómo puedo llegar desde la estación RB2SC hasta la estación AD4RF?\n
-Respuesta: Existen múltiples formas de hacerlo, pero para evitar transbordos innecesarios recomiendo seguir por la línea Roja, desde RB2SC hasta tu destino. 
-Las estaciones que cruzarás son: RB2SC → BE4RC → RD3VC → RE5SC → AD4RF\n
+Usuario: ¿Cómo puedo llegar desde la estación RB2SC2SC hasta la estación AD4RF4SC?\n
+Respuesta: Existen múltiples formas de hacerlo, pero para evitar transbordos innecesarios recomiendo seguir la línea Roja en sentido 1, durante cuatro estaciones mas, desde RB2SC hasta tu destino, estoy muy seguro de que esta ruta es muy buena opción.\n 
+Las estaciones que cruzarás hasta llegar a tu destino son: RB2SC2SC → BE4RC4SC → RD3VC3OD → RE5SC5SC → AD4RF4SC\n
 
 Ejemplo 2:\n
 Usuario: ¿Qué estación debo usar para trasbordar de la línea Amarilla a la línea Naranja?\n
-Respuesta: No existe una estación que conecte directamente la línea Amarilla con la línea Naranja. 
-Sin embargo, la forma más corta de pasar de la línea Amarilla a la línea Naranja requiere dos transbordos. 
-Primero, en la línea Amarilla llega a la estación AD4RF; luego, trasborda a la línea Roja y en sentido de vuelta llega a RD3VC, que se conecta con la línea Naranja. 
-Finalmente, en sentido de ida llegarás a tu destino. 
-Las estaciones que cruzarás son: AD4RF → RE5SC → RD3VC\n
+Respuesta: No me especificas de que estación partes, ni a que estación te quieres dirigir. Me gustaría que brindaras esa información.\n 
+Pero si lo que quieres es transbordar de la linea Amarilla a la Naranja, la mejor opcion es usar el tramo de la linea Roja que conecta ambas lineas, ya que estas no se conectan directamente.\n
+Para ello debes partir de la estación AD4RF4SC en la linea Amarilla, viajar en sentido 2 hasta la estación RD3VC3OD, donde podrás trasbordar a la linea Naranja, pero no estoy muy seguro de esta respuesta, ya existen otras opciones y no tengo muchos detalles\n
+Las estaciones que cruzarás en la opción que te doy son: AD4RF4SC → RE5SC5SC → RD3VC3OD\n
 
 Ejemplo 3:\n
-Usuario: Quiero ir de la estación AE5VE a la estación BE4RC, ¿qué ruta me recomiendas?\n
-Respuesta: Existen múltiples formas de hacerlo, pero para evitar transbordos innecesarios recomiendo seguir por la línea Verde desde AE5VE hasta RD3VC, 
-luego trasbordar a la línea Roja y en sentido de vuelta llegar a BE4RC. 
-Las estaciones que cruzarás son: AE5VE → VD4SC → RD3VC → BE4RC\n
+Usuario: Quiero ir de la estación AE5VE5SC a la estación BE4RC4SC, ¿qué ruta me recomiendas?\n
+Respuesta: Existen múltiples formas de de llegar de AE5VE5SC a BE4RC4SC, pero para evitar transbordos innecesarios y trayectos muy extensos recomiendo subirte a la Línea Verde partiendo AE5VE5SC en sentido 2 hasta RD3VC3OD, 
+luego allí, trasborda a la línea Roja y sigue en sentido 2 hasta llegar a BE4RC4SC., estoy bastante seguro de que esta es una buena opción.\n
+Las estaciones que debes cruzarár son: AE5VE5SC → VD4SC4SC → RD3VC3OD → BE4RC4SC\n
 
-Otra opción es tomar la línea Amarilla en sentido de vuelta hasta AD4RF, trasbordar a la línea Roja y en sentido de vuelta llegar a BE4RC. 
-Las estaciones que cruzarás son: AE5VE → AD4RF → RE5SC → RD3VC → BE4RC\n
+Otra opción es subirte la línea Amarilla en sentido 2 hasta AD4RF4SC, allí debes trasbordar a la Línea Roja y en sentido 2 llegar a BE4RC4SC. 
+Las estaciones que cruzarás son: AE5VE5SC → AD4RF4SC → RE5SC5SC → RD3VC3OD → BE4RC4SC\n
 
-Existen más opciones, pero estas son las más cortas y con menos transbordos.\n
-
+Existen más opciones, pero estas son las más cortas, con menos transbordos y de las cuales estoy completamente seguro que son una buena opción.\n
+--- Falta ---
 Ejemplo 4:\n
 Usuario: ¿Cómo llego de VA1SC a OA1SC?\n
 Respuesta: Toma la línea Verde en sentido de ida hasta BD2VB, luego trasborda a la línea Azul y en sentido de vuelta llega a BB2OC. 
@@ -107,9 +107,8 @@ Usuario: ¿Cuántas estaciones hay en la línea Azul?\n
 Respuesta: La línea Azul tiene 8 estaciones: BA1SC, BB2OC, BC3SC, BD2VB, BE4RC, BF5SC, BG6SC y AG7BH.\n
 """
 
-SYSTEM_PROMPT_FOUR = SYSTEM_PROMPT_ONE + ejemplos_de_preguntas
-SYSTEM_PROMPT_FIVE = SYSTEM_PROMPT_TWO + ejemplos_de_preguntas
-
+SYSTEM_PROMPT_FOUR = SYSTEM_PROMPT_ONE + EJEMPLOS
+SYSTEM_PROMPT_FIVE = SYSTEM_PROMPT_TWO + EJEMPLOS
 
 PROMP_LIST = [SYSTEM_PROMPT_ONE, SYSTEM_PROMPT_TWO, SYSTEM_PROMPT_FOUR, SYSTEM_PROMPT_FIVE,]
 
