@@ -1,6 +1,6 @@
 {
     "amarilla": {
-        "sentido_one": [
+        "sentido_uno": [
             "AA1SC1SC",
             "AB2SC2SC",
             "AC3SC3SC",
@@ -9,7 +9,7 @@
             "AF6SC6SC",
             "AG7BH7SC"
         ],
-        "sentido_two": [
+        "sentido_dos": [
             "AG7BH7SC",
             "AF6SC6SC",
             "AE5VE5SC",
@@ -20,7 +20,7 @@
         ]
     },
     "azul": {
-        "sentido_one": [
+        "sentido_uno": [
             "BA1SC1SC",
             "BB2OC2SC",
             "BC3SC3SC",
@@ -30,7 +30,7 @@
             "BG6SC6SC",
             "AG7BH7SC"
         ],
-        "sentido_two": [
+        "sentido_dos": [
             "AG7BH7SC",
             "BG6SC6SC",
             "BF5SC5SC",
@@ -42,7 +42,7 @@
         ]
     },
     "roja": {
-        "sentido_one": [
+        "sentido_uno": [
             "RA1SC1SC",
             "RB2SC2SC",
             "BE4RC4SC",
@@ -51,7 +51,7 @@
             "AD4RF4SC",
             "RG6SC6SC"
         ],
-        "sentido_two": [
+        "sentido_dos": [
             "RG6SC6SC",
             "AD4RF4SC",
             "RE5SC5SC",
@@ -62,7 +62,7 @@
         ]
     },
     "verde": {
-        "sentido_one": [
+        "sentido_uno": [
             "VA1SC1SC",
             "BD2VB2SC",
             "RD3VC3OD",
@@ -70,7 +70,7 @@
             "AE5VE5SC",
             "VF6SC6SC"
         ],
-        "sentido_two": [
+        "sentido_dos": [
             "VF6SC6SC",
             "AE5VE5SC",
             "VD4SC4SC",
@@ -80,14 +80,14 @@
         ]
     },
     "naranja": {
-        "sentido_one": [
+        "sentido_uno": [
             "OA1SC1SC",
             "OB2SC2SC",
             "BB2OC2SC",
             "OC3SC3SC",
             "RD3VC3OD"
         ],
-        "sentido_two": [
+        "sentido_dos": [
             "RD3VC3OD",
             "OC3SC3SC",
             "BB2OC2SC",
