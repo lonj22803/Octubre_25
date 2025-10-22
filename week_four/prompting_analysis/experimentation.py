@@ -20,13 +20,14 @@ ruta_lineas=("sistema_generico.json")
 with open(ruta_lineas, 'r') as f:
     sistema_generico = json.load(f)
 
+
 print("=== SISTEMA GENÉRICO CARGADO ===\n")
-# print(sistema_generico, "\n", "Es del tipo :", type(sistema_generico))
+print(sistema_generico, "\n", "Es del tipo :", type(sistema_generico))
 
 # Extraemos las líneas de metro y las convertimoe en instrucciones
 lineas_metro = json_to_text_metro(sistema_generico)
 print("=== LÍNEAS DE METRO EN FORMATO TEXTO ===\n")
-# print(lineas_metro, "\n", "Es del tipo :", type(lineas_metro))
+print(lineas_metro, "\n", "Es del tipo :", type(lineas_metro))
 
 """
 - Generaremos solo dos System Prompts esta vez, uno solo con el Json
@@ -45,11 +46,11 @@ En el siguiente archivo JSON se codifica el sistema de metro y sus líneas. Toda
 La información está codificada de la siguiente manera:
 - La primera llave es el nombre de la línea del metro, identificada por colores.
 - Cada línea tiene dos sentidos de ruta: *sentido uno* y *sentido dos*.
-- El sentido es muy importante, ya que indica la dirección y el orden en que se recorren las estaciones. Debes respetar este orden en cada sentido.
-- Si una estación se repite entre líneas, significa que es posible hacer un **transbordo** en esa estación. El concepto de transbordo implica que se puede cambiar de una línea a otra con la que se comparte dicha estación.
+- Los sentidos son muy importante, ya que indican la dirección y el orden en que se recorren las estaciones. Debes respetar este orden en cada sentido si deseas ir de una estacion a otra.
+- Si una estación se repite entre líneas, significa que es posible hacer un **transbordo** en esa estación, es decir conecta las lineas. El concepto de transbordo implica que se puede cambiar de una línea a otra.
 - Cada estación tiene un código único que la identifica. Este código es el que se usará para referirse a las estaciones.
 
-{lineas_metro}
+{sistema_generico}
 
 Tus funciones serán las siguientes:
 
@@ -83,7 +84,7 @@ La información está organizada de la siguiente manera:
 
 A continuación se proporciona la descripción de las líneas y estaciones:
 
-{sistema_generico}
+{lineas_metro}
 
 Tus funciones serán las siguientes:
 
