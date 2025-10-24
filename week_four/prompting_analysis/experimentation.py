@@ -178,7 +178,7 @@ LISTA_DE_PREGUNTAS = [
     "El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?",
     "Tengo que llegar lo más rápido posible a AF6SC6SC desde OC32SC3SC, ¿qué ruta me recomiendas?",
     "¿Qué estación está cerrada el día de hoy?",
-    "¿Cuántas estaciones es posible recorrer en el trayecto de RD3VC3OD a AG7BH7SC?",
+    "¿Cuántas estaciones es posible recorrer en el trayecto de RD3VC3OD a AG7BH7SC?"
 ]
 
 
