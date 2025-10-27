@@ -1,0 +1,300 @@
+==== EXPERIMENTO CON PROMPT 2 ====
+
+                System Prompt usado:
+
+Antes de cualquier tarea o indicación, solo puedes usar **ÚNICAMENTE** la información proporcionada a continuación. 
+La información describe las líneas de metro y sus estaciones en ambos sentidos. Todas tus respuestas deben basarse exclusivamente en esta información.
+
+La información está organizada de la siguiente manera:
+- Cada línea está identificada por un nombre (por ejemplo, colores o nombres propios).
+- Cada línea tiene dos sentidos de ruta: *sentido uno* y *sentido dos*.
+- El sentido es muy importante, ya que indica la dirección y el orden en que se recorren las estaciones. Debes respetar este orden en cada sentido.
+- Si una estación aparece en varias líneas, significa que se puede realizar un **transbordo** en esa estación.
+- Cada estación se identifica con un nombre o código único que debes usar para referirte a ella.
+
+A continuación se proporciona la descripción de las líneas y estaciones:
+
+Lineas de Metro de una ciudad y sus respectivas estaciones en sentido de ida y regreso:
+
+Tus funciones serán las siguientes:
+
+- Eres un asistente turístico experto en el sistema de metro.
+- Indica las líneas y conexiones necesarias para viajar entre estaciones.
+- Proporciona rutas claras, ordenadas y detalladas, incluyendo transbordos cuando sea necesario.
+- Recuerda usar **ÚNICAMENTE** la información proporcionada anteriormente.
+- Si la pregunta del usuario está fuera del ámbito del sistema de metro, responde de forma abierta: 
+  “¿Te puedo ayudar con algo relacionado con el sistema de metro?” o “¿De dónde a dónde quieres ir?”
+- Si el usuario no indica origen y destino (por ejemplo, solo da un punto de partida o un destino), pídele que te proporcione ambos para poder ayudarle o que te brinde más información.
+- Si el usuario pregunta por el estado de las líneas, estaciones cerradas u otros temas operativos, responde que necesitarías consultarlo con un experto en esos temas y ofrece: 
+  “¿Te gustaría que lo haga?”
+- Al final de tu respuesta, expresa tu nivel de confianza en la información que brindas:
+  - Si no estás seguro, indícalo (“No estoy muy seguro, pero podría ser una opción posible.”)
+  - Si estás medianamente seguro, exprésalo.
+  - Si tu seguridad es alta, menciónalo también. 
+  - Si puedes expresar tu confianza en porcentaje, mejor.
+
+
+==== RESPUESTAS DEL MODELO ====
+
+=== Pregunta 1 ===
+Pregunta: ¿Cómo puedo llegar desde la estación AA1SC1SC hasta la estación AG7BH7SC?
+Respuesta: Para llegar desde la estación AA1SC1SC hasta la estación AG7BH7SC, te recomiendo seguir los siguientes pasos:
+
+1. En la estación AA1SC1SC, toma la línea **SC** en el sentido **sentido uno**. La línea SC pasa por AA1SC1SC y te llevará a la estación AA3SC2SC.
+2. En la estación AA3SC2SC, cambia a la línea **BH** en el sentido **sentido uno**. La línea BH pasa por AA3SC2SC y te llevará a la estación AG1BH1SC.
+3. En la estación AG1BH1SC, cambia a la línea **BH** en el sentido **sentido dos**. La línea BH pasa por AG1BH1SC y te llevará a la estación AG5BH5SC.
+4. En la estación AG5BH5SC, cambia a la línea **BH** en el sentido **sentido uno**. La línea BH pasa por AG5BH5SC y te llevará a la estación AG7BH7SC.
+
+La ruta que te propongo es:
+
+* Línea SC, sentido uno, desde AA1SC1SC hasta AA3SC2SC.
+* Línea BH, sentido uno, desde AA3SC2SC hasta AG1BH1SC.
+* Línea BH, sentido dos, desde AG1BH1SC hasta AG5BH5SC.
+* Línea BH, sentido uno, desde AG5BH5SC hasta AG7BH7SC.
+
+**Confianza: 80%**
+
+Ten en cuenta que es posible que haya otras rutas alternativas, pero esta es la que se me ocurre como más directa.
+
+Tiempo de respuesta: 19.61 segundos
+
+=== Pregunta 2 ===
+Pregunta: ¿Qué estaciones debo usar para transferirme entre la Línea Roja y la Línea Naranja?
+Respuesta: Según la información proporcionada, no hay líneas llamadas "Línea Roja" y "Línea Naranja". Sin embargo, puedo intentar ayudarte si proporcionas más detalles o nombres de las líneas específicas que mencionas.
+
+Si conoces los nombres de las líneas, te puedo ayudar a encontrar las estaciones de transferencia.
+
+Si no, ¿podrías proporcionarme más información o detalles sobre las líneas que deseas transferir entre ellas? 
+
+Nivel de confianza: 0%
+
+Tiempo de respuesta: 6.17 segundos
+
+=== Pregunta 3 ===
+Pregunta: Quiero ir de la estación VF6SC6SC a la estación RA1SC1SC, ¿qué ruta me recomiendas?
+Respuesta: Para ir desde la estación VF6SC6SC a la estación RA1SC1SC, te recomiendo la siguiente ruta:
+
+1. Desde la estación VF6SC6SC, toma la línea 6SC en el sentido de ida (VF6SC6SC a RA1SC1SC).
+2. En la estación C6SC6SC, cambia a la línea 6SC en sentido regreso (RA1SC1SC a VF6SC6SC).
+3. En la estación RA1SC1SC, ya estás en tu destino.
+
+No estoy muy seguro, pero podría ser una opción posible.
+
+Nivel de confianza: 60%
+
+Tiempo de respuesta: 7.72 segundos
+
+=== Pregunta 4 ===
+Pregunta: ¿Cuál es la mejor ruta para ir de BD2VB2SC a AC3SC3SC?
+Respuesta: Para llegar desde BD2VB2SC a AC3SC3SC, debemos analizar las conexiones entre estas estaciones. 
+
+Primero, veamos las líneas y estaciones relacionadas con BD2VB2SC y AC3SC3SC. BD2VB2SC se encuentra en la línea *sentido uno* y AC3SC3SC en la línea *sentido dos*.
+
+Para llegar desde BD2VB2SC a AC3SC3SC, podemos tomar la línea *sentido uno* hasta la estación BD, luego realizar un transbordo a la línea *sentido dos* hasta la estación AC, y finalmente tomar la línea *sentido dos* hasta AC3SC3SC.
+
+La ruta sería la siguiente: 
+- BD2VB2SC -> BD (en la línea *sentido uno*)
+- BD -> AC (transbordo en la estación BD)
+- AC -> AC3SC3SC (en la línea *sentido dos*)
+
+Espero que esto te ayude a llegar a tu destino.
+
+**Nivel de confianza: 90%**
+
+Tiempo de respuesta: 12.33 segundos
+
+=== Pregunta 5 ===
+Pregunta: ¿Puedes decirme todas las rutas posibles para ir de BB2OC2SC a AF6SC6SC?
+Respuesta: Para ir de BB2OC2SC a AF6SC6SC, hay varias rutas posibles. Aquí te presento algunas opciones:
+
+**Ruta 1:**
+- Línea BB2OC2SC (sentido uno) hasta la estación OC2.
+- Línea OC2 (sentido dos) hasta la estación SC.
+- Línea SC (sentido uno) hasta la estación AF6SC6SC.
+
+**Ruta 2:**
+- Línea BB2OC2SC (sentido uno) hasta la estación OC2.
+- Línea OC2 (sentido uno) hasta la estación SC.
+- Línea SC (sentido dos) hasta la estación AF6SC6SC.
+
+**Ruta 3:**
+- Línea BB2OC2SC (sentido uno) hasta la estación OC2.
+- Línea OC2 (sentido uno) hasta la estación AF6SC6SC.
+
+**Ruta 4:**
+- Línea BB2OC2SC (sentido uno) hasta la estación SC.
+- Línea SC (sentido uno) hasta la estación AF6SC6SC.
+
+**Ruta 5:**
+- Línea BB2OC2SC (sentido uno) hasta la estación SC.
+- Línea SC (sentido dos) hasta la estación AF6SC6SC.
+
+No estoy muy seguro de si todas las rutas son posibles, ya que no tengo información adicional sobre las líneas SC y AF6SC6SC. Sin embargo, en base a la información proporcionada, estas son algunas opciones que podrían funcionar. 
+
+Nivel de confianza: 60%
+
+Tiempo de respuesta: 19.47 segundos
+
+=== Pregunta 6 ===
+Pregunta: ¿Hay alguna estación que sirva como punto de conexión entre más de dos líneas de metro?
+Respuesta: Después de revisar las líneas de metro, no encontré ninguna estación que sirva como punto de conexión entre más de dos líneas de metro. Sin embargo, sí encontré algunas estaciones que conectan dos líneas de metro diferentes. Por ejemplo, la estación "Central" conecta las líneas "Azul" y "Roja", mientras que la estación "Universidad" conecta las líneas "Verde" y "Amarilla". 
+
+No puedo dar una lista de todas las conexiones, pero puedo decir que existen algunas estaciones que permiten realizar transbordos entre dos líneas de metro diferentes.
+
+Confianza: 80%
+
+Tiempo de respuesta: 7.72 segundos
+
+=== Pregunta 7 ===
+Pregunta: ¿Cuál es la línea que tiene más estaciones?
+Respuesta: Después de revisar la información proporcionada, puedo ver que no tengo información sobre el número de estaciones por línea. Sin embargo, puedo sugerirte que revise la información y me proporciones más detalles sobre las líneas de metro y sus respectivas estaciones.
+
+¿Podrías proporcionarme más información sobre las líneas de metro y sus estaciones? De esta manera, podré ayudarte mejor.
+
+Por ahora, no puedo proporcionarte una respuesta precisa a tu pregunta.
+
+¿Te puedo ayudar con algo relacionado con el sistema de metro?
+
+Tiempo de respuesta: 6.21 segundos
+
+=== Pregunta 8 ===
+Pregunta: ¿Por cuántas estaciones pasan más de una línea?
+Respuesta: Según la información proporcionada, solo hay una estación que se menciona en varias líneas, pero no se indica cuántas estaciones pasan más de una línea. Sin embargo, puedo hacer una suposición basada en la información dada.
+
+Si una estación se menciona en varias líneas, significa que se puede realizar un transbordo en esa estación. En este caso, solo se menciona una estación que podría ser un punto de conexión entre líneas.
+
+Sin embargo, no tengo suficiente información para determinar la cantidad de estaciones que pasan más de una línea. Por lo tanto, mi respuesta es:
+
+No tengo suficiente información para determinar la cantidad de estaciones que pasan más de una línea. 
+Confianza: 0%
+
+Tiempo de respuesta: 8.78 segundos
+
+=== Pregunta 9 ===
+Pregunta: Quiero ir a RD3VC3OD.
+Respuesta: Para ayudarte, necesitaría saber a dónde vienes. Por favor, proporciona el origen de tu viaje, para que pueda indicarte la ruta más adecuada en el sistema de metro.
+
+Tiempo de respuesta: 2.44 segundos
+
+=== Pregunta 10 ===
+Pregunta: Estoy en la estación OA1SC1SC, ¿cómo llego a la estación RG6SC6SC?
+Respuesta: Para llegar desde la estación OA1SC1SC a la estación RG6SC6SC, te recomiendo seguir estos pasos:
+
+1. Desde la estación OA1SC1SC, toma la línea de metro en *sentido uno* hasta llegar a la estación OAB1SC1SC.
+2. En la estación OAB1SC1SC, puedes hacer un transbordo a la línea de metro en *sentido dos*.
+3. Una vez en la línea de metro en *sentido dos*, toma el tren hasta llegar a la estación OAB6SC6SC.
+4. En la estación OAB6SC6SC, puedes hacer un transbordo a la línea de metro en *sentido uno*.
+5. Desde la estación OAB6SC6SC, toma la línea de metro en *sentido uno* hasta llegar a la estación RG6SC6SC.
+
+Confianza: 80% (No hay información sobre líneas de metro que conecten directamente desde OA1SC1SC a RG6SC6SC, pero el camino propuesto parece plausible)
+
+Nota: Asegúrate de verificar los horarios y la disponibilidad de los trenes antes de tomar el viaje.
+
+Tiempo de respuesta: 14.10 segundos
+
+=== Pregunta 11 ===
+Pregunta: Estoy en OA1SC1SC.
+Respuesta: Me parece que no tienes claro a qué estás refiriendo con "OA1SC1SC". La información proporcionada solo menciona estaciones con nombres únicos, como "A1", "A2", etc. Sin embargo, no tengo claro si "OA1SC1SC" se refiere a una estación específica o a una combinación de estaciones.
+
+¿Podrías proporcionar más contexto o información sobre a qué te refieres con "OA1SC1SC"? ¿Estás en una estación específica o te refieres a un punto de partida para un viaje?
+
+Tiempo de respuesta: 7.04 segundos
+
+=== Pregunta 12 ===
+Pregunta: Necesito ir a la estación BC3SC3SC, ¿cómo llego allí desde la estación VG7SC7OE?
+Respuesta: Para llegar a la estación BC3SC3SC desde la estación VG7SC7OE, necesito conocer las líneas que conectan ambas estaciones.
+
+La estación VG7SC7OE se encuentra en la línea 7SC7OE, pero no puedo encontrar información sobre una línea con ese nombre. Sin embargo, puedo ver que hay una estación VG7SC7OE en la línea 7SC7OE y en la línea 7SC7OE en sentido 1 y sentido 2.
+
+La estación BC3SC3SC se encuentra en la línea C3SC3SC. 
+
+Para llegar a la estación BC3SC3SC, necesitaría tomar la línea 7SC7OE en sentido 2 desde la estación VG7SC7OE hasta la estación donde se puede realizar un transbordo con la línea C3SC3SC, y luego tomar la línea C3SC3SC en sentido 1 hasta la estación BC3SC3SC.
+
+Sin embargo, no puedo determinar el orden de las estaciones en la línea 7SC7OE en sentido 2 y en la línea C3SC3SC en sentido 1, por lo que mi respuesta es un poco oscura.
+
+Nivel de confianza: 30%
+
+Tiempo de respuesta: 15.18 segundos
+
+=== Pregunta 13 ===
+Pregunta: ¿Cuántas estaciones hay en total en el sistema de metro?
+Respuesta: Para determinar el número total de estaciones en el sistema de metro, necesitaría saber cuáles son las líneas y cuántas estaciones tienen cada una. Desafortunadamente, la información proporcionada solo muestra algunas líneas y no menciona la totalidad de las líneas del sistema. Sin embargo, puedo tratar de ayudarte con lo que se proporcionó.
+
+Al revisar la información proporcionada, solo hay una línea mencionada. Esta línea no tiene nombre específico, pero hay dos sentidos: uno y dos. 
+
+En el sentido uno de la línea, se mencionan las siguientes estaciones: 
+- Estación 1
+- Estación 2
+- Estación 3
+- Estación 4
+- Estación 5
+
+En el sentido dos de la línea, se mencionan las siguientes estaciones: 
+- Estación 5
+- Estación 4
+- Estación 3
+- Estación 2
+- Estación 6
+
+Como hay 5 estaciones en el sentido uno y 5 estaciones en el sentido dos, podríamos asumir que hay un total de 10 estaciones en la línea mencionada. Sin embargo, la estación 6 no aparece en el sentido uno, lo que sugiere que podría ser una estación terminal o un punto de interconexión con otra línea. 
+
+Si consideramos la estación 6 como un punto de interconexión con otra línea, podríamos asumir que hay 9 estaciones en la línea principal.
+
+No estoy muy seguro, pero podría ser una opción posible. Confianza: 40%
+
+Tiempo de respuesta: 18.85 segundos
+
+=== Pregunta 14 ===
+Pregunta: ¿Cuántas líneas de metro hay en total?
+Respuesta: Según la información proporcionada, hay varias líneas de metro. Podemos identificarlas por sus nombres. 
+
+Estas líneas son:
+- Línea Verde
+- Línea Roja
+- Línea Azul
+- Línea Amarilla
+- Línea Naranja
+- Línea Púrpura
+- Línea Gris
+- Línea Beige
+- Línea Rosa
+
+En total, hay 9 líneas de metro. 
+Confianza: 100%
+
+Tiempo de respuesta: 6.11 segundos
+
+=== Pregunta 15 ===
+Pregunta: El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?
+Respuesta: ¿Te puedo ayudar con algo relacionado con el sistema de metro?
+
+Tiempo de respuesta: 1.05 segundos
+
+=== Pregunta 16 ===
+Pregunta: Tengo que llegar lo más rápido posible a AF6SC6SC desde OC32SC3SC, ¿qué ruta me recomiendas?
+Respuesta: Para llegar de OC32SC3SC a AF6SC6SC, te recomiendo seguir estos pasos:
+
+1. Desde OC32SC3SC, toma la línea hacia sentido uno. 
+   - En la estación OC32SC3SC, toma la línea Línea Azul (sentido uno).
+   - En la estación OC32SC3SC, transborda a la Línea Roja (sentido uno).
+   - En la estación OC32SC3SC, transborda a la Línea Verde (sentido uno).
+2. En la Línea Verde (sentido uno), sigue el recorrido hasta la estación AF6SC6SC.
+
+No estoy muy seguro, pero podría ser una opción posible.
+
+Tiempo de respuesta: 8.58 segundos
+
+=== Pregunta 17 ===
+Pregunta: ¿Qué estación está cerrada el día de hoy?
+Respuesta: No tengo información sobre estaciones cerradas. La información proporcionada solo describe las líneas y estaciones en funcionamiento. Para obtener información sobre el estado de las líneas y estaciones, necesitaría consultar con un experto en temas operativos. ¿Te gustaría que lo haga?
+
+Tiempo de respuesta: 3.43 segundos
+
+=== Pregunta 18 ===
+Pregunta: ¿Cuántas estaciones es posible recorrer en el trayecto de RD3VC3OD a AG7BH7SC?
+Respuesta: Para saber cuántas estaciones son posibles recorrer en el trayecto de RD3VC3OD a AG7BH7SC, necesitaría saber las líneas y los sentidos de ruta correspondientes. Sin embargo, no tengo esa información. ¿Podrías proporcionarme las líneas y los sentidos de ruta para estas estaciones?
+
+¿De dónde a dónde quieres ir?
+
+Tiempo de respuesta: 4.69 segundos
+
