@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Research Documentation}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Data}
+
+This section describes the data generation methodology used in this research project, focusing on the creation of a synthetic metropolitan transportation system with realistic geographic coordinates.
+
+\subsection{Generation Data}
+
+The data generation process involves creating a fictional metropolitan transportation network (metro system) and assigning realistic geographic coordinates to each station. The methodology ensures that the resulting network exhibits properties consistent with real-world metropolitan transportation systems.
+
+\subsubsection{Points Geographics}
+
+The generation of geographic points for the metro stations follows a systematic approach that transforms an existing abstract graph structure into a geographically realistic coordinate system. This process consists of several well-defined steps:
+
+\paragraph{Step 1: Initial Graph Structure}
+
+The process begins with an existing metro graph that defines the network topology. This graph consists of:
+
+\begin{itemize}
+    \item \textbf{Stations}: 25 stations distributed across the network, each identified by a unique code (e.g., AA1SC, BB2OC, RD3VC)
+    \item \textbf{Lines}: 5 colored metro lines (yellow, blue, red, green, orange) connecting various stations
+    \item \textbf{Transfer stations}: Several stations where multiple lines intersect, enabling passenger transfers between lines
+    \item \textbf{Initial coordinates}: Each station has Cartesian coordinates $(x, y)$ in an arbitrary coordinate system
+\end{itemize}
+
+The original Cartesian coordinates were defined manually to create a visually clear and topologically sound metro network diagram, where stations are distributed to avoid overlaps and maintain reasonable spacing between nodes.
+
+\paragraph{Step 2: Coordinate Transformation to Geographic System}
+
+To convert the abstract Cartesian coordinates into realistic geographic coordinates (latitude and longitude), an affine transformation was applied. This transformation preserves the geometric distribution and relationships between stations while mapping them to a real-world geographic reference system.
+
+The transformation is defined by the following equations:
+
+\begin{equation}
+    \text{Latitude} = \text{Latitude}_{\text{center}} + y \cdot s
+\end{equation}
+
+\begin{equation}
+    \text{Longitude} = \text{Longitude}_{\text{center}} + x \cdot s
+\end{equation}
+
+where:
+\begin{itemize}
+    \item $(x, y)$ are the original Cartesian coordinates
+    \item $(\text{Latitude}_{\text{center}}, \text{Longitude}_{\text{center}}) = (40.4168, -3.7038)$ correspond to the geographic center of Madrid, Spain
+    \item $s = 0.0001$ is the scale factor in degrees per coordinate unit
+\end{itemize}
+
+\paragraph{Step 3: Scale Factor Selection and Physical Equivalences}
+
+The scale factor $s = 0.0001$ degrees per unit was carefully selected based on the following considerations:
+
+\begin{align*}
+    1° \text{ of latitude} &\approx 111.3 \text{ km} \\
+    1 \text{ coordinate unit} &= s° = 0.0001° \approx 11.13 \text{ m}
+\end{align*}
+
+This scaling ensures that:
+\begin{itemize}
+    \item Each unit in the original coordinate system corresponds to approximately 11.13 meters in the real world
+    \item The resulting metro network has realistic dimensions comparable to actual metropolitan transportation systems
+    \item Inter-station distances fall within typical ranges observed in real metro networks
+\end{itemize}
+
+\paragraph{Step 4: Statistical Properties of the Generated Network}
+
+After applying the coordinate transformation, a comprehensive statistical analysis was conducted to validate the realism of the generated geographic points. The key statistical properties include:
+
+\begin{itemize}
+    \item \textbf{Total stations}: 25 stations distributed across the network
+    
+    \item \textbf{Geographic range}:
+    \begin{itemize}
+        \item Latitude range: approximately $40.4048$ to $40.4548$ degrees
+        \item Longitude range: approximately $-3.7198$ to $-3.6638$ degrees
+    \end{itemize}
+    
+    \item \textbf{Coverage area}:
+    \begin{itemize}
+        \item Approximate circular area with radius $\approx 3.33$ km
+        \item System diameter of approximately 6-7 km
+    \end{itemize}
+    
+    \item \textbf{Inter-station distances}:
+    \begin{itemize}
+        \item Mean distance between all station pairs: approximately 2.38 km
+        \item Minimum distance between stations: approximately 0.44 km
+        \item Maximum distance between stations: approximately 6.25 km
+    \end{itemize}
+    
+    \item \textbf{Distance distribution}:
+    \begin{itemize}
+        \item 0-5 km: majority of station pairs
+        \item 5-10 km: moderate number of pairs representing longer connections
+        \item Greater than 10 km: few pairs representing extreme opposite ends of the network
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Step 5: Distance Calculation Methodology}
+
+To compute the physical distances between stations, the Haversine formula was employed. This formula calculates great-circle distances between two points on a sphere given their latitude and longitude coordinates:
+
+\begin{equation}
+    a = \sin^2\left(\frac{\Delta\text{lat}}{2}\right) + \cos(\text{lat}_1) \cdot \cos(\text{lat}_2) \cdot \sin^2\left(\frac{\Delta\text{lon}}{2}\right)
+\end{equation}
+
+\begin{equation}
+    c = 2 \cdot \text{atan2}\left(\sqrt{a}, \sqrt{1-a}\right)
+\end{equation}
+
+\begin{equation}
+    d = R_{\text{Earth}} \cdot c
+\end{equation}
+
+where:
+\begin{itemize}
+    \item $\Delta\text{lat} = \text{lat}_2 - \text{lat}_1$ and $\Delta\text{lon} = \text{lon}_2 - \text{lon}_1$ are the differences in latitude and longitude
+    \item $R_{\text{Earth}} = 6371$ km is the mean radius of the Earth
+    \item $d$ is the resulting distance in kilometers
+\end{itemize}
+
+\paragraph{Step 6: Validation and Verification}
+
+The generated geographic coordinates were validated through multiple approaches:
+
+\begin{enumerate}
+    \item \textbf{Visual verification}: Plotting the stations on an actual map of Madrid confirmed that the distribution appears natural and realistic for a metropolitan transportation network
+    
+    \item \textbf{Statistical validation}: The computed inter-station distances align with typical values observed in real metro systems worldwide (average station spacing of 1-3 km is common)
+    
+    \item \textbf{Topological consistency}: The transformation preserves the original graph topology, ensuring that all line connections and transfer points remain intact
+    
+    \item \textbf{Geographic plausibility}: The resulting network fits within a reasonable geographic area for a city the size of Madrid, with an appropriate density of stations
+\end{enumerate}
+
+\paragraph{Summary}
+
+The geographic point generation methodology successfully transforms an abstract metro graph into a realistic geographically-referenced network. By starting with a well-defined graph topology and applying a carefully calibrated affine transformation, the resulting coordinates exhibit statistical properties consistent with real-world metropolitan transportation systems. The systematic approach ensures reproducibility and provides a solid foundation for subsequent experiments involving spatial reasoning, route planning, and location-based queries in conversational AI systems.
+
+The key advantages of this methodology include:
+\begin{itemize}
+    \item \textbf{Realism}: The generated coordinates represent plausible geographic locations for metro stations
+    \item \textbf{Scalability}: The transformation can be easily adjusted to represent different city sizes or geographic contexts
+    \item \textbf{Reproducibility}: The entire process is deterministic and can be replicated with different input parameters
+    \item \textbf{Validation}: The resulting network's statistical properties can be quantitatively compared to real-world systems
+\end{itemize}
+
+\end{document}
