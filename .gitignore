@@ -1,2 +1,9 @@
 week_one/pruebas_con_MCP/.env
 week_one/pruebas_con_MCP/clave_anthropic
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
