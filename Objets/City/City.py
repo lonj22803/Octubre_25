@@ -150,7 +150,7 @@ class CityBase:
             try:
                 from sklearn.cluster import KMeans
             except ImportError:
-                raise ImportError("scikit-learn is required for clustering. Install with: pip install scikit-learn")
+                raise ImportError("scikit-learn is required for KMeans clustering. Install with: pip install scikit-learn")
             
             kmeans = KMeans(n_clusters=n_clusters, random_state=42)
             labels = kmeans.fit_predict(coords_array)
@@ -159,7 +159,7 @@ class CityBase:
             try:
                 from sklearn.cluster import DBSCAN
             except ImportError:
-                raise ImportError("scikit-learn is required for clustering. Install with: pip install scikit-learn")
+                raise ImportError("scikit-learn is required for DBSCAN clustering. Install with: pip install scikit-learn")
             
             dbscan = DBSCAN(eps=0.01, min_samples=2)
             labels = dbscan.fit_predict(coords_array)
@@ -342,7 +342,7 @@ class CityBase:
                 continue
         
         # Add center contribution with boosted weight
-        # This addresses the issue mentioned in lines 453 and 474
+        # This addresses the PDF weight issue where peripheral clusters dominated over city center influence
         pdf_values += center_pdf * center_influence_factor
         
         # Normalize

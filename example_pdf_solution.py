@@ -219,7 +219,7 @@ def demonstrate_entity_distribution():
 if __name__ == "__main__":
     print("\n" + "=" * 70)
     print("DEMONSTRATION: Solution to PDF Weight Issue")
-    print("Lines 453 and 474: center_pdf * center_weight vs cluster_pdf * cluster_weight")
+    print("Problem: Peripheral clusters dominated influence (center_pdf * center_weight vs cluster_pdf * cluster_weight)")
     print("=" * 70)
     
     # Run demonstrations
@@ -246,7 +246,7 @@ The solution to the PDF weight issue involves TWO key parameters:
    - Boosts the PDF contribution of the city center
    - Recommended range: 2.0 - 10.0
    - Default: 3.0
-   - THIS DIRECTLY ADDRESSES LINES 453 AND 474
+   - THIS DIRECTLY ADDRESSES THE PDF WEIGHT ISSUE
 
 Usage in classes:
 - Hotels: center_weight_multiplier=2.5
