@@ -2,7 +2,7 @@
 MetroSystem class that inherits from CityBase for generalized cluster operations.
 """
 
-from Objets.City.City import CityBase
+from Objets.City.City import CityBase, EARTH_RADIUS_KM
 import os
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -26,7 +26,7 @@ def calcular_distancia_haversine(lat1, lon1, lat2, lon2):
     Returns:
         Distancia en kilómetros
     """
-    R = 6371  # Radio de la Tierra en km
+    R = EARTH_RADIUS_KM  # Radio de la Tierra en km
     
     lat1_rad = math.radians(lat1)
     lat2_rad = math.radians(lat2)

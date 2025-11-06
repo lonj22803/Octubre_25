@@ -146,11 +146,10 @@ class Restaurants(CityBase):
                     distancia = np.random.exponential(self.mean_distancia_km)
                 angulo = random.uniform(0, 2 * np.pi)
 
-                # Calcular coordenadas
-                delta_lat = (distancia / 111) * np.cos(angulo)
-                delta_lon = (distancia / (111 * np.cos(np.radians(lat_est)))) * np.sin(angulo)
-                nueva_lat = lat_est + delta_lat
-                nueva_lon = lon_est + delta_lon
+                # Calcular coordenadas usando método heredado
+                nueva_lat, nueva_lon = self.calculate_new_coordinates(
+                    lat_est, lon_est, distancia, angulo
+                )
 
                 latitudes.append(round(nueva_lat, 6))
                 longitudes.append(round(nueva_lon, 6))

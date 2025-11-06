@@ -10,6 +10,10 @@ from collections import Counter
 from scipy.stats import multivariate_normal
 import warnings
 
+# Constants
+KM_PER_DEGREE_LAT = 111.0  # Approximate kilometers per degree of latitude
+EARTH_RADIUS_KM = 6371.0   # Earth radius in kilometers
+
 
 class CityBase:
     """
@@ -143,13 +147,19 @@ class CityBase:
         
         # Perform clustering based on method
         if method == 'kmeans':
-            from sklearn.cluster import KMeans
+            try:
+                from sklearn.cluster import KMeans
+            except ImportError:
+                raise ImportError("scikit-learn is required for clustering. Install with: pip install scikit-learn")
             
-            kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
+            kmeans = KMeans(n_clusters=n_clusters, random_state=42)
             labels = kmeans.fit_predict(coords_array)
             
         elif method == 'dbscan':
-            from sklearn.cluster import DBSCAN
+            try:
+                from sklearn.cluster import DBSCAN
+            except ImportError:
+                raise ImportError("scikit-learn is required for clustering. Install with: pip install scikit-learn")
             
             dbscan = DBSCAN(eps=0.01, min_samples=2)
             labels = dbscan.fit_predict(coords_array)
@@ -376,3 +386,27 @@ class CityBase:
         entity_distribution = {station: count for station, count in zip(stations, distribution)}
         
         return entity_distribution
+
+    @staticmethod
+    def calculate_new_coordinates(lat_center: float, lon_center: float,
+                                 distance_km: float, angle_rad: float) -> Tuple[float, float]:
+        """
+        Calculates new coordinates given a center point, distance, and angle.
+        Uses approximate conversion of degrees to kilometers.
+        
+        Args:
+            lat_center: Center latitude
+            lon_center: Center longitude
+            distance_km: Distance from center in kilometers
+            angle_rad: Angle in radians
+            
+        Returns:
+            Tuple of (new_lat, new_lon)
+        """
+        delta_lat = (distance_km / KM_PER_DEGREE_LAT) * np.cos(angle_rad)
+        delta_lon = (distance_km / (KM_PER_DEGREE_LAT * np.cos(np.radians(lat_center)))) * np.sin(angle_rad)
+        
+        new_lat = lat_center + delta_lat
+        new_lon = lon_center + delta_lon
+        
+        return new_lat, new_lon
