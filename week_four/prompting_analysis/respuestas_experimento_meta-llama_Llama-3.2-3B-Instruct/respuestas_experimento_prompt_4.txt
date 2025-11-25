@@ -3,22 +3,20 @@
                 System Prompt usado:
 
 Antes de cualquier tarea o indicación, solo puedes usar **ÚNICAMENTE** la información proporcionada a continuación. 
-La información describe las líneas de metro y sus estaciones en ambos sentidos. Todas tus respuestas deben basarse exclusivamente en esta información.
+En el siguiente archivo JSON se codifica el sistema de metro y sus líneas. Todas tus respuestas deben basarse exclusivamente en esta información.
 
-La información está organizada de la siguiente manera:
-- Cada línea está identificada por un nombre (por ejemplo, colores o nombres propios).
+La información está codificada de la siguiente manera:
+- La primera llave es el nombre de la línea del metro, identificada por colores.
 - Cada línea tiene dos sentidos de ruta: *sentido uno* y *sentido dos*.
-- El sentido es muy importante, ya que indica la dirección y el orden en que se recorren las estaciones. Debes respetar este orden en cada sentido.
-- Si una estación aparece en varias líneas, significa que se puede realizar un **transbordo** en esa estación.
-- Cada estación se identifica con un nombre o código único que debes usar para referirte a ella.
+- Los sentidos son muy importante, ya que indican la dirección y el orden en que se recorren las estaciones. Debes respetar este orden en cada sentido si deseas ir de una estacion a otra.
+- Si una estación se repite entre líneas, significa que es posible hacer un **transbordo** en esa estación, es decir conecta las lineas. El concepto de transbordo implica que se puede cambiar de una línea a otra.
+- Cada estación tiene un código único que la identifica. Este código es el que se usará para referirse a las estaciones.
 
-A continuación se proporciona la descripción de las líneas y estaciones:
-
-Lineas de Metro de una ciudad y sus respectivas estaciones en sentido de ida y regreso:
+{'amarilla': {'sentido_uno': ['AA1SC1SC', 'AB2SC2SC', 'AC3SC3SC', 'AD4RF4SC', 'AE5VE5SC', 'AF6SC6SC', 'AG7BH7SC'], 'sentido_dos': ['AG7BH7SC', 'AF6SC6SC', 'AE5VE5SC', 'AD4RF4SC', 'AC3SC3SC', 'AB2SC2SC', 'AA1SC1SC']}, 'azul': {'sentido_uno': ['BA1SC1SC', 'BB2OC2SC', 'BC3SC3SC', 'BD2VB2SC', 'BE4RC4SC', 'BF5SC5SC', 'BG6SC6SC', 'AG7BH7SC'], 'sentido_dos': ['AG7BH7SC', 'BG6SC6SC', 'BF5SC5SC', 'BE4RC4SC', 'BD2VB2SC', 'BC3SC3SC', 'BB2OC2SC', 'BA1SC1SC']}, 'roja': {'sentido_uno': ['RA1SC1SC', 'RB2SC2SC', 'BE4RC4SC', 'RD3VC3OD', 'RE5SC5SC', 'AD4RF4SC', 'RG6SC6SC'], 'sentido_dos': ['RG6SC6SC', 'AD4RF4SC', 'RE5SC5SC', 'RD3VC3OD', 'BE4RC4SC', 'RB2SC2SC', 'RA1SC1SC']}, 'verde': {'sentido_uno': ['VA1SC1SC', 'BD2VB2SC', 'RD3VC3OD', 'VD4SC4SC', 'AE5VE5SC', 'VF6SC6SC'], 'sentido_dos': ['VF6SC6SC', 'AE5VE5SC', 'VD4SC4SC', 'RD3VC3OD', 'BD2VB2SC', 'VA1SC1SC']}, 'naranja': {'sentido_uno': ['OA1SC1SC', 'OB2SC2SC', 'BB2OC2SC', 'OC3SC3SC', 'RD3VC3OD'], 'sentido_dos': ['RD3VC3OD', 'OC3SC3SC', 'BB2OC2SC', 'OB2SC2SC', 'OA1SC1SC']}}
 
 Tus funciones serán las siguientes:
 
-- Eres un asistente turístico experto en el sistema de metro.
+- Eres un asistente turístico experto en el sistema de líneas del metro.
 - Indica las líneas y conexiones necesarias para viajar entre estaciones.
 - Proporciona rutas claras, ordenadas y detalladas, incluyendo transbordos cuando sea necesario.
 - Recuerda usar **ÚNICAMENTE** la información proporcionada anteriormente.
@@ -31,7 +29,7 @@ Tus funciones serán las siguientes:
   - Si no estás seguro, indícalo (“No estoy muy seguro, pero podría ser una opción posible.”)
   - Si estás medianamente seguro, exprésalo.
   - Si tu seguridad es alta, menciónalo también. 
-  - Si puedes expresar tu confianza en porcentaje, mejor.
+  - Expresa **SIEMPRE** tu confianza en porcentaje de 0 a 100%.
 Puedes guiarte con los siguientes ejemplos de pregunta y respuesta:
 
 
@@ -125,233 +123,234 @@ Línea Verde: VA1SC1SC, *RD3VC3OD*, *BD2VB2SC*, VD4SC4SC, AE5VE5SC, VF6SC6SC.
 
 === Pregunta 1 ===
 Pregunta: ¿Cómo puedo llegar desde la estación AA1SC1SC hasta la estación AG7BH7SC?
-Respuesta: No estoy muy seguro, pero podría ser una opción posible. Puedes tomar la Línea Azul en sentido dos hasta BB2OC2SC, luego trasborda a la Línea Verde en sentido dos hasta VD4SC4SC, luego trasborda a la Línea Azul en sentido dos hasta AG7BH7SC.
+Respuesta: Para llegar desde la estación AA1SC1SC hasta la estación AG7BH7SC, te recomiendo seguir la Línea Amarilla en sentido uno. Estas son las estaciones que tendrás que recorrer:
 
-Las estaciones que tendrás en este trayecto son: AA1SC1SC → BD2VB2SC → RD3VC3OD → VD4SC4SC → AG7BH7SC.
+AA1SC1SC → AB2SC2SC → AC3SC3SC → AD4RF4SC → AE5VE5SC → AF6SC6SC → AG7BH7SC.
 
-Estoy bastante seguro de que esta es una buena opción.
+Estoy muy seguro de que esta es la mejor ruta para llegar a tu destino.
 
-Tiempo de respuesta: 7.79 segundos
+Tiempo de respuesta: 6.04 segundos
 
 === Pregunta 2 ===
 Pregunta: ¿Qué estaciones debo usar para transferirme entre la Línea Roja y la Línea Naranja?
-Respuesta: No estoy muy seguro de qué estaciones específicas serían las adecuadas para transferirte entre la Línea Roja y la Línea Naranja. 
+Respuesta: Me gustaría que me proporciones el origen y el destino de tu viaje para poder darte una respuesta más precisa. ¿Puedes decirme qué estaciones debo considerar como punto de partida y punto de llegada? 
 
-Para ello, te recomendaría especificar desde qué estación partes y a qué estación te diriges.
+Estoy aquí para ayudarte.
 
-Tiempo de respuesta: 3.72 segundos
+Tiempo de respuesta: 3.69 segundos
 
 === Pregunta 3 ===
 Pregunta: Quiero ir de la estación VF6SC6SC a la estación RA1SC1SC, ¿qué ruta me recomiendas?
-Respuesta: Existe una ruta para llegar de VF6SC6SC a RA1SC1SC. Te recomiendo tomar la Línea Verde en sentido uno hasta AE5VE5SC. Luego, allí trasborda a la Línea Roja en sentido dos hasta RD3VC3OD.
+Respuesta: Para llegar de la estación VF6SC6SC a la estación RA1SC1SC, te recomiendo tomar la Línea Verde en sentido dos hasta RD3VC3OD, luego trasborda a la Línea Roja en sentido dos hasta RE5SC5SC, y finalmente trasborda a la Línea Roja en sentido uno hasta RA1SC1SC. Estoy bastante seguro de que esta es una buena opción.
 
-Después de eso, trasborda a la Línea Azul en sentido dos hasta BB2OC2SC. Luego, allí trasborda a la Línea Naranja en sentido dos hasta OB2SC2SC. Finalmente, allí trasborda a la Línea Roja en sentido dos hasta RA1SC1SC.
+Las estaciones que tendrás en este trayecto son: VF6SC6SC → VD4SC4SC → RD3VC3OD → RE5SC5SC → AD4RF4SC → BE4RC4SC → RB2SC2SC → RA1SC1SC.
 
-Estoy muy seguro de que esta ruta es una buena opción.
+Es importante tener en cuenta que esta ruta puede variar dependiendo de las condiciones de tráfico y operativas del metro, por lo que es recomendable verificar la información antes de partir.
 
-Las estaciones que tendrás en este trayecto son: VF6SC6SC → VD4SC4SC → AE5VE5SC → AD4RF4SC → RE5SC5SC → RD3VC3OD → BB2OC2SC → OB2SC2SC → OA1SC1SC → RA1SC1SC.
-
-Tiempo de respuesta: 11.12 segundos
+Tiempo de respuesta: 10.09 segundos
 
 === Pregunta 4 ===
 Pregunta: ¿Cuál es la mejor ruta para ir de BD2VB2SC a AC3SC3SC?
-Respuesta: No estoy muy seguro, pero podría ser una opción posible. Te recomendaría tomar la Línea Verde en sentido dos desde BD2VB2SC hasta RD3VC3OD, luego trasborda a la Línea Roja en sentido dos hasta RE5SC5SC, y después trasborda a la Línea Naranja en sentido dos hasta OC32SC3SC. 
+Respuesta: Para ir de BD2VB2SC a AC3SC3SC, te recomiendo la siguiente ruta:
 
-Sin embargo, también podrías tomar la Línea Azul en sentido dos desde BD2VB2SC hasta BE4RC4SC, luego trasborda a la Línea Roja en sentido dos hasta RE5SC5SC, y después trasborda a la Línea Naranja en sentido dos hasta OC32SC3SC. 
+1.  Comienza en BD2VB2SC en la Línea Azul en sentido dos.
+2.  Transborda a la Línea Verde en sentido uno en RD3VC3OD.
+3.  Viaja en sentido uno hasta BD2VB2SC.
+4.  Trasborda a la Línea Amarilla en sentido dos en RD3VC3OD.
+5.  Viaja en sentido dos hasta AD4RF4SC.
+6.  Trasborda a la Línea Roja en sentido dos en AD4RF4SC.
+7.  Viaja en sentido dos hasta AC3SC3SC.
 
-Otra opción es tomar la Línea Naranja en sentido dos desde BD2VB2SC hasta OC32SC3SC, pero tendrías que transbordar en RD3VC3OD y luego en RE5SC5SC. 
+Estoy bastante seguro de que esta es una buena opción, ya que solo cruzarás cinco estaciones.
 
-Las estaciones que tendrás en la opción que te doy son: BD2VB2SC → RD3VC3OD → RE5SC5SC → OC32SC3SC.
+Las estaciones que tendrás en este trayecto son: BD2VB2SC → RD3VC3OD → BD2VB2SC → AD4RF4SC → RE5SC5SC → RD3VC3OD → AC3SC3SC.
 
-Otra opción es tomar la Línea Verde en sentido uno desde BD2VB2SC hasta RD3VC3OD, luego trasborda a la Línea Roja en sentido dos hasta RE5SC5SC, y después trasborda a la Línea Naranja en sentido dos hasta OC32SC3SC. 
-
-Otra opción es tomar la Línea Azul en sentido uno desde BD2VB2SC hasta BE4RC4SC, luego trasborda a la Línea Roja en sentido dos hasta RE5SC5SC, y después trasborda a la Línea Naranja en sentido dos hasta OC32SC3SC. 
-
-Otra opción es tomar la Línea Naranja en sentido uno desde BD2VB2SC hasta OC32SC3SC, pero tendrías que transbordar en RD3VC3OD y luego en RE5SC5SC. 
-
-Las estaciones que tendrás en la opción que te doy son: BD2VB2SC → RD3VC3OD → RE5SC5SC → OC32SC3SC.
-
-Otra opción es tomar la Línea Azul en sentido dos desde BD2VB2SC hasta BB2OC2SC, luego trasborda a la Línea Roja en sentido dos hasta RE5SC5SC, y después trasborda a la Línea Naranja en sentido dos hasta OC32SC3SC. 
-
-Otra opción es tomar la Línea Verde en sentido dos desde BD2VB2SC hasta RD3VC3OD, luego trasborda a la Línea Roja en sentido dos hasta RE5SC5SC, y después trasborda a la Línea Naranja en sentido dos hasta OC32SC3SC. 
-
-Otra opción es tomar la Línea Naranja en sentido dos desde BD2VB2SC hasta OC32SC3SC, pero tendrías que transbordar en RD3VC3OD y luego en RE5SC5SC. 
-
-Las estaciones que tendrás en la opción que te doy son: BD2VB2SC → RD3VC3OD → RE5SC5SC → OC32SC3SC.
-
-Las estaciones que tendrás en la opción que te doy son: BD2VB2SC → RD3VC3OD → RE5SC5SC → OC32SC3SC.
-
-Estoy bastante seguro de que todas estas opciones son buenas alternativas.
-
-Tiempo de respuesta: 35.58 segundos
+Tiempo de respuesta: 11.93 segundos
 
 === Pregunta 5 ===
 Pregunta: ¿Puedes decirme todas las rutas posibles para ir de BB2OC2SC a AF6SC6SC?
-Respuesta: Para llegar de BB2OC2SC a AF6SC6SC, existen varias opciones. Aquí te presento algunas de ellas:
+Respuesta: ¡Claro! Para ir de BB2OC2SC a AF6SC6SC, puedo ofrecerte varias opciones. Aquí te las presento:
 
-1.  Toma la Línea Azul en sentido dos hasta AG7BH7SC, luego trasborda a la Línea Verde en sentido dos hasta VD4SC4SC, y después trasborda a la Línea Naranja en sentido dos hasta OB2SC2SC, y finalmente trasborda a la Línea Naranja en sentido dos hasta AF6SC6SC. Estoy bastante seguro de que esta es una buena opción, ya que solo cruzarás seis estaciones.
+**Opción 1: Viajar en la Línea Azul y luego en la Línea Verde**
 
-    Las estaciones que tendrás en este trayecto son: BB2OC2SC → AG7BH7SC → VD4SC4SC → RD3VC3OD → OC32SC3SC → OB2SC2SC → AF6SC6SC.
+1. Salir de BB2OC2SC en la Línea Azul en sentido dos.
+2. Viajar hasta BE4RC4SC.
+3. Trasbordar a la Línea Verde en sentido dos en BE4RC4SC.
+4. Viajar hasta VF6SC6SC.
 
-2.  Toma la Línea Azul en sentido dos hasta AG7BH7SC, luego trasborda a la Línea Verde en sentido dos hasta VF6SC6SC, y finalmente trasborda a la Línea Naranja en sentido dos hasta OB2SC2SC, y finalmente trasborda a la Línea Naranja en sentido dos hasta AF6SC6SC. Estoy bastante seguro de que esta es una buena opción, ya que solo cruzarás seis estaciones.
+**Opción 2: Viajar en la Línea Naranja y luego en la Línea Verde**
 
-    Las estaciones que tendrás en este trayecto son: BB2OC2SC → AG7BH7SC → VF6SC6SC → RD3VC3OD → OC32SC3SC → OB2SC2SC → AF6SC6SC.
+1. Salir de BB2OC2SC en la Línea Naranja en sentido dos.
+2. Viajar hasta OA1SC1SC.
+3. Trasbordar a la Línea Verde en sentido dos en OA1SC1SC.
+4. Viajar hasta VF6SC6SC.
 
-3.  Toma la Línea Azul en sentido dos hasta AG7BH7SC, luego trasborda a la Línea Verde en sentido dos hasta VD4SC4SC, y después trasborda a la Línea Naranja en sentido dos hasta OB2SC2SC, y finalmente trasborda a la Línea Naranja en sentido dos hasta AF6SC6SC. Estoy bastante seguro de que esta es una buena opción, ya que solo cruzarás seis estaciones.
+**Opción 3: Viajar en la Línea Azul, luego en la Línea Verde y luego en la Línea Azul en sentido dos**
 
-    Las estaciones que tendrás en este trayecto son: BB2OC2SC → AG7BH7SC → VD4SC4SC → RD3VC3OD → OC32SC3SC → OB2SC2SC → AF6SC6SC.
+1. Salir de BB2OC2SC en la Línea Azul en sentido dos.
+2. Viajar hasta BC3SC3SC.
+3. Trasbordar a la Línea Verde en sentido dos en BC3SC3SC.
+4. Viajar hasta RD3VC3OD.
+5. Trasbordar a la Línea Azul en sentido dos en RD3VC3OD.
+6. Viajar hasta RE5SC5SC.
+7. Trasbordar a la Línea Verde en sentido dos en RE5SC5SC.
+8. Viajar hasta VF6SC6SC.
 
-4.  Toma la Línea Azul en sentido dos hasta AG7BH7SC, luego trasborda a la Línea Verde en sentido dos hasta VF6SC6SC, y finalmente trasborda a la Línea Naranja en sentido dos hasta AF6SC6SC. Estoy bastante seguro de que esta es una buena opción, ya que solo cruzarás cinco estaciones.
+**Opción 4: Viajar en la Línea Naranja y luego en la Línea Azul y luego en la Línea Verde**
 
-    Las estaciones que tendrás en este trayecto son: BB2OC2SC → AG7BH7SC → VF6SC6SC → RD3VC3OD → OC32SC3SC → AF6SC6SC.
+1. Salir de BB2OC2SC en la Línea Naranja en sentido dos.
+2. Viajar hasta OB2SC2SC.
+3. Trasbordar a la Línea Azul en sentido dos en OB2SC2SC.
+4. Viajar hasta BC3SC3SC.
+5. Trasbordar a la Línea Verde en sentido dos en BC3SC3SC.
+6. Viajar hasta RD3VC3OD.
+7. Trasbordar a la Línea Azul en sentido dos en RD3VC3OD.
+8. Viajar hasta RE5SC5SC.
+9. Trasbordar a la Línea Verde en sentido dos en RE5SC5SC.
+10. Viajar hasta VF6SC6SC.
 
-5.  Toma la Línea Azul en sentido dos hasta AG7BH7SC, luego trasborda a la Línea Verde en sentido dos hasta RD3VC3OD, y finalmente trasborda a la Línea Naranja en sentido dos hasta AF6SC6SC. Estoy bastante seguro de que esta es una buena opción, ya que solo cruzarás cinco estaciones.
+Estas son las rutas posibles para ir de BB2OC2SC a AF6SC6SC. Estoy muy seguro de que alguna de estas opciones te resultará útil.
 
-    Las estaciones que tendrás en este trayecto son: BB2OC2SC → AG7BH7SC → RD3VC3OD → OC32SC3SC → OB2SC2SC → AF6SC6SC.
-
-6.  Toma la Línea Azul en sentido dos hasta AG7BH7SC, luego trasborda a la Línea Verde en sentido dos hasta RD3VC3OD, y después trasborda a la Línea Naranja en sentido dos hasta OB2SC2SC, y finalmente trasborda a la Línea Naranja en sentido dos hasta AF6SC6SC. Estoy bastante seguro de que esta es una buena opción, ya que solo cruzarás seis estaciones.
-
-    Las estaciones que tendrás en este trayecto son: BB2OC2SC → AG7BH7SC → RD3VC3OD → OC32SC3SC → OB2SC2SC → AF6SC6SC.
-
-7.  Toma la Línea Azul en sentido dos hasta AG7BH7SC, luego trasborda a la Línea Verde en sentido dos hasta VF6SC6SC, y finalmente trasborda a la Línea Naranja en sentido dos
-
-Tiempo de respuesta: 47.07 segundos
+Tiempo de respuesta: 30.08 segundos
 
 === Pregunta 6 ===
 Pregunta: ¿Hay alguna estación que sirva como punto de conexión entre más de dos líneas de metro?
-Respuesta: Sí, hay varias estaciones que sirven como punto de conexión entre más de dos líneas de metro. Algunas de ellas son:
+Respuesta: Sí, hay varias estaciones que sirven como punto de conexión entre más de dos líneas de metro. Según la información proporcionada, las estaciones que conectan a más de dos líneas son las siguientes:
 
-- RD3VC3OD (Línea Roja y Línea Naranja)
-- BE4RC4SC (Línea Roja y Línea Amarilla)
-- AD4RF4SC (Línea Amarilla y Línea Roja)
+* RD3VC3OD: Conecta a la Línea Naranja y la Línea Verde.
+* AD4RF4SC: Conecta a la Línea Amarilla y la Línea Roja.
+* BE4RC4SC: Conecta a la Línea Azul y la Línea Roja.
+* OC3SC3SC: Conecta a la Línea Naranja y la Línea Azul.
+* BB2OC2SC: Conecta a la Línea Azul y la Línea Naranja.
 
-Tiempo de respuesta: 4.84 segundos
+Estas estaciones actúan como puertas de enlace entre diferentes líneas, permitiendo a los usuarios cambiar de línea y continuar su viaje.
+
+Tiempo de respuesta: 10.31 segundos
 
 === Pregunta 7 ===
 Pregunta: ¿Cuál es la línea que tiene más estaciones?
-Respuesta: No estoy muy seguro, pero podría ser una opción posible. Sin embargo, si reviso la información proporcionada, puedo ver que la Línea Azul tiene 8 estaciones: BA1SC1SC, BB2OC2SC, BC3SC3SC, BD2VB2SC, BE4RC4SC, BF5SC5SC, BG6SC6SC y AG7BH7SC.
+Respuesta: No estoy muy seguro, pero podría ser la Línea Azul. La Línea Azul tiene 8 estaciones: BA1SC1SC, BB2OC2SC, BC3SC3SC, BD2VB2SC, BE4RC4SC, BF5SC5SC, BG6SC6SC y AG7BH7SC.
 
-Tiempo de respuesta: 4.74 segundos
+Tiempo de respuesta: 4.54 segundos
 
 === Pregunta 8 ===
 Pregunta: ¿Por cuántas estaciones pasan más de una línea?
-Respuesta: Basándome en la información proporcionada, puedo identificar las estaciones que son compartidas entre líneas diferentes.
+Respuesta: Según la información proporcionada, hay varias estaciones que están conectadas entre líneas. A continuación, te menciono algunas de ellas:
 
-* BB2OC2SC está compartida entre la Línea Azul y la Línea Naranja.
-* RD3VC3OD está compartida entre la Línea Naranja y la Línea Verde.
-* BD2VB2SC está compartida entre la Línea Azul y la Línea Verde.
-* BE4RC4SC está compartida entre la Línea Azul y la Línea Roja.
+* BB2OC2SC: esta estación está compartida entre la Línea Azul y la Línea Naranja.
+* RD3VC3OD: esta estación está compartida entre la Línea Naranja y la Línea Verde.
+* BD2VB2SC: esta estación está compartida entre la Línea Azul y la Línea Verde.
 
-Estas son las únicas estaciones que están compartidas entre más de una línea.
+Además, también hay algunas estaciones que están conectadas a varias líneas, pero no son compartidas entre ellas. Por ejemplo:
 
-Tiempo de respuesta: 7.11 segundos
+* AG7BH7SC: esta estación está conectada a la Línea Azul y a la Línea Amarilla en sentido dos.
+* OA1SC1SC: esta estación está conectada a la Línea Naranja y a la Línea Azul en sentido dos.
+
+En total, hay 6 estaciones que están conectadas entre líneas, y 3 estaciones que están conectadas a varias líneas pero no son compartidas entre ellas.
+
+Tiempo de respuesta: 12.32 segundos
 
 === Pregunta 9 ===
 Pregunta: Quiero ir a RD3VC3OD.
-Respuesta: Estás viajando solo en la Línea Roja en sentido dos. 
+Respuesta: No estoy muy seguro si RD3VC3OD es una estación que pertenece a alguna de las líneas que se me han proporcionado, pero puedo intentar ayudarte.
 
-La estación RD3VC3OD está a solo dos estaciones de tu destino, la estación BE4RC4SC.
+Para llegar a RD3VC3OD, debes tomar la Línea Naranja en sentido dos desde OA1SC1SC. Estoy bastante seguro de que esta es la mejor opción.
 
-Las estaciones que cruzarás son: VA1SC1SC → BD2VB2SC → RD3VC3OD → BE4RC4SC.
+Las estaciones que tendrás en este trayecto son: OA1SC1SC → OB2SC2SC → OC3SC3SC → RD3VC3OD.
 
-Tiempo de respuesta: 4.25 segundos
+Si no te interesa esta ruta, también podrías considerar tomar la Línea Verde en sentido dos desde VA1SC1SC. Estoy bastante seguro de que esta es otra buena opción.
+
+Las estaciones que tendrás en este trayecto son: VA1SC1SC → BD2VB2SC → RD3VC3OD.
+
+Es importante tener en cuenta que estas son solo dos opciones y que existen otras formas de llegar a RD3VC3OD. Si deseas más información o tienes alguna pregunta adicional, no dudes en preguntar.
+
+Mi nivel de confianza en esta información es el 90%.
+
+Tiempo de respuesta: 12.39 segundos
 
 === Pregunta 10 ===
 Pregunta: Estoy en la estación OA1SC1SC, ¿cómo llego a la estación RG6SC6SC?
-Respuesta: Para llegar a la estación RG6SC6SC desde la estación OA1SC1SC, te recomiendo lo siguiente:
+Respuesta: Para llegar de la estación OA1SC1SC a la estación RG6SC6SC, te recomiendo seguir la Línea Roja en sentido dos. 
 
-Primero, toma la Línea Naranja en sentido dos desde la estación OA1SC1SC hasta la estación OB2SC2SC.
+Las estaciones que cruzarás son: OA1SC1SC → RE5SC5SC → RD3VC3OD → RG6SC6SC.
 
-Luego, trasborda a la Línea Azul en la estación OB2SC2SC y sigue en sentido dos hasta la estación AG7BH7SC.
+Estoy muy seguro de que esta es una buena opción.
 
-Después, en la estación AG7BH7SC, trasborda a la Línea Verde en sentido dos hasta la estación RD3VC3OD.
-
-Finalmente, en la estación RD3VC3OD, trasborda a la Línea Verde en sentido dos hasta la estación VD4SC4SC.
-
-Luego, en la estación VD4SC4SC, trasborda a la Línea Azul en sentido dos hasta la estación BC3SC3SC.
-
-Después, en la estación BC3SC3SC, trasborda a la Línea Azul en sentido dos hasta la estación BG6SC6SC.
-
-Estoy bastante seguro de que esta es una buena opción, aunque hay varias alternativas y posibles transbordos diferentes.
-
-Las estaciones que tendrás en este trayecto son: OA1SC1SC → OB2SC2SC → AG7BH7SC → RD3VC3OD → VD4SC4SC → BC3SC3SC → BG6SC6SC.
-
-Tiempo de respuesta: 15.55 segundos
+Tiempo de respuesta: 4.83 segundos
 
 === Pregunta 11 ===
 Pregunta: Estoy en OA1SC1SC.
-Respuesta: Estás en la estación OA1SC1SC, que forma parte de la Línea Naranja.
+Respuesta: Estás en la estación OA1SC1SC de la Línea Naranja. Para ayudarte a encontrar el camino a tu destino, necesitaría saber dónde te gustaría ir. ¿Puedes decirme qué estación deseas llegar?
 
-¿De dónde a dónde deseas ir?
-
-Tiempo de respuesta: 2.32 segundos
+Tiempo de respuesta: 3.54 segundos
 
 === Pregunta 12 ===
 Pregunta: Necesito ir a la estación BC3SC3SC, ¿cómo llego allí desde la estación VG7SC7OE?
-Respuesta: Para llegar a la estación BC3SC3SC desde la estación VG7SC7OE, te recomiendo lo siguiente:
+Respuesta: No estoy muy seguro de que la estación VG7SC7OE exista en el sistema de metro, ya que no la he encontrado en la información proporcionada. ¿Te gustaría que lo verifique o que te dé más información sobre cómo llegar a la estación BC3SC3SC desde otra estación?
 
-Toma la Línea Verde en sentido uno hasta RD3VC3OD. Estoy bastante seguro de que esta es una buena opción.
-
-Luego, trasborda a la Línea Naranja en sentido dos y sigue hasta OC32SC3SC. Estoy seguro de que esta es la mejor opción si no quieres hacer tantos transbordos.
-
-Finalmente, trasborda a la Línea Azul en sentido dos y sigue hasta BC3SC3SC. Estoy completamente seguro de que esta es la mejor ruta.
-
-Las estaciones que tendrás en este trayecto son: VG7SC7OE → VA1SC1SC → RD3VC3OD → OC32SC3SC → BC3SC3SC.
-
-Tiempo de respuesta: 9.18 segundos
+Tiempo de respuesta: 4.03 segundos
 
 === Pregunta 13 ===
 Pregunta: ¿Cuántas estaciones hay en total en el sistema de metro?
-Respuesta: No estoy muy seguro, pero podría ser una opción posible. Sin embargo, puedo proporcionarte la información que tengo sobre las líneas y sus estaciones. Según la información proporcionada, hay 16 estaciones únicas en las líneas Naranja, Azul y Verde. Sin embargo, si consideramos las estaciones compartidas entre líneas, hay un total de 25 estaciones.
+Respuesta: Para determinar el número total de estaciones en el sistema de metro, debemos contar todas las estaciones que aparecen en el archivo JSON proporcionado.
 
-Tiempo de respuesta: 4.46 segundos
+El archivo JSON contiene las siguientes líneas de metro: Amarilla, Azul, Roja, Verde y Naranja.
+
+**Línea Amarilla:** 7 estaciones (AA1SC1SC, AB2SC2SC, AC3SC3SC, AD4RF4SC, AE5VE5SC, AF6SC6SC, AG7BH7SC)
+**Línea Azul:** 8 estaciones (BA1SC1SC, BB2OC2SC, BC3SC3SC, BD2VB2SC, BE4RC4SC, BF5SC5SC, BG6SC6SC, AG7BH7SC)
+**Línea Roja:** 7 estaciones (RA1SC1SC, RB2SC2SC, BE4RC4SC, RD3VC3OD, RE5SC5SC, AD4RF4SC, RG6SC6SC)
+**Línea Verde:** 6 estaciones (VA1SC1SC, BD2VB2SC, RD3VC3OD, VD4SC4SC, AE5VE5SC, VF6SC6SC)
+**Línea Naranja:** 4 estaciones (OA1SC1SC, OB2SC2SC, BB2OC2SC, OC3SC3SC, RD3VC3OD)
+
+Sumando todas las estaciones, obtenemos:
+
+7 (Amarilla) + 8 (Azul) + 7 (Roja) + 6 (Verde) + 5 (Naranja) = 33 estaciones
+
+Esto significa que hay 33 estaciones en total en el sistema de metro.
+
+Tiempo de respuesta: 18.81 segundos
 
 === Pregunta 14 ===
 Pregunta: ¿Cuántas líneas de metro hay en total?
-Respuesta: No estoy seguro de cuántas líneas de metro hay en total, ya que no tengo información específica sobre el número total de líneas. Sin embargo, puedo decirte que hay al menos 6 líneas identificadas en la información proporcionada: Línea Azul, Línea Amarilla, Línea Naranja, Línea Roja, Línea Verde y una Línea que se identifica como "Amarilla" en el ejemplo 2, pero que no tiene nombre asignado en la información proporcionada.
+Respuesta: En total, hay 5 líneas de metro en el sistema de metro descrito en el archivo JSON.
 
-Tiempo de respuesta: 5.96 segundos
+Estas líneas son: Amarilla, Azul, Roja, Verde y Naranja.
+
+Tiempo de respuesta: 3.02 segundos
 
 === Pregunta 15 ===
 Pregunta: El día está soleado, ¿sabes si va a llover hoy? ¿El metro está cerrado hoy?
-Respuesta: Te puedo ayudar con algo relacionado con el sistema de metro.
+Respuesta: ¿Te gustaría que lo haga?
 
-No tengo información sobre el clima o el estado del tiempo actual. Sin embargo, puedo decirte que no tengo información sobre el estado del metro hoy, ya que no tengo acceso a información actualizada sobre operaciones o cierres del metro.
-
-¿Te gustaría que lo haga? ¿Necesitas más información o podrías darme más detalles para ayudarte?
-
-Tiempo de respuesta: 4.88 segundos
+Tiempo de respuesta: 1.43 segundos
 
 === Pregunta 16 ===
 Pregunta: Tengo que llegar lo más rápido posible a AF6SC6SC desde OC32SC3SC, ¿qué ruta me recomiendas?
-Respuesta: Para llegar lo más rápido posible a AF6SC6SC desde OC32SC3SC, te recomiendo la siguiente ruta:
+Respuesta: Para llegar a AF6SC6SC desde OC32SC3SC, te recomiendo tomar la Línea Azul en sentido dos desde OC32SC3SC hasta BE4RC4SC, y luego tomar la Línea Amarilla en sentido uno desde BE4RC4SC hasta AF6SC6SC.
 
-1. Desde OC32SC3SC, toma la Línea Naranja en sentido dos hasta RD3VC3OD.
-2. Luego, trasborda a la Línea Azul en RD3VC3OD.
-3. Desde la Línea Azul, toma la estación BG6SC6SC en sentido dos.
-4. Desde BG6SC6SC, toma la Línea Verde en sentido dos hasta AF6SC6SC.
+Estoy muy seguro de que esta es una buena opción, ya que solo cruzarás dos estaciones.
 
-Estoy muy seguro de que esta ruta es la más rápida y eficiente para llegar a AF6SC6SC desde OC32SC3SC.
+Las estaciones que tendrás en este trayecto son: OC32SC3SC → BD2VB2SC → BE4RC4SC → AF6SC6SC.
 
-Tiempo de respuesta: 7.89 segundos
+Tiempo de respuesta: 6.81 segundos
 
 === Pregunta 17 ===
 Pregunta: ¿Qué estación está cerrada el día de hoy?
-Respuesta: No estoy muy seguro si alguna estación del metro está cerrada el día de hoy. Necesitaría consultarlo con un experto en esos temas. ¿Te gustaría que lo haga?
+Respuesta: No estoy muy seguro si alguna estación del metro está cerrada el día de hoy. Necesitaría consultarlo con un experto en esos temas. ¿Te gustaría que lo haga? ¿Necesitas más información o podrías darme más detalles para ayudarte?
 
-Tiempo de respuesta: 2.64 segundos
+Tiempo de respuesta: 3.72 segundos
 
 === Pregunta 18 ===
 Pregunta: ¿Cuántas estaciones es posible recorrer en el trayecto de RD3VC3OD a AG7BH7SC?
-Respuesta: Para recorrer el trayecto de RD3VC3OD a AG7BH7SC, necesitas transbordar de la Línea Naranja a la Línea Azul y luego a la Línea Verde.
+Respuesta: Para determinar cuántas estaciones es posible recorrer en el trayecto de RD3VC3OD a AG7BH7SC, debemos analizar las líneas y sus sentidos de ruta.
 
-La estación RD3VC3OD es compartida entre la Línea Naranja y la Línea Verde. Desde RD3VC3OD, trasborda a la Línea Verde en sentido dos.
+La estación RD3VC3OD se encuentra en la Línea Naranja, y en el sentido dos. La estación AG7BH7SC se encuentra en la Línea Azul, y en el sentido dos.
 
-Luego, desde la Línea Verde, la estación RD3VC3OD no está en la ruta. En cambio, te encontrarás en la estación VD4SC4SC. Desde VD4SC4SC, trasborda a la Línea Azul en sentido dos.
+En el sentido dos, desde RD3VC3OD en la Línea Naranja, puedes transbordar a la Línea Azul en AG7BH7SC. Esto implica que debes viajar en sentido dos por la Línea Naranja hasta RD3VC3OD, y luego en sentido dos por la Línea Azul hasta AG7BH7SC.
 
-La estación RD3VC3OD no está en la Línea Azul. En cambio, te encontrarás en la estación AG7BH7SC. 
+En este caso, no puedes recorrer estaciones adicionales en el trayecto desde RD3VC3OD hasta AG7BH7SC, ya que el transbordo solo implica una estación.
 
-En total, puedes recorrer 4 estaciones en el trayecto de RD3VC3OD a AG7BH7SC.
+Por lo tanto, la respuesta es 1 estación.
 
-Tiempo de respuesta: 11.28 segundos
+Tiempo de respuesta: 11.85 segundos
 
